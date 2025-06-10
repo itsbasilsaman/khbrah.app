@@ -4,8 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "mkdir -p dist && chmod +x ./node_modules/.bin/tailwindcss",
-    "build": "node ./node_modules/tailwindcss/lib/cli.js -i ./src/input.css -o ./dist/output.css --minify"
+    "postinstall": "mkdir -p public && chmod +x ./node_modules/.bin/tailwindcss",
+    "prebuild": "cp -r *.html js css Assets public/",
+    "build": "node ./node_modules/tailwindcss/lib/cli.js -i ./src/input.css -o ./public/output.css --minify"
   },
   "keywords": [],
   "author": "",
