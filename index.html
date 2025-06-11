@@ -215,14 +215,14 @@ referrerpolicy="no-referrer"
         </div>
       </div>
     </div>
-    <section class="relative w-full overflow-hidden bg-gray-50 py-4 md:py-6 lg:py-8">
+    <section class="relative w-full overflow-hidden bg- -50 pt-4 md:py-6 lg:py-8">
       <div class="container mx-auto px-4 md:px-6 lg:px-8 relative z-10">
-        <div class="relative w-full max-w-[95%] md:max-w-[85%] lg:max-w-[80%] mx-auto">
-          <div class="bg-transparent p-2 md:p-3 lg:p-4 rounded-lg md:rounded-xl lg:rounded-2xl ">
+        <div class="relative w-full   mx-auto">
+          <div class="    md:p-3 lg:p-4   ">
             <img
               src="5ff723a6a2190a08cd9e2ed2/5ffc724b2d7e5d5d9473ede4_image-about-hero-law-firm-template.jpg"
               alt="Law Team - Law Firm Webflow Template"
-              class="w-full h-auto object-contain rounded-lg md:rounded-xl lg:rounded-2xl animate-slide-in max-h-[85vh] md:max-h-[75vh] lg:max-h-[70vh]"
+              class="w-full h-auto object-contain   animate-slide-in max-h-[85vh] md:max-h-[75vh] lg:max-h-[70vh]"
               sizes="(max-width: 479px) 100vw, (max-width: 767px) 100vw, (max-width: 1919px) 95vw, 1276px"
               srcset="
                 5ff723a6a2190a08cd9e2ed2/5ffc724b2d7e5d5d9473ede4_image-about-hero-law-firm-template-p-500.jpeg 500w,
@@ -239,7 +239,7 @@ referrerpolicy="no-referrer"
     </section>
     
     
-    <section class="section home-about-us">
+    <section class="  home-about-us">
       <div class="container-default w-container">
         <div class="home-about-us-wrapper">
           <div data-w-id="42aa54da-09d1-49c2-3915-e449700ac32b"
@@ -274,8 +274,80 @@ referrerpolicy="no-referrer"
       </div>
     </section>
 
- 
+    <section id="Achievements" class="section achievements">
+      <div class="container-default w-container">
+        <div class="w-layout-grid achievements-grid">
+          <div class="achievement-wrapper">
+            <div class="achievement-number" data-target="252">0</div>
+            <div class="paragraph-large" data-en="Successful Cases" data-ar="قضايا ناجحة">Successful Cases</div>
+          </div>
+          <div class="achievement-wrapper">
+            <div class="achievement-number" data-target="175">0</div>
+            <div class="paragraph-large" data-en="Satisfied Clients" data-ar="عملاء راضون">Satisfied Clients</div>
+          </div>
+          <div class="achievement-wrapper">
+            <div class="achievement-number" data-target="18">0</div>
+            <div class="paragraph-large" data-en="Lawyer Associates" data-ar="محامون شركاء">Lawyer Associates</div>
+          </div>
+          <div class="achievement-wrapper">
+            <div class="achievement-number" data-target="500">0</div>
+            <div class="paragraph-large" data-en="Money saved for our clients" data-ar="المال الذي تم توفيره لعملائنا">Money saved for our clients</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <script>
+      // Function to check if element is in viewport
+      function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+          rect.top >= 0 &&
+          rect.left >= 0 &&
+          rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
+      }
+
+      // Function to animate counting
+      function animateCounter(element) {
+        const target = parseInt(element.getAttribute('data-target'));
+        const duration = 3000; // 3 seconds
+        const frameDuration = 1000 / 60; // 60fps
+        const totalFrames = Math.round(duration / frameDuration);
+        const step = target / totalFrames;
+        let current = 0;
+        let frame = 0;
+
+        const timer = setInterval(() => {
+          frame++;
+          current = Math.min(target, Math.floor(step * frame));
+          
+          if (current >= target) {
+            element.textContent = target + (element.getAttribute('data-target') === '50' ? 'M+' : '+');
+            clearInterval(timer);
+          } else {
+            element.textContent = current + (element.getAttribute('data-target') === '50' ? 'M+' : '+');
+          }
+        }, frameDuration);
+      }
+
+      // Function to handle scroll
+      function handleScroll() {
+        const counters = document.querySelectorAll('.achievement-number');
+        counters.forEach(counter => {
+          if (isInViewport(counter) && !counter.classList.contains('counted')) {
+            counter.classList.add('counted');
+            animateCounter(counter);
+          }
+        });
+      }
+
+      // Add scroll event listener
+      window.addEventListener('scroll', handleScroll);
+      // Initial check for elements in viewport
+      handleScroll();
+    </script>
 
     <section class="section home-practice-areas">
       <div data-w-id="a586b461-69a0-ea22-833f-dc652f4dd40f" class="container-small-557px home-practice-areas">
@@ -583,21 +655,17 @@ referrerpolicy="no-referrer"
         <div class="footer-wrapper">
           <div class="footer-nav-wrapper">
             <div data-w-id="9007e872-66d4-b25f-30f5-9eaeecea3549" class="footer-nav-box">
-              <h2 class="title footer-title">Menu</h2>
+              <h2 class="title footer-title" data-en="Menu" data-ar="القائمة">Menu</h2>
               <div class="footer-nav-content">
                 <ul role="list" class="footer-nav w-list-unstyled">
                   <li class="footer-nav-item"><a href="index.html" aria-current="page"
-                      class="nav-link footer-nav-link w--current">Home</a></li>
-                  <li class="footer-nav-item"><a href="about.html" class="nav-link footer-nav-link">About</a></li>
-                  <li class="footer-nav-item"><a href="features.html" class="nav-link footer-nav-link">Features</a></li>
-                  <li class="footer-nav-item"><a href="packages.html" class="nav-link footer-nav-link">Plans</a></li>
-                  <li class="footer-nav-item"><a
-                      href="contact.html"
-                      class="nav-link footer-nav-link">Contact</a></li>
-                  
+                      class="nav-link footer-nav-link w--current" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                  <li class="footer-nav-item"><a href="about.html" class="nav-link footer-nav-link" data-en="About" data-ar="من نحن">About</a></li>
+                  <li class="footer-nav-item"><a href="features.html" class="nav-link footer-nav-link" data-en="Features" data-ar="المميزات">Features</a></li>
+                  <li class="footer-nav-item"><a href="packages.html" class="nav-link footer-nav-link" data-en="Plans" data-ar="الخطط">Plans</a></li>
+                  <li class="footer-nav-item"><a href="contact.html" class="nav-link footer-nav-link" data-en="Contact" data-ar="اتصل بنا">Contact</a></li>
                 </ul>
                 <ul role="list" class="footer-nav last w-list-unstyled">
-                   
                 </ul>
               </div>
             </div>
@@ -628,36 +696,34 @@ referrerpolicy="no-referrer"
           </div>
           <div class="divider footer-divider"></div>
           <div data-w-id="294f866c-3b43-211b-5158-dfd4844a5629" class="footer-newsletter-wrapper">
-            <h2 class="title footer-title">Subscribe to Our Newsletter</h2>
-            <p class="paragraph footer-newsletter">Lorem ipsum dolor sit amet, consecteturlo adipiscing elit. Nec
-              phasellus ut massa proin aliquet sodales non</p>
+            <h2 class="title footer-title" data-en="Stay Updated with Legal Insights" data-ar="ابق على اطلاع بالرؤى القانونية">Stay Updated with Legal Insights</h2>
+            <p class="paragraph footer-newsletter" data-en="Subscribe to our newsletter for the latest legal updates, case studies, and insights from our experienced team of legal professionals." data-ar="اشترك في نشرتنا الإخبارية للحصول على آخر التحديثات القانونية ودراسات الحالة ورؤى من فريقنا من المتخصصين القانونيين ذوي الخبرة.">Subscribe to our newsletter for the latest legal updates, case studies, and insights from our experienced team of legal professionals.</p>
             <div class="footer-form-block w-form">
               <form id="wf-form-Newsletter-Form-Footer" name="wf-form-Newsletter-Form-Footer"
                 data-name="Newsletter Form Footer" method="get" class="footer-newsletter-input-wrapper"
                 data-wf-page-id="5ff723a6a2190a6bad9e2ecd" data-wf-element-id="818bdc07-1861-3837-514d-eb08723b59ef">
                 <input class="input footer-newsletter w-input" maxlength="256" name="email" data-name="Email"
                   placeholder="Enter your email address" type="email" id="email" required=""><input type="submit"
-                  data-wait="Please wait..." class="footer-newsletter-submit-button w-button" value="Subscribe"></form>
+                  data-wait="Please wait..." class="footer-newsletter-submit-button w-button" value="Subscribe" data-en="Subscribe" data-ar="اشترك">
+              </form>
               <div class="success-message w-form-done">
-                <div>Thanks for joining our newsletter.</div>
+                <div data-en="Thank you for subscribing to our legal newsletter." data-ar="شكراً لاشتراكك في نشرتنا الإخبارية القانونية.">Thank you for subscribing to our legal newsletter.</div>
               </div>
               <div class="error-message w-form-fail">
-                <div>Oops! Something went wrong.</div>
+                <div data-en="Oops! Something went wrong. Please try again." data-ar="عذراً! حدث خطأ ما. يرجى المحاولة مرة أخرى.">Oops! Something went wrong. Please try again.</div>
               </div>
             </div>
-            <h2 class="title footer-title">Follow Us</h2>
-            <div class="w-layout-grid footer-social-media-grid"><a href="https://twitter.com/" target="https://x.com/khbra_sa"
+            <h2 class="title footer-title" data-en="Connect With Us" data-ar="تواصل معنا">Connect With Us</h2>
+            <div class="w-layout-grid footer-social-media-grid"><a href="https://x.com/khbra_sa" target="_blank"
                 class="footer-social-media-link icon-size-16px"><i class="fa-brands fa-x-twitter"></i></a> <a href="https://wa.me/966537166646" target="_blank"
                 class="footer-social-media-link"><i class="fa-brands fa-whatsapp"></i></a></div>
           </div>
         </div>
         <div data-w-id="0dab31d8-ab6c-6b0e-ec9f-9078ede6e0ef" class="small-print-wrapper"><a href="index.htm"
             aria-current="page" class="footer-logo-container w-inline-block w--current"><img
-              src="5ff723a6a2190a08cd9e2ed2/6269d9e757e8418a48197dfd_lawyers-webflow-template-logo.svg" alt=""
-              class="footer-logo"></a>
-          <div class="small-print">Copyright © Lawyers | Designed by <a href="https://brixtemplates.com/"
-              target="_blank">BRIX Templates</a> - Powered by <a href="https://webflow.com/" target="_blank">Webflow</a>
-          </div>
+              src="./Assets/khbrah-logo.png" alt="Khbrah Law Firm Logo"
+              class="footer-logo w-[100px]"></a>
+          <div class="small-print" data-en="© 2024 Khbrah Law Firm. All rights reserved." data-ar="© 2024 مكتب خبيرة للمحاماة. جميع الحقوق محفوظة.">© 2024 Khbrah Law Firm. All rights reserved.</div>
         </div>
       </div>
     </footer>

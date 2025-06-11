@@ -27,6 +27,8 @@
   <meta content="summary_large_image" name="twitter:card">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta content="Webflow" name="generator">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="5ff723a6a2190a08cd9e2ed2/css/lawfirmtemplate.webflow.722dc906b.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -193,130 +195,83 @@
       <div data-w-id="09052920-2819-9443-9d1f-509f9024a216"
         style="-webkit-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
         class="container-small-557px packages">
-        <h1 class="title packages">Our Packages</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae vitae aenean tincidunt pretium quam id. Massa
-          leo.</p>
+        <h1 class="title packages" data-ar="نوع الباقة" data-en="Our Packages">Our Packages</h1>
+        <p data-ar="اختر الباقة المناسبة لاحتياجاتك القانونية" data-en="Choose the package that fits your legal needs.">Choose the package that fits your legal needs.</p>
       </div>
       <div class="container-default w-container">
         <div class="w-dyn-list">
           <div role="list" class="packages-grid w-dyn-items">
-            <div data-w-id="e5fe6760-1a95-0666-99d9-213bd234a703"
-              style="-webkit-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
-              role="listitem" class="package-item w-dyn-item">
+            <!-- Basic Package -->
+            <div role="listitem" class="package-item w-dyn-item">
               <div class="card package">
                 <div class="card-package-top">
-                  <h2 class="title package-card-name">Standard</h2>
-                  <div data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_price_%22%2C%22to%22%3A%22innerHTML%22%7D%5D"
-                    class="package-card-price">$ 2,500.00 USD</div>
-                  <p class="paragraph package-card-about-summary">Access to 10 hours of legal consultation with our firm
-                    for one month.</p>
+                  <h2 class="title package-card-name" data-ar="الاستشارة الأساسية" data-en="Basic Consultation">Basic Consultation</h2>
+                  <div class="package-card-price" data-ar="149 ريال" data-en="149 SAR">149 SAR</div>
+                  <p class="paragraph package-card-about-summary" data-ar="استشارة هاتفية مع محامي مرخص لمدة 20 دقيقة وعدد أسئلة غير محدود." data-en="Phone consultation with a licensed lawyer for 20 minutes and unlimited questions.">Phone consultation with a licensed lawyer for 20 minutes and unlimited questions.</p>
                 </div>
                 <div class="divider package-card"></div>
                 <div class="card-package-bottom">
                   <div class="w-layout-grid package-card-features-grid">
-                    <div class="package-card-feature-wrapper"><img
-                        src="5ff723a6a2190a08cd9e2ed2/5ffe0e3ed43bfa4932f962ef_icon-check-law-firm-template.svg"
-                        alt="Check Icon - Law Firm Webflow Template" class="image package-card-feature">
-                      <div>10 hours of legal consultation</div>
-                    </div>
-                    <div class="package-card-feature-wrapper"><img
-                        src="5ff723a6a2190a08cd9e2ed2/5ffe0e3ed43bfa4932f962ef_icon-check-law-firm-template.svg"
-                        alt="Check Icon - Law Firm Webflow Template" class="image package-card-feature">
-                      <div>24 hours response time</div>
-                    </div>
-                    <div class="package-card-feature-wrapper"><img
-                        src="5ff723a6a2190a08cd9e2ed2/5ffe0e3ed43bfa4932f962ef_icon-check-law-firm-template.svg"
-                        alt="Check Icon - Law Firm Webflow Template" class="image package-card-feature">
-                      <div>Phone or email consultation</div>
-                    </div>
-                    <div class="package-card-feature-wrapper"><img
-                        src="5ff723a6a2190a08cd9e2ed2/5ffe0e3ed43bfa4932f962ef_icon-check-law-firm-template.svg"
-                        alt="Check Icon - Law Firm Webflow Template" class="image package-card-feature">
-                      <div>Assistance in 6 practice areas</div>
-                    </div>
+                    <div class="package-card-feature-wrapper"><i class="fa-solid fa-circle-check" style="color: #2ecc40; margin-right: 8px;"></i><div data-ar="استشارة مكالمة هاتفية" data-en="Phone consultation">Phone consultation</div></div>
+                    <div class="package-card-feature-wrapper"><i class="fa-solid fa-circle-check" style="color: #2ecc40; margin-right: 8px;"></i><div data-ar="محامي مرخص من وزارة العدل" data-en="Licensed lawyer from Ministry of Justice">Licensed lawyer from Ministry of Justice</div></div>
+                    <div class="package-card-feature-wrapper"><i class="fa-solid fa-circle-check" style="color: #2ecc40; margin-right: 8px;"></i><div data-ar="مدة الاستشارة 20 دقيقة" data-en="Consultation duration: 20 minutes">Consultation duration: 20 minutes</div></div>
+                    <div class="package-card-feature-wrapper"><i class="fa-solid fa-circle-check" style="color: #2ecc40; margin-right: 8px;"></i><div data-ar="عدد أسئلة لا محدود" data-en="Unlimited questions">Unlimited questions</div></div>
                   </div>
-                  <div class="card-package-buttons"><a href="product/standard.html"
-                      class="button-primary full-width w-button">Learn More</a></div>
+                  <div class="card-package-buttons"><a href="#" class="button-primary full-width w-button" data-ar="اختر الباقة" data-en="Choose Package">Choose Package</a></div>
                 </div>
               </div>
             </div>
-            <div data-w-id="e5fe6760-1a95-0666-99d9-213bd234a703"
-              style="-webkit-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
-              role="listitem" class="package-item w-dyn-item">
+            <!-- Golden Package -->
+            <div role="listitem" class="package-item w-dyn-item">
               <div class="card package">
                 <div class="card-package-top">
-                  <h2 class="title package-card-name">Growth</h2>
-                  <div data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_price_%22%2C%22to%22%3A%22innerHTML%22%7D%5D"
-                    class="package-card-price">$ 5,000.00 USD</div>
-                  <p class="paragraph package-card-about-summary">Access to 25 hours of legal consultation with our firm
-                    for one month.</p>
+                  <h2 class="title package-card-name" data-ar="الاستشارة الذهبية" data-en="Golden Consultation">Golden Consultation</h2>
+                  <div class="package-card-price" data-ar="499 ريال" data-en="499 SAR">499 SAR</div>
+                  <p class="paragraph package-card-about-summary" data-ar="استشارة هاتفية مع محامي مرخص ذو خبرة أكثر من 5 سنوات لمدة 35 دقيقة مع تفاصيل مكتوبة وخصم 5% على الخدمات القانونية." data-en="Phone consultation with a licensed lawyer with over 5 years experience for 35 minutes, written details, and 5% discount on legal services.">Phone consultation with a licensed lawyer with over 5 years experience for 35 minutes, written details, and 5% discount on legal services.</p>
                 </div>
                 <div class="divider package-card"></div>
                 <div class="card-package-bottom">
                   <div class="w-layout-grid package-card-features-grid">
-                    <div class="package-card-feature-wrapper"><img
-                        src="5ff723a6a2190a08cd9e2ed2/5ffe0e3ed43bfa4932f962ef_icon-check-law-firm-template.svg"
-                        alt="Check Icon - Law Firm Webflow Template" class="image package-card-feature">
-                      <div>25 hours of legal consultation</div>
-                    </div>
-                    <div class="package-card-feature-wrapper"><img
-                        src="5ff723a6a2190a08cd9e2ed2/5ffe0e3ed43bfa4932f962ef_icon-check-law-firm-template.svg"
-                        alt="Check Icon - Law Firm Webflow Template" class="image package-card-feature">
-                      <div>4 hours response time</div>
-                    </div>
-                    <div class="package-card-feature-wrapper"><img
-                        src="5ff723a6a2190a08cd9e2ed2/5ffe0e3ed43bfa4932f962ef_icon-check-law-firm-template.svg"
-                        alt="Check Icon - Law Firm Webflow Template" class="image package-card-feature">
-                      <div>On-site consultation</div>
-                    </div>
-                    <div class="package-card-feature-wrapper"><img
-                        src="5ff723a6a2190a08cd9e2ed2/5ffe0e3ed43bfa4932f962ef_icon-check-law-firm-template.svg"
-                        alt="Check Icon - Law Firm Webflow Template" class="image package-card-feature">
-                      <div>Assistance in 6 practice areas</div>
-                    </div>
+                    <div class="package-card-feature-wrapper"><i class="fa-solid fa-circle-check" style="color: #2ecc40; margin-right: 8px;"></i><div data-ar="استشارة مكالمة هاتفية" data-en="Phone consultation">Phone consultation</div></div>
+                    <div class="package-card-feature-wrapper"><i class="fa-solid fa-circle-check" style="color: #2ecc40; margin-right: 8px;"></i><div data-ar="محامي مرخص من وزارة العدل" data-en="Licensed lawyer from Ministry of Justice">Licensed lawyer from Ministry of Justice</div></div>
+                    <div class="package-card-feature-wrapper"><i class="fa-solid fa-circle-check" style="color: #2ecc40; margin-right: 8px;"></i><div data-ar="خبرة المحامي أكثر من 5 سنوات" data-en="Lawyer experience over 5 years">Lawyer experience over 5 years</div></div>
+                    <div class="package-card-feature-wrapper"><i class="fa-solid fa-circle-check" style="color: #2ecc40; margin-right: 8px;"></i><div data-ar="مدة الاستشارة 35 دقيقة" data-en="Consultation duration: 35 minutes">Consultation duration: 35 minutes</div></div>
+                    <div class="package-card-feature-wrapper"><i class="fa-solid fa-circle-check" style="color: #2ecc40; margin-right: 8px;"></i><div data-ar="تفاصيل الاستشارة بمستند مكتوب" data-en="Written consultation details">Written consultation details</div></div>
+                    <div class="package-card-feature-wrapper"><i class="fa-solid fa-circle-check" style="color: #2ecc40; margin-right: 8px;"></i><div data-ar="عدد أسئلة لا محدود" data-en="Unlimited questions">Unlimited questions</div></div>
+                    <div class="package-card-feature-wrapper"><i class="fa-solid fa-circle-check" style="color: #2ecc40; margin-right: 8px;"></i><div data-ar="خصم 5% على الخدمات القانونية" data-en="5% discount on legal services">5% discount on legal services</div></div>
+                    <div class="package-card-feature-wrapper"><i class="fa-solid fa-circle-check" style="color: #2ecc40; margin-right: 8px;"></i><div data-ar="إمكانية التقسيط عبر تمارا" data-en="Installment via Tamara available">Installment via Tamara available</div></div>
+                    <div class="package-card-feature-wrapper"><i class="fa-solid fa-circle-check" style="color: #2ecc40; margin-right: 8px;"></i><div data-ar="إمكانية تغيير موعد الاستشارة" data-en="Ability to reschedule consultation">Ability to reschedule consultation</div></div>
+                    <div class="package-card-feature-wrapper"><i class="fa-solid fa-circle-check" style="color: #2ecc40; margin-right: 8px;"></i><div data-ar="خدمة عملاء 24 ساعة" data-en="24/7 customer service">24/7 customer service</div></div>
                   </div>
-                  <div class="card-package-buttons"><a href="product/growth.html"
-                      class="button-primary full-width w-button">Learn More</a></div>
+                  <div class="card-package-buttons"><a href="#" class="button-primary full-width w-button" data-ar="اختر الباقة" data-en="Choose Package">Choose Package</a></div>
                 </div>
               </div>
             </div>
-            <div data-w-id="e5fe6760-1a95-0666-99d9-213bd234a703"
-              style="-webkit-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
-              role="listitem" class="package-item w-dyn-item">
+            <!-- Platinum Package -->
+            <div role="listitem" class="package-item w-dyn-item">
               <div class="card package">
                 <div class="card-package-top">
-                  <h2 class="title package-card-name">Enterprise</h2>
-                  <div data-wf-sku-bindings="%5B%7B%22from%22%3A%22f_price_%22%2C%22to%22%3A%22innerHTML%22%7D%5D"
-                    class="package-card-price">$ 10,000.00 USD</div>
-                  <p class="paragraph package-card-about-summary">Access to 60 hours of legal consultation with our firm
-                    for one month.</p>
+                  <h2 class="title package-card-name" data-ar="الاستشارة البلاتينية" data-en="Platinum Consultation">Platinum Consultation</h2>
+                  <div class="package-card-price" data-ar="999 ريال" data-en="999 SAR">999 SAR</div>
+                  <p class="paragraph package-card-about-summary" data-ar="استشارة هاتفية مع محامي مرخص ذو خبرة أكثر من 10 سنوات لمدة 50 دقيقة مع تفاصيل مكتوبة وخصم 10% على الخدمات القانونية واستشارة إضافية مجانية." data-en="Phone consultation with a licensed lawyer with over 10 years experience for 50 minutes, written details, 10% discount on legal services, and a free extra consultation.">Phone consultation with a licensed lawyer with over 10 years experience for 50 minutes, written details, 10% discount on legal services, and a free extra consultation.</p>
                 </div>
                 <div class="divider package-card"></div>
                 <div class="card-package-bottom">
                   <div class="w-layout-grid package-card-features-grid">
-                    <div class="package-card-feature-wrapper"><img
-                        src="5ff723a6a2190a08cd9e2ed2/5ffe0e3ed43bfa4932f962ef_icon-check-law-firm-template.svg"
-                        alt="Check Icon - Law Firm Webflow Template" class="image package-card-feature">
-                      <div>60 hours of legal consultation</div>
-                    </div>
-                    <div class="package-card-feature-wrapper"><img
-                        src="5ff723a6a2190a08cd9e2ed2/5ffe0e3ed43bfa4932f962ef_icon-check-law-firm-template.svg"
-                        alt="Check Icon - Law Firm Webflow Template" class="image package-card-feature">
-                      <div>1 hour response time</div>
-                    </div>
-                    <div class="package-card-feature-wrapper"><img
-                        src="5ff723a6a2190a08cd9e2ed2/5ffe0e3ed43bfa4932f962ef_icon-check-law-firm-template.svg"
-                        alt="Check Icon - Law Firm Webflow Template" class="image package-card-feature">
-                      <div>Dedicated associate</div>
-                    </div>
-                    <div class="package-card-feature-wrapper"><img
-                        src="5ff723a6a2190a08cd9e2ed2/5ffe0e3ed43bfa4932f962ef_icon-check-law-firm-template.svg"
-                        alt="Check Icon - Law Firm Webflow Template" class="image package-card-feature">
-                      <div>Premium service &amp; assistance</div>
-                    </div>
+                    <div class="package-card-feature-wrapper"><i class="fa-solid fa-circle-check" style="color: #2ecc40; margin-right: 8px;"></i><div data-ar="استشارة مكالمة هاتفية" data-en="Phone consultation">Phone consultation</div></div>
+                    <div class="package-card-feature-wrapper"><i class="fa-solid fa-circle-check" style="color: #2ecc40; margin-right: 8px;"></i><div data-ar="محامي مرخص من وزارة العدل" data-en="Licensed lawyer from Ministry of Justice">Licensed lawyer from Ministry of Justice</div></div>
+                    <div class="package-card-feature-wrapper"><i class="fa-solid fa-circle-check" style="color: #2ecc40; margin-right: 8px;"></i><div data-ar="خبرة المحامي أكثر من 10 سنوات" data-en="Lawyer experience over 10 years">Lawyer experience over 10 years</div></div>
+                    <div class="package-card-feature-wrapper"><i class="fa-solid fa-circle-check" style="color: #2ecc40; margin-right: 8px;"></i><div data-ar="مدة الاستشارة 50 دقيقة" data-en="Consultation duration: 50 minutes">Consultation duration: 50 minutes</div></div>
+                    <div class="package-card-feature-wrapper"><i class="fa-solid fa-circle-check" style="color: #2ecc40; margin-right: 8px;"></i><div data-ar="تفاصيل الاستشارة بمستند مكتوب" data-en="Written consultation details">Written consultation details</div></div>
+                    <div class="package-card-feature-wrapper"><i class="fa-solid fa-circle-check" style="color: #2ecc40; margin-right: 8px;"></i><div data-ar="عدد أسئلة لا محدود" data-en="Unlimited questions">Unlimited questions</div></div>
+                    <div class="package-card-feature-wrapper"><i class="fa-solid fa-circle-check" style="color: #2ecc40; margin-right: 8px;"></i><div data-ar="خصم 10% على الخدمات القانونية" data-en="10% discount on legal services">10% discount on legal services</div></div>
+                    <div class="package-card-feature-wrapper"><i class="fa-solid fa-circle-check" style="color: #2ecc40; margin-right: 8px;"></i><div data-ar="إمكانية التقسيط عبر تمارا" data-en="Installment via Tamara available">Installment via Tamara available</div></div>
+                    <div class="package-card-feature-wrapper"><i class="fa-solid fa-circle-check" style="color: #2ecc40; margin-right: 8px;"></i><div data-ar="إمكانية تغيير موعد الاستشارة" data-en="Ability to reschedule consultation">Ability to reschedule consultation</div></div>
+                    <div class="package-card-feature-wrapper"><i class="fa-solid fa-circle-check" style="color: #2ecc40; margin-right: 8px;"></i><div data-ar="خدمة عملاء 24 ساعة" data-en="24/7 customer service">24/7 customer service</div></div>
+                    <div class="package-card-feature-wrapper"><i class="fa-solid fa-circle-check" style="color: #2ecc40; margin-right: 8px;"></i><div data-ar="استشارة أخرى مجانية لمدة 15 دقيقة" data-en="Another free consultation for 15 minutes">Another free consultation for 15 minutes</div></div>
+                    <div class="package-card-feature-wrapper"><i class="fa-solid fa-circle-check" style="color: #2ecc40; margin-right: 8px;"></i><div data-ar="مدير حساب خاص بك لمتابعة طلباتك" data-en="Dedicated account manager">Dedicated account manager</div></div>
                   </div>
-                  <div class="card-package-buttons"><a href="product/enterprise.html"
-                      class="button-primary full-width w-button">Learn More</a></div>
+                  <div class="card-package-buttons"><a href="#" class="button-primary full-width w-button" data-ar="اختر الباقة" data-en="Choose Package">Choose Package</a></div>
                 </div>
               </div>
             </div>
@@ -338,177 +293,80 @@
         <div class="footer-wrapper">
           <div class="footer-nav-wrapper">
             <div data-w-id="9007e872-66d4-b25f-30f5-9eaeecea3549" class="footer-nav-box">
-              <h2 class="title footer-title">Menu</h2>
+              <h2 class="title footer-title" data-en="Menu" data-ar="القائمة">Menu</h2>
               <div class="footer-nav-content">
                 <ul role="list" class="footer-nav w-list-unstyled">
-                  <li class="footer-nav-item"><a href="index.html" class="nav-link footer-nav-link">Home</a></li>
-                  <li class="footer-nav-item"><a href="about.html" class="nav-link footer-nav-link">About</a></li>
-                  <li class="footer-nav-item"><a href="contact.html" class="nav-link footer-nav-link">Contact</a></li>
-                  <li class="footer-nav-item"><a href="blog.html" class="nav-link footer-nav-link">Blog</a></li>
-                  <li class="footer-nav-item"><a
-                      href="blog/8-tips-in-choosing-the-right-law-firm-for-your-case-and-needs.html"
-                      class="nav-link footer-nav-link">Blog Post</a></li>
-                  <li class="footer-nav-item"><a href="lawyers.html" class="nav-link footer-nav-link">Lawyers</a></li>
-                  <li class="footer-nav-item"><a href="team/john-carter.html" class="nav-link footer-nav-link">Lawyer
-                      Single</a></li>
+                  <li class="footer-nav-item"><a href="index.html" aria-current="page"
+                      class="nav-link footer-nav-link w--current" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                  <li class="footer-nav-item"><a href="about.html" class="nav-link footer-nav-link" data-en="About" data-ar="من نحن">About</a></li>
+                  <li class="footer-nav-item"><a href="features.html" class="nav-link footer-nav-link" data-en="Features" data-ar="المميزات">Features</a></li>
+                  <li class="footer-nav-item"><a href="packages.html" class="nav-link footer-nav-link" data-en="Plans" data-ar="الخطط">Plans</a></li>
+                  <li class="footer-nav-item"><a href="contact.html" class="nav-link footer-nav-link" data-en="Contact" data-ar="اتصل بنا">Contact</a></li>
                 </ul>
                 <ul role="list" class="footer-nav last w-list-unstyled">
-                  <li class="footer-nav-item"><a href="case-results.html" class="nav-link footer-nav-link">Case
-                      Results</a></li>
-                  <li class="footer-nav-item"><a href="practice-areas.html" class="nav-link footer-nav-link">Practice
-                      Areas</a></li>
-                  <li class="footer-nav-item"><a href="packages.html" aria-current="page"
-                      class="nav-link footer-nav-link w--current">Packages</a></li>
-                  <li class="footer-nav-item"><a href="product/enterprise.html" class="nav-link footer-nav-link">Package
-                      Single</a></li>
                 </ul>
               </div>
             </div>
             <div data-w-id="6b34003d-3c5d-40ee-07d3-a61a8da2bb1d" class="footer-nav-box last">
-              <h2 class="title footer-title">Utility Pages</h2>
+              <h2 class="title footer-title" data-en="Contact Us" data-ar="بيانات الأتصال">Contact Us</h2>
               <div class="footer-nav-content">
                 <ul role="list" class="footer-nav last w-list-unstyled">
-                  <li class="footer-nav-item"><a href="utility-pages/start-here.html"
-                      class="nav-link footer-nav-link">Start Here</a></li>
-                  <li class="footer-nav-item"><a href="utility-pages/style-guide.html"
-                      class="nav-link footer-nav-link">Style Guide</a></li>
-                  <li class="footer-nav-item"><a href="404.html" class="nav-link footer-nav-link">404 Not Found</a></li>
-                  <li class="footer-nav-item"><a href="401.html" class="nav-link footer-nav-link">Password Protected</a>
+                  <li class="footer-nav-item">
+                    <div class="contact-info">
+                      <p class="address" data-en="Main Branch" data-ar="الفرع الرئيسي">Main Branch</p>
+                      <p class="address" data-en="King Abdulaziz Road" data-ar="طريق الملك عبد العزيز الفرعي">King Abdulaziz Road</p>
+                      <p class="address" data-en="Al Yasmin District" data-ar="حي الياسمين">Al Yasmin District</p>
+                      <p class="address" data-en="Riyadh, Saudi Arabia" data-ar="الرياض، المملكة العربية السعودية" style="margin-bottom: 15px;">Riyadh, Saudi Arabia</p>
+                    </div>
                   </li>
-                  <li class="footer-nav-item"><a href="utility-pages/licenses.html"
-                      class="nav-link footer-nav-link">Licenses</a></li>
-                  <li class="footer-nav-item"><a href="utility-pages/changelog.html"
-                      class="nav-link footer-nav-link">Changelog</a></li>
-                  <li class="footer-nav-item"><a href="https://brixtemplates.com/more-templates"
-                      class="nav-link footer-nav-link special">Browse More Templates</a></li>
+                  <li class="footer-nav-item">
+                    <div class="contact-info">
+                      <p class="phone-title" data-en="Phone" data-ar="عبر الهاتف"><i class="fa-solid fa-phone" style="margin-right: 5px;"></i>Phone</p>
+                      <p class="phone"><a href="https://wa.me/966537166646" class="phone-link" target="_blank">00966537166646</a></p>
+                      <p class="phone" style="margin-bottom: 15px;"><a href="tel:+966114555520" class="phone-link">00966114555520</a></p>
+                      <p class="email-title" data-en="Email" data-ar="عبر البريد الإلكتروني"><i class="fa-solid fa-envelope" style="margin-right: 5px;"></i> Email</p>
+                      <p class="email"><a href="mailto:info@khbra.sa" class="email-link">info@khbra.sa</a></p>
+                    </div>
+                  </li>
                 </ul>
               </div>
             </div>
           </div>
           <div class="divider footer-divider"></div>
           <div data-w-id="294f866c-3b43-211b-5158-dfd4844a5629" class="footer-newsletter-wrapper">
-            <h2 class="title footer-title">Subscribe to Our Newsletter</h2>
-            <p class="paragraph footer-newsletter">Lorem ipsum dolor sit amet, consecteturlo adipiscing elit. Nec
-              phasellus ut massa proin aliquet sodales non</p>
+            <h2 class="title footer-title" data-en="Stay Updated with Legal Insights" data-ar="ابق على اطلاع بالرؤى القانونية">Stay Updated with Legal Insights</h2>
+            <p class="paragraph footer-newsletter" data-en="Subscribe to our newsletter for the latest legal updates, case studies, and insights from our experienced team of legal professionals." data-ar="اشترك في نشرتنا الإخبارية للحصول على آخر التحديثات القانونية ودراسات الحالة ورؤى من فريقنا من المتخصصين القانونيين ذوي الخبرة.">Subscribe to our newsletter for the latest legal updates, case studies, and insights from our experienced team of legal professionals.</p>
             <div class="footer-form-block w-form">
               <form id="wf-form-Newsletter-Form-Footer" name="wf-form-Newsletter-Form-Footer"
                 data-name="Newsletter Form Footer" method="get" class="footer-newsletter-input-wrapper"
-                data-wf-page-id="5ff877cbe4fddca46e575f5b" data-wf-element-id="818bdc07-1861-3837-514d-eb08723b59ef">
+                data-wf-page-id="5ff723a6a2190a6bad9e2ecd" data-wf-element-id="818bdc07-1861-3837-514d-eb08723b59ef">
                 <input class="input footer-newsletter w-input" maxlength="256" name="email" data-name="Email"
                   placeholder="Enter your email address" type="email" id="email" required=""><input type="submit"
-                  data-wait="Please wait..." class="footer-newsletter-submit-button w-button" value="Subscribe"></form>
+                  data-wait="Please wait..." class="footer-newsletter-submit-button w-button" value="Subscribe" data-en="Subscribe" data-ar="اشترك">
+              </form>
               <div class="success-message w-form-done">
-                <div>Thanks for joining our newsletter.</div>
+                <div data-en="Thank you for subscribing to our legal newsletter." data-ar="شكراً لاشتراكك في نشرتنا الإخبارية القانونية.">Thank you for subscribing to our legal newsletter.</div>
               </div>
               <div class="error-message w-form-fail">
-                <div>Oops! Something went wrong.</div>
+                <div data-en="Oops! Something went wrong. Please try again." data-ar="عذراً! حدث خطأ ما. يرجى المحاولة مرة أخرى.">Oops! Something went wrong. Please try again.</div>
               </div>
             </div>
-            <h2 class="title footer-title">Follow Us</h2>
-            <div class="w-layout-grid footer-social-media-grid"><a href="https://www.facebook.com/" target="_blank"
-                class="footer-social-media-link"></a><a href="https://twitter.com/" target="_blank"
-                class="footer-social-media-link icon-size-16px"></a><a href="https://www.instagram.com/"
-                target="_blank" class="footer-social-media-link icon-size-20px"></a><a href="https://www.linkedin.com/"
-                target="_blank" class="footer-social-media-link"></a><a href="https://www.youtube.com/" target="_blank"
-                class="footer-social-media-link icon-size-15px"></a><a href="https://telegram.org/" target="_blank"
-                class="footer-social-media-link"></a></div>
+            <h2 class="title footer-title" data-en="Connect With Us" data-ar="تواصل معنا">Connect With Us</h2>
+            <div class="w-layout-grid footer-social-media-grid"><a href="https://x.com/khbra_sa" target="_blank"
+                class="footer-social-media-link icon-size-16px"><i class="fa-brands fa-x-twitter"></i></a> <a href="https://wa.me/966537166646" target="_blank"
+                class="footer-social-media-link"><i class="fa-brands fa-whatsapp"></i></a></div>
           </div>
         </div>
-        <div data-w-id="0dab31d8-ab6c-6b0e-ec9f-9078ede6e0ef" class="small-print-wrapper"><a href="index.html"
-            class="footer-logo-container w-inline-block"><img
-              src="5ff723a6a2190a08cd9e2ed2/6269d9e757e8418a48197dfd_lawyers-webflow-template-logo.svg" alt=""
-              class="footer-logo"></a>
-          <div class="small-print">Copyright © Lawyers | Designed by <a href="https://brixtemplates.com/"
-              target="_blank">BRIX Templates</a> - Powered by <a href="https://webflow.com/" target="_blank">Webflow</a>
-          </div>
+        <div data-w-id="0dab31d8-ab6c-6b0e-ec9f-9078ede6e0ef" class="small-print-wrapper"><a href="index.htm"
+            aria-current="page" class="footer-logo-container w-inline-block w--current"><img
+              src="./Assets/khbrah-logo.png" alt="Khbrah Law Firm Logo"
+              class="footer-logo w-[100px]"></a>
+          <div class="small-print" data-en="© 2024 Khbrah Law Firm. All rights reserved." data-ar="© 2024 مكتب خبيرة للمحاماة. جميع الحقوق محفوظة.">© 2024 Khbrah Law Firm. All rights reserved.</div>
         </div>
       </div>
     </footer>
   </div>
-  <div>
-    <div data-w-id="355558ca-2590-c05a-19b2-192384d011a0" class="brix-badges-wrapper">
-      <div class="more-templates-lottie-2" data-w-id="355558ca-2590-c05a-19b2-192384d011a1" data-animation-type="lottie"
-        data-src="https://cdn.prod.website-files.com/5e30f06b05f79621331ddc25/65dcea068e8dfd14eaed7b6f_Notification%20Dot.json"
-        data-loop="1" data-direction="1" data-autoplay="1" data-is-ix2-target="0" data-renderer="svg"
-        data-default-duration="2.5" data-duration="0"></div><a href="https://brixtemplates.com/more-webflow-templates-b"
-        target="_blank" class="more-templates-badge-wrapper w-inline-block">
-        <div class="more-templates-logo-wrapper"><img loading="lazy"
-            src="608e162a9175d0346094038b/67463b7d46e9fffa59a5ab2b_webflow-logo.png" alt=""
-            class="more-templates-logo"><img loading="lazy"
-            src="608e162a9175d0346094038b/67463b7d46e9fffa59a5ab2b_webflow-logo.png" alt=""
-            class="more-templates-logo blur"></div>
-        <div>
-          <p class="more-templates-p">Explore our collection of 200+ <span class="more-webflow-templates-sub">Premium
-              Webflow Templates</span></p>
-        </div>
-      </a><a
-        href="https://brixtemplates.com/template-customization?utm_source=webflow&utm_medium=template&utm_campaign=badge"
-        target="_blank" class="more-templates-badge-wrapper customization w-inline-block">
-        <div class="more-templates-logo-wrapper"><img loading="lazy"
-            src="5ff723a6a2190a08cd9e2ed2/674782760578675d8ee92a38_customize-your-webflow-template-brix-templates.png"
-            alt="" class="more-templates-logo customize"><img loading="lazy"
-            src="5ff723a6a2190a08cd9e2ed2/674782760578675d8ee92a38_customize-your-webflow-template-brix-templates.png"
-            alt="" class="more-templates-logo blur"></div>
-        <div>
-          <p class="more-templates-p">Need to customize this template?<span class="more-webflow-templates-sub">Hire our
-              Webflow team</span>!</p>
-        </div>
-      </a>
-      <div class="hidden-code w-embed w-script">
-        <style>
-          .more-templates-badge-wrapper {
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-          }
-
-          .more-templates-badge-wrapper.active {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-            z-index: 9991;
-          }
-
-          .more-templates-badge-wrapper.next {
-            opacity: 0.4;
-            transform: translateY(11px) scale(0.9);
-            z-index: 9990;
-          }
-
-          .more-templates-badge-wrapper.active:hover {
-
-            transform: translateY(-3px) scale(1.02) translateX(-3px) rotate(1deg);
-
-          }
-        </style>
-
-        <script>
-          document.addEventListener('DOMContentLoaded', function () {
-            const cards = document.querySelectorAll('.more-templates-badge-wrapper');
-            let currentIndex = 0;
-            const ANIMATION_INTERVAL = 8000; // 8 seconds
-
-            function updateCards() {
-              cards.forEach((card, index) => {
-                card.classList.remove('active', 'next');
-
-                if (index === currentIndex) {
-                  card.classList.add('active');
-                } else if (index === (currentIndex + 1) % cards.length) {
-                  card.classList.add('next');
-                }
-              });
-
-              currentIndex = (currentIndex + 1) % cards.length;
-            }
-
-            // Initial state
-            updateCards();
-
-            // Start the loop
-            setInterval(updateCards, ANIMATION_INTERVAL);
-          });
-        </script>
-      </div>
-    </div>
-  </div>
+  <script src="js/language-switch.js" type="text/javascript"></script>
   <script src="js/jquery-3.5.1.min.dc5e7f18c8.js?site=5ff723a6a2190a08cd9e2ed2" type="text/javascript"
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="5ff723a6a2190a08cd9e2ed2/js/webflow.582146835.js" type="text/javascript"></script>
