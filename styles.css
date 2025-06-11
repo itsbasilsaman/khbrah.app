@@ -1,0 +1,160 @@
+/* Features Section Styles */
+.features-section {
+  padding: 80px 0;
+  background-color: #f8f9fa;
+}
+
+.features-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.features-header h2 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.features-header p {
+  font-size: 18px;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.feature-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+}
+
+.icon-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.feature-card h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.feature-card p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.features-cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.button-primary {
+  display: inline-block;
+  padding: 15px 30px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.button-primary:hover {
+  background-color: #0056b3;
+}
+
+.cta-subtext {
+  margin-top: 15px;
+  color: #666;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .features-header h2 {
+    font-size: 28px;
+  }
+  
+  .features-header p {
+    font-size: 16px;
+  }
+}
+
+/* Footer Contact Info Styles */
+.contact-info {
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.contact-info .address,
+.contact-info .phone,
+.contact-info .email,
+.contact-info .phone-title,
+.contact-info .email-title {
+  margin-bottom: 8px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-info .phone-title,
+.contact-info .email-title {
+  margin-top: 16px;
+  font-weight: 600;
+}
+
+.contact-info .phone,
+.contact-info .email {
+  direction: ltr;
+  text-align: left;
+}
+
+[lang="ar"] .contact-info .phone,
+[lang="ar"] .contact-info .email {
+  direction: rtl;
+  text-align: right;
+}
+
+.phone-link {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.phone-link:hover {
+  color: #25D366; /* WhatsApp brand color */
+}
+
+.email-link {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.email-link:hover {
+  color: #007bff; /* Email hover color */
+} 

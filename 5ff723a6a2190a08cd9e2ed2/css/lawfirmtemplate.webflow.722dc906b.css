@@ -1,6 +1,4 @@
-﻿@tailwind base;
-@tailwind components;
-@tailwind utilities;
+﻿ 
 
 
 html {
@@ -4288,10 +4286,9 @@ figcaption {
 .container-header {
   justify-content: space-between;
   align-items: center;
-  max-width: 1224px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 28px 24px;
+  max-width: 100%;
+  
+  padding: 15px 24px;
   display: flex;
 }
 
@@ -7112,9 +7109,9 @@ figcaption {
     max-width: 1460px;
   }
 
-  .container-header {
+  /* .container-header {
     max-width: 1324px;
-  }
+  } */
 
   .page-section-offset {
     height: 150px;
@@ -9352,7 +9349,7 @@ figcaption {
   }
 
   .container-header {
-    padding: 20px 16px;
+    padding: 7px 16px;
   }
 
   .split-content.home-blog-right {
