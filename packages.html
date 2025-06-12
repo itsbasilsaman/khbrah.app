@@ -143,55 +143,104 @@
 
 <body class="bg-neutral-200">
   <div style="opacity:0" class="page-wrapper">
-    <div data-collapse="medium" data-animation="default" data-duration="550" data-easing="ease-in-out-quad"
-      data-easing2="ease-in-out-quad" data-w-id="58db7844-5919-d71b-dd74-2323ed8dffe9" role="banner"
-      class="header w-nav">
-      <div class="container-header">
-        <div class="split-content header-left"><a href="index.html" aria-current="page"
-            class="brand w-nav-brand w--current "><img
-              src="./Assets/khbrah-logo.png" alt=""
-              class="header-logo w-[120px] h-[70px] object-contain"></a>
-          <nav role="navigation" class="nav-menu w-nav-menu">
-            <ul role="list" class="header-navigation">
-              <li class="nav-item-wrapper mobile"><a href="contact.html"
-                  class="button-primary header-button mobile w-button">Download App</a></li>
-              <li class="nav-item-wrapper"><a href="index.html" aria-current="page" class="nav-link w--current">Home</a>
-              </li>
-              <li class="nav-item-wrapper"><a href="about.html" class="nav-link">About</a></li>
-              <li class="nav-item-wrapper"><a href="features.html" class="nav-link">Features</a></li>
-              <li class="nav-item-wrapper"><a href="packages.html" class="nav-link">Plans</a></li>
-              <li class="nav-item-wrapper"><a href="contact.html" class="nav-link">Contact</a></li>
-            
-             
-            </ul>
+    <header class="fixed top-0 left-0 w-full z-50 px-4 sm:px-6 lg:px-8 header">
+      <div class="max-w-screen-xl mx-auto">
+        <div class="flex justify-between items-center bg-black/30 backdrop-blur-xl rounded-full px-6 py-3 mt-4 shadow-lg relative">
+          
+          <!-- Logo -->
+          <a href="index.html" class="flex items-center gap-2 shrink-0">
+            <img src="./Assets/khbrah-logo.png" alt="Khbrah Logo" class="h-12 w-20 object-contain">
+          </a>
+    
+          <!-- Desktop Nav -->
+          <nav class="hidden lg:flex space-x-6 text-white font-medium">
+            <a href="index.html" class="nav-link font-semibold w--current text-white">Home</a>
+            <a href="about.html" class="nav-link text-white font-semibold">About</a>
+            <a href="features.html" class="nav-link text-white font-semibold">Features</a>
+            <a href="packages.html" class="nav-link text-white font-semibold">Plans</a>
+            <a href="contact.html" class="nav-link text-white font-semibold">Contact</a>
           </nav>
-        </div>
-        <div class="split-content header-right">
-          <div class="language-switch ">
-            <label class="switch">
-              <input type="checkbox" id="languageToggle">
-              <span class="slider round">
-                <span class="lang-text en">EN</span>
-                <span class="lang-text ar">AR</span>
-              </span>
-            </label>
-          </div>
-          <a href="tel:(212)587-0127" class="header-icon phone w-inline-block">
-            <div></div>
-          </a><a href="contact.html" class="button-primary header-button w-button">Download App</a>
-          <div class="menu-button w-nav-button">
-            <div class="menu-button-icon-wrapper">
-              <div class="menu-button-icon">
-                <div class="menu-line-top"></div>
-                <div class="menu-line-middle"></div>
-                <div class="menu-line-bottom"></div>
-              </div>
+    
+          <!-- Desktop Right -->
+          <div class="hidden lg:flex items-center space-x-4">
+            <div class="language-switch">
+              <label class="switch">
+                <input type="checkbox" id="languageToggle">
+                <span class="slider round">
+                  <span class="lang-text en">EN</span>
+                  <span class="lang-text ar">AR</span>
+                </span>
+              </label>
             </div>
+            <a href="contact.html" class="text-white font-medium bg-black hover:bg-gray-800 px-4 py-2 rounded-full transition">Download App</a>
+          </div>
+    
+          <!-- Mobile Right -->
+          <div class="flex items-center gap-3 lg:hidden z-50">
+            <div class="language-switch">
+              <label class="switch">
+                <input type="checkbox" id="languageToggleMobile">
+                <span class="slider round">
+                  <span class="lang-text en">EN</span>
+                  <span class="lang-text ar">AR</span>
+                </span>
+              </label>
+            </div>
+            <button id="menu-toggle" class="text-white focus:outline-none">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2"
+                   viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
           </div>
         </div>
       </div>
+    </header>
+    
+    <!-- Mobile Sidebar -->
+    <div id="mobile-menu"
+         class="fixed z-50 top-0 right-0 h-full w-72 bg-black/90 text-white backdrop-blur-lg transform translate-x-full transition-transform duration-300 ease-in-out z-40 flex flex-col p-6 space-y-6 shadow-2xl lg:hidden">
+    
+      <!-- Close Icon -->
+      <button id="menu-close" class="self-end text-white text-3xl mb-4">&times;</button>
+    
+      <!-- Navigation -->
+      <nav class="flex flex-col space-y-4 text-lg font-medium">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="features.html">Features</a>
+        <a href="packages.html">Plans</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    
+      <!-- Divider -->
+      <div class="border-t border-white/20 pt-6">
+        <!-- Language Switch -->
+        
+    
+        <!-- Download Button -->
+        <a href="contact.html" class="block text-center text-white font-medium bg-black hover:bg-gray-800 px-4 py-2 rounded-full transition">Download App</a>
+      </div>
     </div>
-    <section class="section packages">
+    
+    <!-- JS -->
+    <script>
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuClose = document.getElementById('menu-close');
+    
+      menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.remove('translate-x-full');
+        mobileMenu.classList.add('translate-x-0');
+      });
+    
+      menuClose.addEventListener('click', () => {
+        mobileMenu.classList.remove('translate-x-0');
+        mobileMenu.classList.add('translate-x-full');
+      });
+    </script>
+    <section class="section packages mt-16 sm:mt-10">
       <div data-w-id="09052920-2819-9443-9d1f-509f9024a216"
         style="-webkit-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
         class="container-small-557px packages">

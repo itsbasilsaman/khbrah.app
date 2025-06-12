@@ -216,6 +216,13 @@ referrerpolicy="no-referrer"
   <script
     type="text/javascript">window.__WEBFLOW_CURRENCY_SETTINGS = { "currencyCode": "USD", "symbol": "$", "decimal": ".", "fractionDigits": 2, "group": ",", "template": "{{wf {\"path\":\"symbol\",\"type\":\"PlainText\"} }} {{wf {\"path\":\"amount\",\"type\":\"CommercePrice\"} }} {{wf {\"path\":\"currencyCode\",\"type\":\"PlainText\"} }}", "hideDecimalForWholeNumbers": false };</script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    @media (max-width: 767px) {
+      html, body {
+        overflow-x: hidden !important;
+      }
+    }
+  </style>
 </head>
 
 <body class="bg-neutral-200 overflow-x-hidden md:overflow-x-visible">
@@ -232,11 +239,11 @@ referrerpolicy="no-referrer"
 
       <!-- Desktop Nav -->
       <nav class="hidden lg:flex space-x-6 text-white font-medium">
-        <a href="index.html" class="nav-link w--current">Home</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="features.html" class="nav-link">Features</a>
-        <a href="packages.html" class="nav-link">Plans</a>
-        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="index.html" class="nav-link font-semibold w--current text-white">Home</a>
+        <a href="about.html" class="nav-link text-white font-semibold">About</a>
+        <a href="features.html" class="nav-link text-white font-semibold">Features</a>
+        <a href="packages.html" class="nav-link text-white font-semibold">Plans</a>
+        <a href="contact.html" class="nav-link text-white font-semibold">Contact</a>
       </nav>
 
       <!-- Desktop Right -->
@@ -320,7 +327,7 @@ referrerpolicy="no-referrer"
 </script>
     
     
-    <section class="relative flex items-center min-h-screen overflow-hidden bg-gradient-to-br from-white via-gray-50 to-gray-100">
+    <section class="relative flex items-center min-h-screen overflow-hidden bg-gradient-to-br from-white via-gray-50 to-gray-100 pt-8 md:pt-12">
       <!-- Background Elements -->
       <div class="absolute inset-0 bg-gradient-radial from-gray-100/30 via-transparent to-transparent"></div>
       <div class="absolute rounded-full top-20 left-10 w-72 h-72 bg-gray-200/20 blur-3xl"></div>
@@ -343,28 +350,33 @@ referrerpolicy="no-referrer"
               <!-- Left Content -->
               <div class="space-y-8 lg:pr-8">
                   <!-- Badge -->
-                  <div class="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-800 bg-gray-100 opacity-0 animate-slide-up animate-delay-200">
-                      <span>Trusted Legal Partner</span>
+                  <div class="hidden md:inline-flex items-center px-4 py-2 text-sm font-medium text-gray-800 bg-gray-100 opacity-0 animate-slide-up animate-delay-200">
+                      <span data-en="Trusted Legal Partner" data-ar="شريك قانوني موثوق">Trusted Legal Partner</span>
                   </div>
 
                   <!-- Main Heading -->
                   <div class="space-y-4">
                       <h1 class="text-4xl font-bold leading-tight text-gray-900 opacity-0 md:text-5xl lg:text-6xl xl:text-7xl animate-slide-up animate-delay-400">
-                          Your Digital
-                          <span class="block text-gradient">Legal Partner</span>
+                          <span data-en="Your Digital" data-ar="شريكك الرقمي">Your Digital</span>
+                          <span class="block text-gradient" data-en="Legal Partner" data-ar="القانوني">Legal Partner</span>
                       </h1>
                       <p class="max-w-lg text-lg leading-relaxed text-gray-600 opacity-0 md:text-xl animate-slide-up animate-delay-600">
-                          Experience seamless legal services with our innovative mobile platform. Connect with expert lawyers, manage your cases, and access justice anywhere, anytime.
+                          <span data-en="Experience seamless legal services with our innovative mobile platform. Connect with expert lawyers, manage your cases, and access justice anywhere, anytime." 
+                                data-ar="استمتع بخدمات قانونية سلسة مع منصتنا المبتكرة للهواتف المحمولة. تواصل مع المحامين الخبراء، وأدر قضاياك، واحصل على العدالة في أي مكان وزمان.">
+                              Experience seamless legal services with our innovative mobile platform. Connect with expert lawyers, manage your cases, and access justice anywhere, anytime.
+                          </span>
                       </p>
                   </div>
 
                   <!-- CTA Buttons -->
                   <div class="flex flex-col gap-4 opacity-0 sm:flex-row animate-slide-up animate-delay-1000">
-                      <button class="inline-flex items-center justify-center px-8 py-4 font-semibold text-white transition-all duration-300 transform bg-gray-800 group hover:bg-gray-900 hover:scale-105 ">
-                          <span>Download for Android</span>
+                      <button class="inline-flex items-center justify-center px-6 py-4 font-semibold text-white transition-all duration-300 transform bg-gray-800 group hover:bg-gray-900 hover:scale-105">
+                        <i class="mr-2 fab pl-2 fa-android"></i>  
+                        <span data-en="Download for Android" data-ar="تحميل للأندرويد">Download for Android</span>
                       </button>
-                      <button class="inline-flex items-center justify-center px-8 py-4 font-semibold text-gray-700 transition-all duration-300 border-2 border-gray-300 group hover:border-gray-800 hover:text-gray-900">
-                          <span>Download for iOS</span>
+                      <button class="inline-flex items-center justify-center px-6 py-4 font-semibold text-gray-700 transition-all duration-300 border border-black group hover:border-gray-800 hover:text-gray-900">
+                        <i class="mr-2 pl-2 fab fa-apple"></i>  
+                        <span data-en="Download for iOS" data-ar="تحميل للآيفون">Download for iOS</span>
                       </button>
                   </div>
               </div>
@@ -404,34 +416,36 @@ referrerpolicy="no-referrer"
                       </div>
 
                       <!-- Mobile View (visible on mobile) -->
-                      <div class="block lg:hidden overflow-x-hidden max-w-full relative">
+                      <div class="w-full overflow-x-hidden">
+                        <div class="block lg:hidden relative w-full">
                           <!-- Main Center Phone -->
                           <div class="relative z-20 mx-auto opacity-0 animate-scale-in animate-delay-800">
                               <div class="relative mx-auto w-56 h-[450px] bg-black rounded-[2.5rem] p-1.5 shadow-2xl">
-                                  <img src="/r1.jpg"
+                                  <img src="/Assets/banner-mobile-one.jpg"
                                        alt="App Screen"
                                        class="w-full h-full bg-white rounded-[2rem] object-cover"/>
                               </div>
                           </div>
 
                           <!-- Left Phone -->
-                          <div class="absolute z-10 opacity-0 left-0 top-10 animate-slide-in-right animate-delay-1200 max-w-[45%]">
+                          <div class="absolute z-10 opacity-0 top-10 left-0 w-1/2 max-w-xs mx-0 animate-slide-in-right animate-delay-1200">
                               <div class="w-48 h-[380px] bg-black rounded-[2rem] p-1.5 shadow-xl opacity-80 transform rotate-[-8deg] hover:rotate-[-6deg] transition-transform duration-300">
                                   <div class="w-full h-full bg-white rounded-[1.8rem] overflow-hidden relative">
                                       <div class="absolute top-0 z-30 w-20 h-4 transform -translate-x-1/2 bg-black rounded-b-lg left-1/2"></div>
-                                      <img src="/r2.jpg" alt="App Preview" class="w-full h-full object-cover rounded-[1.8rem]" />
+                                      <img src="/Assets/banner-mobile-two.jpg" alt="App Preview" class="w-full h-full object-cover rounded-[1.8rem]" />
                                   </div>
                               </div>
                           </div>
 
                           <!-- Right Phone -->
-                          <div class="absolute z-10 opacity-0 right-0 top-16 animate-slide-in-right animate-delay-1400 max-w-[45%]">
+                          <div class="absolute z-10 opacity-0 top-16 right-0 w-1/2 max-w-xs mx-0 animate-slide-in-right animate-delay-1400">
                               <div class="w-48 h-[380px] bg-black rounded-[2rem] p-1.5 shadow-xl opacity-80 transform rotate-[8deg] hover:rotate-[6deg] transition-transform duration-300">
                                   <div class="w-full h-full bg-gray-900 rounded-[1.8rem] overflow-hidden flex items-center justify-center">
-                                      <img src="/r3.jpg" alt="App Preview" class="w-full h-full object-cover rounded-[1.8rem]" />
+                                      <img src="/Assets/banner-mobile-three.jpg" alt="App Preview" class="w-full h-full object-cover rounded-[1.8rem]" />
                                   </div>
                               </div>
                           </div>
+                        </div>
                       </div>
 
                       <!-- Floating Elements Around Phones -->
@@ -473,7 +487,7 @@ referrerpolicy="no-referrer"
   </script>
     
     
-    <section class="  home-about-us">
+    <section class="  home-about-us pt-5 lg:pt-8">
       <div class="container-default w-container">
         <div class="home-about-us-wrapper">
           <div data-w-id="42aa54da-09d1-49c2-3915-e449700ac32b"

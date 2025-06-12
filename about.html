@@ -145,75 +145,125 @@
 
 <body class="bg-neutral-200">
   <div style="opacity:0" class="page-wrapper">
-    <div data-collapse="medium" data-animation="default" data-duration="550" data-easing="ease-in-out-quad"
-      data-easing2="ease-in-out-quad" data-w-id="58db7844-5919-d71b-dd74-2323ed8dffe9" role="banner"
-      class="header w-nav">
-      <div class="container-header">
-        <div class="split-content header-left"><a href="index.html" aria-current="page"
-            class="brand w-nav-brand w--current "><img
-              src="./Assets/khbrah-logo.png" alt=""
-              class="header-logo w-[120px] h-[70px] object-contain"></a>
-          <nav role="navigation" class="nav-menu w-nav-menu">
-            <ul role="list" class="header-navigation">
-              <li class="nav-item-wrapper mobile"><a href="contact.html"
-                  class="button-primary header-button mobile w-button">Download App</a></li>
-              <li class="nav-item-wrapper"><a href="index.html" aria-current="page" class="nav-link w--current">Home</a>
-              </li>
-              <li class="nav-item-wrapper"><a href="about.html" class="nav-link">About</a></li>
-              <li class="nav-item-wrapper"><a href="features.html" class="nav-link">Features</a></li>
-              <li class="nav-item-wrapper"><a href="packages.html" class="nav-link">Plans</a></li>
-              <li class="nav-item-wrapper"><a href="contact.html" class="nav-link">Contact</a></li>
-            
-             
-            </ul>
-          </nav>
+      <!-- Header -->
+<header class="fixed top-0 left-0 w-full z-50 px-4 sm:px-6 lg:px-8 header">
+  <div class="max-w-screen-xl mx-auto">
+    <div class="flex justify-between items-center bg-black/30 backdrop-blur-xl rounded-full px-6 py-3 mt-4 shadow-lg relative">
+      
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-2 shrink-0">
+        <img src="./Assets/khbrah-logo.png" alt="Khbrah Logo" class="h-12 w-20 object-contain">
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex space-x-6 text-white font-medium">
+        <a href="index.html" class="nav-link font-semibold w--current text-white">Home</a>
+        <a href="about.html" class="nav-link text-white font-semibold">About</a>
+        <a href="features.html" class="nav-link text-white font-semibold">Features</a>
+        <a href="packages.html" class="nav-link text-white font-semibold">Plans</a>
+        <a href="contact.html" class="nav-link text-white font-semibold">Contact</a>
+      </nav>
+
+      <!-- Desktop Right -->
+      <div class="hidden lg:flex items-center space-x-4">
+        <div class="language-switch">
+          <label class="switch">
+            <input type="checkbox" id="languageToggle">
+            <span class="slider round">
+              <span class="lang-text en">EN</span>
+              <span class="lang-text ar">AR</span>
+            </span>
+          </label>
         </div>
-        <div class="split-content header-right">
-          <div class="language-switch ">
-            <label class="switch">
-              <input type="checkbox" id="languageToggle">
-              <span class="slider round">
-                <span class="lang-text en">EN</span>
-                <span class="lang-text ar">AR</span>
-              </span>
-            </label>
-          </div>
-          <a href="tel:(212)587-0127" class="header-icon phone w-inline-block">
-            <div></div>
-          </a><a href="contact.html" class="button-primary header-button w-button">Download App</a>
-          <div class="menu-button w-nav-button">
-            <div class="menu-button-icon-wrapper">
-              <div class="menu-button-icon">
-                <div class="menu-line-top"></div>
-                <div class="menu-line-middle"></div>
-                <div class="menu-line-bottom"></div>
-              </div>
-            </div>
-          </div>
+        <a href="contact.html" class="text-white font-medium bg-black hover:bg-gray-800 px-4 py-2 rounded-full transition">Download App</a>
+      </div>
+
+      <!-- Mobile Right -->
+      <div class="flex items-center gap-3 lg:hidden z-50">
+        <div class="language-switch">
+          <label class="switch">
+            <input type="checkbox" id="languageToggleMobile">
+            <span class="slider round">
+              <span class="lang-text en">EN</span>
+              <span class="lang-text ar">AR</span>
+            </span>
+          </label>
         </div>
+        <button id="menu-toggle" class="text-white focus:outline-none">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2"
+               viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
       </div>
     </div>
-    <section class="section about-hero">
+  </div>
+</header>
+
+<!-- Mobile Sidebar -->
+<div id="mobile-menu"
+     class="fixed z-50 top-0 right-0 h-full w-72 bg-black/90 text-white backdrop-blur-lg transform translate-x-full transition-transform duration-300 ease-in-out z-40 flex flex-col p-6 space-y-6 shadow-2xl lg:hidden">
+
+  <!-- Close Icon -->
+  <button id="menu-close" class="self-end text-white text-3xl mb-4">&times;</button>
+
+  <!-- Navigation -->
+  <nav class="flex flex-col space-y-4 text-lg font-medium">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="features.html">Features</a>
+    <a href="packages.html">Plans</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Divider -->
+  <div class="border-t border-white/20 pt-6">
+    <!-- Language Switch -->
+    
+
+    <!-- Download Button -->
+    <a href="contact.html" class="block text-center text-white font-medium bg-black hover:bg-gray-800 px-4 py-2 rounded-full transition">Download App</a>
+  </div>
+</div>
+
+<!-- JS -->
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuClose = document.getElementById('menu-close');
+
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.remove('translate-x-full');
+    mobileMenu.classList.add('translate-x-0');
+  });
+
+  menuClose.addEventListener('click', () => {
+    mobileMenu.classList.remove('translate-x-0');
+    mobileMenu.classList.add('translate-x-full');
+  });
+</script>
+    <section class="section about-hero mt-16 sm:mt-10">
       <div data-w-id="25e50fda-014e-d0ca-778b-5f922cbe346a"
         style="-webkit-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
         class="container-medium-687px about-hero">
-        <h1>About Our Firm</h1>
-        <p class="paragraph-large about-hero">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae vitae
-          aenean tincidunt pretium quam id. Massa leo.</p>
-        <div class="_2-buttons about-hero"><a href="contact.html" class="button-primary _2-buttons-class w-button">Free
-            Consultation</a>
-          <div class="space _2-buttons"></div><a href="#Achievements"
-            class="button-secondary _2-buttons-class w-button">Learn More</a>
+        <h1 data-en="About Our Platform" data-ar="منصة خدماتنا القانونية"  class="text-2xl lg:text-4xl mb-2">About Our Platform</h1>
+        <p class="paragraph-large about-hero" data-en="Your trusted legal consultancy platform, connecting clients with experienced lawyers through innovative digital solutions. " data-ar="منصتك الموثوقة للاستشارات القانونية، تربط العملاء بمحامين ذوي خبرة من خلال حلول رقمية مبتكرة."
+        >Your trusted legal consultancy platform, connecting clients with experienced lawyers through innovative digital solutions.</p>
+        <div class="_2-buttons about-hero">
+          <a href="#" class="button-primary _2-buttons-class w-button" data-en="Download App" data-ar="تحميل التطبيق">Download App</a>
+          <div class="space _2-buttons"></div>
+          <a href="features.html" class="button-secondary _2-buttons-class w-button" data-en="Our Features" data-ar="مميزاتنا">Our Features</a>
         </div>
       </div>
       <div class="container-default w-container">
         <div data-w-id="143e8882-8657-89e7-e5d8-e7827230dcb6"
           style="-webkit-transform:translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
-          class="image-wrapper about-hero"><img
-            src="/Assets/rectangle-s-2.jpg"
-            alt="Law Team - Law Firm Webflow Template"
+          class="image-wrapper about-hero">
+          <img src="/Assets/rectangle-s-2.jpg"
+            alt="Khbrah Legal Platform"
             sizes="(max-width: 479px) 93vw, (max-width: 767px) 94vw, (max-width: 1919px) 95vw, 1276px"
-             class="image about-hero">
+            class="image about-hero">
           <div style="display:block" class="image-solid-cover"></div>
         </div>
       </div>
@@ -321,31 +371,26 @@
           <div data-w-id="208edcf8-c577-c12d-d300-5f60bf0fa5b3"
             style="-webkit-transform:translate3d(-40px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(-40px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(-40px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(-40px, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
             class="split-content story-left">
-            <h2 class="title about-story">The Story Behind our Law Firm</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras pellentesque bibendum diam ac pellentesque
-              risus quisque diam. Purus pulvinar feugiat maecenas tortor habitasse ut elit. Urna orci eget volutpat
-              facilisi. Ac vitae praesent pharetra viverra condimentum at blandit egestas diam. Ultricies dapibus eget
-              vitae ultricies.</p>
+            <h2 class="title about-story text-xl lg:text-2xl mb-2" data-en="The Story Behind our Platform" data-ar="قصة منصتنا">The Story Behind our Platform</h2>
+            <p data-en="Khbrah is your trusted legal consultancy platform, connecting clients with experienced lawyers through innovative digital solutions. Our app offers comprehensive legal services including audio/video consultations, legal document assistance, and expert representation. We believe in making legal services accessible, efficient, and transparent for everyone. Our platform bridges the gap between clients and legal professionals, ensuring quality legal support is just a click away." data-ar="خبيرة هي منصتك الموثوقة للاستشارات القانونية، تربط العملاء بمحامين ذوي خبرة من خلال حلول رقمية مبتكرة. يقدم تطبيقنا خدمات قانونية شاملة تشمل الاستشارات الصوتية/المرئية، ومساعدة المستندات القانونية، والتمثيل القانوني المتخصص. نحن نؤمن بجعل الخدمات القانونية في متناول الجميع، وفعالة، وشفافة. تعمل منصتنا على سد الفجوة بين العملاء والمهنيين القانونيين، مما يضمن أن الدعم القانوني عالي الجودة متاح بنقرة واحدة فقط.">Khbrah is your trusted legal consultancy platform, connecting clients with experienced lawyers through innovative digital solutions. Our app offers comprehensive legal services including audio/video consultations, legal document assistance, and expert representation. We believe in making legal services accessible, efficient, and transparent for everyone. Our platform bridges the gap between clients and legal professionals, ensuring quality legal support is just a click away.</p>
           </div>
           <div class="split-content story-right">
             <div data-w-id="2b9f9ee6-3ed6-08fa-050f-a9926777956e"
               style="-webkit-transform:translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
               class="image-wrapper story-1"><img
-                src="5ff723a6a2190a08cd9e2ed2/5ffc75c0cb7b920639612eeb_image-1-about-story-law-firm-template.jpg"
+                src="/Assets/rectangle-s-2.jpg"
                 alt="Our Story - Law Firm Webflow Template"
                 sizes="(max-width: 991px) 59vw, (max-width: 1919px) 33vw, 402.5625px"
-                srcset="5ff723a6a2190a08cd9e2ed2/5ffc75c0cb7b920639612eeb_image-1-about-story-law-firm-template-p-500.jpeg 500w, 5ff723a6a2190a08cd9e2ed2/5ffc75c0cb7b920639612eeb_image-1-about-story-law-firm-template.jpg 808w"
-                class="image story-1">
+                 class="image story-1">
               <div style="display:block" class="image-solid-cover"></div>
             </div>
             <div data-w-id="e09a94c2-1330-2375-fa3e-de3c473625d3"
               style="-webkit-transform:translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(0.97, 0.97, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
               class="image-wrapper story-2"><img
-                src="5ff723a6a2190a08cd9e2ed2/5ffc75c13674574180864465_image-2-about-story-law-firm-template.jpg"
+                src="/Assets/rectangle-s-2.jpg"
                 alt="Law Firm Building - Law Firm Webflow Template"
                 sizes="(max-width: 479px) 64vw, (max-width: 991px) 65vw, (max-width: 1919px) 37vw, 440.90625px"
-                srcset="5ff723a6a2190a08cd9e2ed2/5ffc75c13674574180864465_image-2-about-story-law-firm-template-p-500.jpeg 500w, 5ff723a6a2190a08cd9e2ed2/5ffc75c13674574180864465_image-2-about-story-law-firm-template-p-800.jpeg 800w, 5ff723a6a2190a08cd9e2ed2/5ffc75c13674574180864465_image-2-about-story-law-firm-template.jpg 876w"
-                class="image story-2">
+                 class="image story-2">
               <div style="display:block" class="image-solid-cover"></div>
             </div>
           </div>
@@ -358,11 +403,10 @@
           style="-webkit-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
           class="top-content about-team">
           <div class="split-content about-team-left">
-            <h2 class="title about-team">Our Team</h2>
+            <h2 class="title about-team text-xl lg:text-2xl mb-2" data-en="Our Team" data-ar="فريقنا">Our Team</h2>
           </div>
           <div class="split-content about-team-right">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Id tempus pellentesque vitae adipiscing. Orci eu
-              volutpat sit.</p>
+            <p data-en="Our team consists of experienced legal professionals and technology experts dedicated to revolutionizing legal services through digital innovation. We combine legal expertise with cutting-edge technology to provide seamless legal solutions." data-ar="يتكون فريقنا من محترفين قانونيين ذوي خبرة وخبراء في التكنولوجيا مكرسين لتطوير الخدمات القانونية من خلال الابتكار الرقمي. نجمع بين الخبرة القانونية وأحدث التقنيات لتقديم حلول قانونية سلسة">Our team consists of experienced legal professionals and technology experts dedicated to revolutionizing legal services through digital innovation. We combine legal expertise with cutting-edge technology to provide seamless legal solutions.</p>
           </div>
         </div>
         <div class="w-dyn-list">
@@ -373,21 +417,19 @@
                 data-w-id="01bcbcc8-276c-fec0-c0ff-e73c9b61f988" href="team/john-carter.html"
                 class="card about-team w-inline-block">
                 <div data-w-id="09d6dae4-35de-64e1-34c0-c6e607538f72" class="image-wrapper about-card-team"><img
-                    src="5ff723a6a2190a3db39e2ef7/5ff8db7ab9e232262fc2a239_image-1-team-law-firm-template.jpg"
+                    src="/Assets/members.jpg"
                     alt="John Carter"
                     sizes="(max-width: 479px) 100vw, (max-width: 767px) 94vw, (max-width: 991px) 38vw, (max-width: 1919px) 30vw, 410px"
-                    srcset="5ff723a6a2190a3db39e2ef7/5ff8db7ab9e232262fc2a239_image-1-team-law-firm-template-p-500.jpeg 500w, 5ff723a6a2190a3db39e2ef7/5ff8db7ab9e232262fc2a239_image-1-team-law-firm-template.jpg 752w"
-                    class="image about-card-team">
+                     class="image about-card-team">
                   <div style="display:block" class="image-solid-cover"></div>
                 </div>
                 <div class="about-card-team-content">
                   <div class="about-card-team-top-content">
-                    <h3 class="title about-card-team">John Carter</h3>
-                    <div class="about-card-team-rol">Lead Attorney</div>
+                    <h3 class="title about-card-team" data-en="Dr. Abdullah Al-Sulaiman" data-ar="د. عبدالله السليمان">Dr. Abdullah Al-Sulaiman</h3>
+                    <div class="about-card-team-rol" data-en="Managing Partner" data-ar="الشريك المدير">Managing Partner</div>
                   </div>
                   <div class="divider about-card-team"></div>
-                  <p class="paragraph about-card-team">Lorem ipsum dolor sit amet, dolor sit a consectetur adipiscing
-                    elit. Nibh dignissim posuere alo cursus sed amet.</p>
+                  <p class="paragraph about-card-team" data-en="With over 20 years of experience in corporate law and international arbitration, Dr. Al-Sulaiman leads our firm with expertise in complex legal matters." data-ar="مع أكثر من 20 عامًا من الخبرة في القانون التجاري والتحكيم الدولي، يقود د. السليمان شركتنا بخبرة في المسائل القانونية المعقدة">With over 20 years of experience in corporate law and international arbitration, Dr. Al-Sulaiman leads our firm with expertise in complex legal matters.</p>
                 </div>
               </a></div>
             <div data-w-id="ec6ca168-625e-5595-31c5-bac5e0bb9c20"
@@ -396,18 +438,17 @@
                 data-w-id="01bcbcc8-276c-fec0-c0ff-e73c9b61f988" href="team/lynda-beck.html"
                 class="card about-team w-inline-block">
                 <div data-w-id="09d6dae4-35de-64e1-34c0-c6e607538f72" class="image-wrapper about-card-team"><img
-                    src="5ff723a6a2190a3db39e2ef7/5ff8db33e6c011852a747120_image-2-team-law-firm-template.jpg"
+                    src="/Assets/members.jpg"
                     alt="Lynda Beck" class="image about-card-team">
                   <div style="display:block" class="image-solid-cover"></div>
                 </div>
                 <div class="about-card-team-content">
                   <div class="about-card-team-top-content">
-                    <h3 class="title about-card-team">Lynda Beck</h3>
-                    <div class="about-card-team-rol">Lead Attorney</div>
+                    <h3 class="title about-card-team" data-en="Adv. Noura Al-Rashidi" data-ar="أ. نورة الراشدي">Adv. Noura Al-Rashidi</h3>
+                    <div class="about-card-team-rol" data-en="Head of Family Law" data-ar="رئيسة قسم القانون الأسري">Head of Family Law</div>
                   </div>
                   <div class="divider about-card-team"></div>
-                  <p class="paragraph about-card-team">Lorem ipsum dolor sit amet, dolor sit a consectetur adipiscing
-                    elit. Nibh dignissim posuere alo cursus sed amet.</p>
+                  <p class="paragraph about-card-team" data-en="Specializing in family law and personal status matters, Adv. Al-Rashidi brings extensive experience in handling sensitive family cases with utmost professionalism." data-ar="متخصصة في قانون الأسرة والأحوال الشخصية، تجلب أ. الراشدي خبرة واسعة في التعامل مع القضايا الأسرية الحساسة بأعلى درجات الاحترافية">Specializing in family law and personal status matters, Adv. Al-Rashidi brings extensive experience in handling sensitive family cases with utmost professionalism.</p>
                 </div>
               </a></div>
             <div data-w-id="ec6ca168-625e-5595-31c5-bac5e0bb9c20"
@@ -416,35 +457,32 @@
                 data-w-id="01bcbcc8-276c-fec0-c0ff-e73c9b61f988" href="team/mathew-grant.html"
                 class="card about-team w-inline-block">
                 <div data-w-id="09d6dae4-35de-64e1-34c0-c6e607538f72" class="image-wrapper about-card-team"><img
-                    src="5ff723a6a2190a3db39e2ef7/5ff8daeb57384b7e54efcc10_image-3-team-law-firm-template.jpg"
+                    src="/Assets/members.jpg"
                     alt="Mathew Grant"
                     sizes="(max-width: 479px) 100vw, (max-width: 767px) 94vw, (max-width: 991px) 38vw, (max-width: 1919px) 30vw, 410px"
-                    srcset="5ff723a6a2190a3db39e2ef7/5ff8daeb57384b7e54efcc10_image-3-team-law-firm-template-p-500.jpeg 500w, 5ff723a6a2190a3db39e2ef7/5ff8daeb57384b7e54efcc10_image-3-team-law-firm-template.jpg 752w"
-                    class="image about-card-team">
+                     class="image about-card-team">
                   <div style="display:block" class="image-solid-cover"></div>
                 </div>
                 <div class="about-card-team-content">
                   <div class="about-card-team-top-content">
-                    <h3 class="title about-card-team">Mathew Grant</h3>
-                    <div class="about-card-team-rol">Attorney</div>
+                    <h3 class="title about-card-team" data-en="Adv. Mohammed Al-Qahtani" data-ar="أ. محمد القحطاني">Adv. Mohammed Al-Qahtani</h3>
+                    <div class="about-card-team-rol" data-en="Head of Commercial Law" data-ar="رئيس قسم القانون التجاري">Head of Commercial Law</div>
                   </div>
                   <div class="divider about-card-team"></div>
-                  <p class="paragraph about-card-team">Lorem ipsum dolor sit amet, dolor sit a consectetur adipiscing
-                    elit. Nibh dignissim posuere alo cursus sed amet.</p>
+                  <p class="paragraph about-card-team" data-en="Expert in commercial and corporate law, Adv. Al-Qahtani has successfully handled numerous high-profile business cases and corporate restructuring matters." data-ar="خبير في القانون التجاري وقانون الشركات، نجح أ. القحطاني في التعامل مع العديد من قضايا الأعمال البارزة ومسائل إعادة هيكلة الشركات">Expert in commercial and corporate law, Adv. Al-Qahtani has successfully handled numerous high-profile business cases and corporate restructuring matters.</p>
                 </div>
               </a></div>
           </div>
         </div>
-        <div data-w-id="ba0d5854-6386-d025-94a4-9bb405de2212"
+        <!-- <div data-w-id="ba0d5854-6386-d025-94a4-9bb405de2212"
           style="-webkit-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
           class="flex-vc"><a href="lawyers.html" class="button-secondary w-button">See Entire Team</a></div>
-      </div>
+      </div> -->
     </section>
     <section class="section testimonials">
       <div data-w-id="b401b05d-bff4-eec9-2e25-1ebfdff9effd" class="container-medium-665px testimonials">
-        <h2>Testimonials</h2>
-        <p>Lorem ipsum dolor sit amet, consecteturlo adipiscing elit. Nec phasellus ut massa proin aliquet sodales non.
-          Enim neque ine.</p>
+        <h2 class="text-2xl lg:text-4xl mb-2" data-en="Client Success Stories" data-ar="قصص نجاح العملاء">Client Success Stories</h2>
+        <p data-en="Discover how our innovative legal consultation platform has helped clients access quality legal services remotely" data-ar="اكتشف كيف ساعدت منصتنا المبتكرة للاستشارات القانونية العملاء في الوصول إلى خدمات قانونية عالية الجودة عن بعد">Discover how our innovative legal consultation platform has helped clients access quality legal services remotely</p>
       </div>
       <div class="container-default w-container">
         <div class="testimonials-wrapper">
@@ -454,48 +492,42 @@
               <div class="testimonials-tabs-content w-tab-content">
                 <div data-w-tab="Tab 1" class="testimonial-tab-pane w-tab-pane w--tab-active">
                   <div class="testimonial-wrapper">
-                    <p class="paragraph testimonial">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-                      interdum eu malesuada aliquam sed scelerisque consequat ultrices mi. Lacus, vestibulum mauris, at
-                      malesuada ac odio. Iaculis dignissim in a, enim, amet aliquam. Lorem ipsum dolor sit"</p>
+                    <p class="paragraph testimonial" data-en="The video consultation feature saved me so much time and money. I was able to discuss my case with a qualified lawyer from the comfort of my home. The platform's budget setting feature also helped me plan my legal expenses effectively." data-ar="وفرت ميزة الاستشارة بالفيديو الكثير من الوقت والمال. تمكنت من مناقشة قضيتي مع محامٍ مؤهل من راحة منزلي. كما ساعدت ميزة تحديد الميزانية في المنصة على التخطيط الفعال لمصاريفي القانونية">"The video consultation feature saved me so much time and money. I was able to discuss my case with a qualified lawyer from the comfort of my home. The platform's budget setting feature also helped me plan my legal expenses effectively."</p>
                     <div class="about-testimonial-wrapper">
                       <div class="image-wrapper testimonial-picture"><img
-                          src="5ff723a6a2190a08cd9e2ed2/5ff8c7dca3cd6452ca54c57c_image-1-testimonial-law-firm-template.jpg"
-                          alt="John Carter - Law Firm Webflow Template" class="image testimonial-picture"></div>
+                          src="./Assets/user-profile.jpg"
+                          alt="Ahmed Hassan - KHBRAH Legal Consultancy" class="image testimonial-picture"></div>
                       <div class="about-testimonial-content">
-                        <div class="about-testimonial-name">John Carter</div>
-                        <div class="about-testimonial-job">CEO at Fast Ventures</div>
+                        <div class="about-testimonial-name" data-en="Ahmed Hassan" data-ar="أحمد حسن">Ahmed Hassan</div>
+                        <div class="about-testimonial-job" data-en="Business Owner" data-ar="صاحب أعمال">Business Owner</div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div data-w-tab="Tab 2" class="testimonial-tab-pane w-tab-pane">
                   <div class="testimonial-wrapper">
-                    <p class="paragraph testimonial">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-                      interdum eu malesuada aliquam sed scelerisque consequat ultrices mi. Lacus, vestibulum mauris, at
-                      malesuada ac odio. Iaculis dignissim in a, enim, amet aliquam. Lorem ipsum dolor sit"</p>
+                    <p class="paragraph testimonial" data-en="The legal document acquisition service was incredibly efficient. I needed several documents for my business, and the platform connected me with the right legal experts who prepared everything perfectly. The chat consultation feature made it easy to clarify any doubts." data-ar="كانت خدمة الحصول على المستندات القانونية فعالة بشكل لا يصدق. كنت بحاجة إلى عدة مستندات لعملي، وربطتني المنصة بالخبراء القانونيين المناسبين الذين أعدوا كل شيء بشكل مثالي. جعلت ميزة الاستشارة عبر الدردشة من السهل توضيح أي شكوك">"The legal document acquisition service was incredibly efficient. I needed several documents for my business, and the platform connected me with the right legal experts who prepared everything perfectly. The chat consultation feature made it easy to clarify any doubts."</p>
                     <div class="about-testimonial-wrapper">
                       <div class="image-wrapper testimonial-picture"><img
-                          src="5ff723a6a2190a08cd9e2ed2/5ff8c7db88a1fe4a3f169cfb_image-2-testimonial-law-firm-template.jpg"
-                          alt="Andrew Moore - Law Firm Webflow Template" class="image testimonial-picture"></div>
+                          src="./Assets/user-profile.jpg"
+                          alt="Sarah Al-Mansouri - KHBRAH Legal Consultancy" class="image testimonial-picture"></div>
                       <div class="about-testimonial-content">
-                        <div class="about-testimonial-name">Andrew Moore</div>
-                        <div class="about-testimonial-job">CEO at Fast Ventures</div>
+                        <div class="about-testimonial-name" data-en="Sarah Al-Mansouri" data-ar="سارة المنصوري">Sarah Al-Mansouri</div>
+                        <div class="about-testimonial-job" data-en="Entrepreneur" data-ar="رائدة أعمال">Entrepreneur</div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div data-w-tab="Tab 3" class="testimonial-tab-pane w-tab-pane">
                   <div class="testimonial-wrapper">
-                    <p class="paragraph testimonial">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-                      interdum eu malesuada aliquam sed scelerisque consequat ultrices mi. Lacus, vestibulum mauris, at
-                      malesuada ac odio. Iaculis dignissim in a, enim, amet aliquam. Lorem ipsum dolor sit"</p>
+                    <p class="paragraph testimonial" data-en="The video insights section is a goldmine of legal knowledge. I've learned so much about my rights and legal procedures through these educational videos. The audio consultation option was perfect for when I needed quick legal advice while commuting." data-ar="قسم الرؤى القانونية بالفيديو هو كنز من المعرفة القانونية. لقد تعلمت الكثير عن حقوقي والإجراءات القانونية من خلال هذه الفيديوهات التعليمية. كانت خيار الاستشارة الصوتية مثاليًا عندما كنت بحاجة إلى نصيحة قانونية سريعة أثناء التنقل">"The video insights section is a goldmine of legal knowledge. I've learned so much about my rights and legal procedures through these educational videos. The audio consultation option was perfect for when I needed quick legal advice while commuting."</p>
                     <div class="about-testimonial-wrapper">
                       <div class="image-wrapper testimonial-picture"><img
-                          src="5ff723a6a2190a08cd9e2ed2/5ff8c7dc679e6711684dc8c6_image-3-testimonial-law-firm-template.jpg"
-                          alt="Bill Cannon - Law Firm Webflow Template" class="image testimonial-picture"></div>
+                          src="./Assets/user-profile.jpg"
+                          alt="Mohammed Al-Rashidi - KHBRAH Legal Consultancy" class="image testimonial-picture"></div>
                       <div class="about-testimonial-content">
-                        <div class="about-testimonial-name">Bill Cannon</div>
-                        <div class="about-testimonial-job">CEO at Fast Ventures</div>
+                        <div class="about-testimonial-name" data-en="Mohammed Al-Rashidi" data-ar="محمد الراشدي">Mohammed Al-Rashidi</div>
+                        <div class="about-testimonial-job" data-en="Corporate Executive" data-ar="تنفيذي شركات">Corporate Executive</div>
                       </div>
                     </div>
                   </div>
@@ -503,22 +535,21 @@
               </div>
               <div class="testimonials-tabs-menu w-tab-menu"><a data-w-tab="Tab 1"
                   class="testimonial-tab-link w-inline-block w-tab-link w--current"><img
-                    src="5ff723a6a2190a08cd9e2ed2/5ff8c7dca3cd6452ca54c57c_image-1-testimonial-law-firm-template.jpg"
-                    alt="John Carter - Law Firm Webflow Template" class="image testimonial-link"></a><a
+                    src="./Assets/user-profile.jpg" style="object-fit: cover;"
+                    alt="Ahmed Hassan - KHBRAH Legal Consultancy" class="image testimonial-link"></a><a
                   data-w-tab="Tab 2" class="testimonial-tab-link w-inline-block w-tab-link"><img
-                    src="5ff723a6a2190a08cd9e2ed2/5ff8c7db88a1fe4a3f169cfb_image-2-testimonial-law-firm-template.jpg"
-                    alt="Andrew Moore - Law Firm Webflow Template" class="image testimonial-link"></a><a
+                    src="./Assets/user-profile.jpg" style="object-fit: cover;"
+                    alt="Sarah Al-Mansouri - KHBRAH Legal Consultancy" class="image testimonial-link"></a><a
                   data-w-tab="Tab 3" class="testimonial-tab-link w-inline-block w-tab-link"><img
-                    src="5ff723a6a2190a08cd9e2ed2/5ff8c7dc679e6711684dc8c6_image-3-testimonial-law-firm-template.jpg"
-                    alt="Bill Cannon - Law Firm Webflow Template" class="image testimonial-link"></a></div>
+                    src="./Assets/user-profile.jpg" style="object-fit: cover;"
+                    alt="Mohammed Al-Rashidi - KHBRAH Legal Consultancy" class="image testimonial-link"></a></div>
             </div>
           </div>
           <div data-w-id="b401b05d-bff4-eec9-2e25-1ebfdff9f032" class="image-wrapper testimonials"><img
-              src="5ff723a6a2190a08cd9e2ed2/5ff8c5e5e6c0111d60741f20_image-testimonials-law-firm-template.jpg"
-              alt="Law Firm Testimonials - Law Firm Webflow Template"
+              src="./Assets/square-2.jpg"
+              alt="KHBRAH Legal Consultancy Testimonials"
               sizes="(max-width: 479px) 93vw, (max-width: 767px) 94vw, (max-width: 991px) 70vw, 702px"
-              srcset="5ff723a6a2190a08cd9e2ed2/5ff8c5e5e6c0111d60741f20_image-testimonials-law-firm-template-p-500.jpeg 500w, 5ff723a6a2190a08cd9e2ed2/5ff8c5e5e6c0111d60741f20_image-testimonials-law-firm-template-p-800.jpeg 800w, 5ff723a6a2190a08cd9e2ed2/5ff8c5e5e6c0111d60741f20_image-testimonials-law-firm-template-p-1080.jpeg 1080w, 5ff723a6a2190a08cd9e2ed2/5ff8c5e5e6c0111d60741f20_image-testimonials-law-firm-template.jpg 1404w"
-              class="image testimonials">
+               class="image testimonials" style="object-fit: cover;">
             <div class="image-solid-cover"></div>
           </div>
         </div>
@@ -527,9 +558,9 @@
     <section class="section cta">
       <div class="container-default w-container">
         <div data-w-id="aed83d10-eb96-d404-4b84-64f2138da974" class="cta-box">
-          <h2>Request a Free Case Review Today!</h2>
-          <p class="paragraph cta">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris interdum eu malesuada
-            aliquam sed.</p><a href="contact.html" class="button-primary w-button">Free Consultation</a>
+          <h2 class="text-xl lg:text-2xl mb-2" data-en="Get Started with Khbrah Today!" data-ar="ابدأ مع خبيرة اليوم!">Get Started with Khbrah Today!</h2>
+          <p class="paragraph cta" data-en="Experience the future of legal services with our innovative digital platform. Connect with expert lawyers, get instant consultations, and manage your legal needs efficiently." data-ar="اختبر مستقبل الخدمات القانونية مع منصتنا الرقمية المبتكرة. تواصل مع المحامين الخبراء، واحصل على استشارات فورية، وأدر احتياجاتك القانونية بكفاءة.">Experience the future of legal services with our innovative digital platform. Connect with expert lawyers, get instant consultations, and manage your legal needs efficiently.</p>
+          <a href="contact.html" class="button-primary w-button" data-en="Start Free Consultation" data-ar="ابدأ استشارة مجانية">Start Free Consultation</a>
         </div>
       </div>
     </section>
