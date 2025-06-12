@@ -5,29 +5,31 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Lawyers - Law Firm - Webflow Ecommerce website template</title>
+  <title>Khbrah – Trusted Digital Legal Consultancy Platform</title>
   <meta
-    content="Lawyers is a premium Legal Firm and Law Firm Webflow template. If you want to have an amazing online presence for your legal firm, this is the right template choice for you. It includes everything you need to start getting more clients."
-    name="description">
-  <meta content="Lawyers - Law Firm - Webflow Ecommerce website template" property="og:title">
+    name="description"
+    content="Khbrah is your trusted legal consultancy platform, connecting clients with experienced lawyers through innovative digital solutions. Get expert audio/video consultations, legal document assistance, and professional legal representation.">
+  <meta property="og:title" content="Khbrah – Trusted Digital Legal Consultancy Platform">
   <meta
-    content="Lawyers is a premium Legal Firm and Law Firm Webflow template. If you want to have an amazing online presence for your legal firm, this is the right template choice for you. It includes everything you need to start getting more clients."
-    property="og:description">
+    property="og:description"
+    content="Khbrah connects you with experienced legal professionals through a user-friendly digital platform. Access consultations, legal documents, and expert representation seamlessly.">
   <meta
-    content="https://cdn.prod.website-files.com/5ff723a6a2190a08cd9e2ed2/6269dad4efa2390f914b9536_open-graph-lawyers-webflow-template.png"
-    property="og:image">
-  <meta content="Lawyers - Law Firm - Webflow Ecommerce website template" property="twitter:title">
+    property="og:image"
+    content="https://yourdomain.com/path-to-your-og-image.jpg">
+  <meta property="twitter:title" content="Khbrah – Trusted Digital Legal Consultancy Platform">
   <meta
-    content="Lawyers is a premium Legal Firm and Law Firm Webflow template. If you want to have an amazing online presence for your legal firm, this is the right template choice for you. It includes everything you need to start getting more clients."
-    property="twitter:description">
+    property="twitter:description"
+    content="Access expert legal support via audio/video consultations, document handling, and representation—all in one trusted platform.">
   <meta
-    content="https://cdn.prod.website-files.com/5ff723a6a2190a08cd9e2ed2/6269dad4efa2390f914b9536_open-graph-lawyers-webflow-template.png"
-    property="twitter:image">
+    property="twitter:image"
+    content="https://yourdomain.com/path-to-your-twitter-image.jpg">
   <meta property="og:type" content="website">
-  <meta content="summary_large_image" name="twitter:card">
-  <meta content="width=device-width, initial-scale=1" name="viewport">
-  <meta content="Webflow" name="generator">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <link href="5ff723a6a2190a08cd9e2ed2/css/lawfirmtemplate.webflow.722dc906b.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
@@ -134,6 +136,40 @@
     [dir="rtl"] .header-navigation {
       flex-direction: row-reverse;
     }
+
+    /* Preserve LTR for numbers and email */
+    .preserve-ltr {
+      direction: ltr;
+      text-align: left;
+      display: inline-block;
+    }
+
+    /* Icon positioning */
+    .contact-directly-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    [dir="rtl"] .contact-directly-link {
+      flex-direction: row;
+    }
+
+    .contact-directly-icon {
+      flex-shrink: 0;
+    }
+
+    .contact-info .phone-title,
+    .contact-info .email-title {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    [dir="rtl"] .contact-info .phone-title i,
+    [dir="rtl"] .contact-info .email-title i {
+      order: 1;
+    }
   </style>
   <script
     type="text/javascript">window.__WEBFLOW_CURRENCY_SETTINGS = { "currencyCode": "USD", "symbol": "$", "decimal": ".", "fractionDigits": 2, "group": ",", "template": "{{wf {\"path\":\"symbol\",\"type\":\"PlainText\"} }} {{wf {\"path\":\"amount\",\"type\":\"CommercePrice\"} }} {{wf {\"path\":\"currencyCode\",\"type\":\"PlainText\"} }}", "hideDecimalForWholeNumbers": false };</script>
@@ -189,8 +225,8 @@
         </div>
       </div>
     </div>
-    <div class="bg contact-2"></div>
-    <section id="Contact" class="section contact">
+   
+    <section id="Contact" class="section contact bg-black" style="background: linear-gradient(to right, #4f4f4f, #000000);">
       <div class="container-default w-container">
         <div class="contact-wrapper">
           <div data-w-id="7523478b-9b6c-249f-6e42-5f7c3a2c6bf6"
@@ -205,15 +241,15 @@
             <div class="contact-directly-links-wrapper">
               <a href="mailto:info@khbra.sa" class="contact-directly-link w-inline-block">
                 <div class="contact-directly-icon icon-size-19px">📧</div>
-                <div class="text-lg">info@khbra.sa</div>
+                <div class="text-lg preserve-ltr">info@khbra.sa</div>
               </a>
-              <a href="tel:00966537166646" class="contact-directly-link w-inline-block">
+              <a href="tel:+966537166646" class="contact-directly-link w-inline-block">
                 <div class="contact-directly-icon">📞</div>
-                <div class="text-lg">00966537166646</div>
+                <div class="text-lg preserve-ltr">+966 53 716 6646</div>
               </a>
               <a href="tel:00966114555520" class="contact-directly-link last w-inline-block">
                 <div class="contact-directly-icon">📞</div>
-                <div class="text-lg">00966114555520</div>
+                <div class="text-lg preserve-ltr">00966114555520</div>
               </a>
             </div>
           </div>
@@ -257,220 +293,148 @@
           </div>
         </div>
       </div>
-      <div class="bg contact-1"></div>
+    
     </section>
-    <section class="section our-offices-contact">
-      <div data-w-id="520d7025-7eb8-b08a-e968-735e7fe2ec9d"
-        style="-webkit-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
-        class="container-medium-614px offices">
-        <h2>Our Offices</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae vitae aenean tincidunt pretium quam id. Massa
-          leo.</p>
-      </div>
-      <div class="container-default w-container">
-        <div class="w-layout-grid offices-grid">
-          <div data-w-id="a6e11f1a-6566-d28f-9b43-1637729538e7"
-            style="-webkit-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
-            class="card office">
-            <div class="image-wrapper card-office"><img
-                src="5ff723a6a2190a08cd9e2ed2/5ff8aa2a990014537321275f_icon-1-office-law-firm-template.svg"
-                alt="New York Icon - Law Firm Webflow Template" class="image card-office"></div>
-            <div class="card-office-content">
-              <div class="card-office-title-wrapper">
-                <h3 class="title card-office">New York</h3>
-                <p>Financial District, New York, NY 10006, USA</p>
-              </div>
-              <div class="card-office-links-wrapper"><a href="mailto:newyork@lawfirm.com"
-                  class="card-office-link w-inline-block">
-                  <div class="card-office-link-icon icon-size-19px"></div>
-                  <div class="card-office-link-text">newyork@lawyers.com</div>
-                </a><a href="tel:(212)587-0120" class="card-office-link last w-inline-block">
-                  <div class="card-office-link-icon"></div>
-                  <div class="card-office-link-text">(212) 587 - 0120</div>
-                </a></div>
-            </div>
-          </div>
-          <div data-w-id="d49bd19f-e649-ac3c-7229-5e8d11ae8ace"
-            style="-webkit-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
-            class="card office">
-            <div class="image-wrapper card-office"><img
-                src="5ff723a6a2190a08cd9e2ed2/5ff8aa2b2147a94d765f4598_icon-2-office-law-firm-template.svg"
-                alt="Los Angeles - Law Firm Webflow Template" class="image card-office"></div>
-            <div class="card-office-content">
-              <div class="card-office-title-wrapper">
-                <h3 class="title card-office">Los Angeles</h3>
-                <p>Los Feliz Blvd, Los Angeles, CA 90027, USA</p>
-              </div>
-              <div class="card-office-links-wrapper"><a href="mailto:losangeles@lawyers.com"
-                  class="card-office-link w-inline-block">
-                  <div class="card-office-link-icon icon-size-19px"></div>
-                  <div class="card-office-link-text">losangeles@lawyers.com</div>
-                </a><a href="tel:(562)433-4189" class="card-office-link last w-inline-block">
-                  <div class="card-office-link-icon"></div>
-                  <div class="card-office-link-text">(562) 433 - 4189</div>
-                </a></div>
-            </div>
-          </div>
-          <div data-w-id="7da74dc8-a93a-0ffc-d36c-220e08a4cae9"
-            style="-webkit-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
-            class="card office">
-            <div class="image-wrapper card-office"><img
-                src="5ff723a6a2190a08cd9e2ed2/5ff8aa2a7f54df78764abbd1_icon-3-office-law-firm-template.svg"
-                alt="London Icon - Law Firm Webflow Template" class="image card-office"></div>
-            <div class="card-office-content">
-              <div class="card-office-title-wrapper">
-                <h3 class="title card-office">London</h3>
-                <p>79 Richmond Road READING RG44 2EQ</p>
-              </div>
-              <div class="card-office-links-wrapper"><a href="mailto:london@lawyers.com"
-                  class="card-office-link w-inline-block">
-                  <div class="card-office-link-icon icon-size-19px"></div>
-                  <div class="card-office-link-text">london@lawyers.com</div>
-                </a><a href="tel:(784)3879-435" class="card-office-link last w-inline-block">
-                  <div class="card-office-link-icon"></div>
-                  <div class="card-office-link-text">(784) 3879 - 435</div>
-                </a></div>
-            </div>
-          </div>
-        </div>
-        <div data-w-id="e1fdcb96-ee4a-5e97-af97-e58a7bbcaaef"
-          style="-webkit-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
-          class="image-wrapper offices"><img
-            src="5ff723a6a2190a08cd9e2ed2/5ffcfa7d5f8fe91d085bf881_image-contact-offices-law-firm-template.jpg"
-            alt="Our Offices - Law Firm Webflow Template"
-            sizes="(max-width: 767px) 100vw, (max-width: 1919px) 95vw, 1276px"
-            srcset="5ff723a6a2190a08cd9e2ed2/5ffcfa7d5f8fe91d085bf881_image-contact-offices-law-firm-template-p-500.jpeg 500w, 5ff723a6a2190a08cd9e2ed2/5ffcfa7d5f8fe91d085bf881_image-contact-offices-law-firm-template-p-800.jpeg 800w, 5ff723a6a2190a08cd9e2ed2/5ffcfa7d5f8fe91d085bf881_image-contact-offices-law-firm-template-p-1080.jpeg 1080w, 5ff723a6a2190a08cd9e2ed2/5ffcfa7d5f8fe91d085bf881_image-contact-offices-law-firm-template-p-1600.jpeg 1600w, 5ff723a6a2190a08cd9e2ed2/5ffcfa7d5f8fe91d085bf881_image-contact-offices-law-firm-template-p-2000.jpeg 2000w, 5ff723a6a2190a08cd9e2ed2/5ffcfa7d5f8fe91d085bf881_image-contact-offices-law-firm-template.jpg 2350w"
-            class="image offices">
-          <div class="image-offices-filter"></div>
-        </div>
-      </div>
-    </section>
-    <section class="section faqs">
+    
+    <section class="section faqs mt-10">
       <div class="container-default w-container">
         <div data-w-id="242df3c4-3ceb-e8ed-9e8d-ffa500f026d6"
-          style="-webkit-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
+          style="transform:translate3d(0, 40px, 0) scale3d(1, 1, 1);opacity:0"
           class="top-content faqs">
           <div class="split-content faqs-left">
-            <h2 class="title faqs">Frequently Asked Questions</h2>
+            <h2 class="title faqs text-2xl lg:text-4xl mb-2" data-en="Frequently Asked Questions" data-ar="الأسئلة الشائعة">Frequently Asked Questions</h2>
           </div>
-          <div class="split-content faqs-right"><a href="about.html" class="button-secondary w-button">About Us</a>
+          <div class="split-content faqs-right">
+            <a href="about.html" class="button-secondary w-button" data-en="About Us" data-ar="معلومات عنا">About Us</a>
           </div>
         </div>
+    
         <div class="w-layout-grid faqs-grid">
           <div data-w-id="dfe1c25b-8af3-5a53-587c-55a806523fb5"
-            style="-webkit-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
+            style="transform:translate3d(0, 40px, 0) scale3d(1, 1, 1);opacity:0"
             class="faqs-wrapper">
+    
             <div class="card faq">
               <div class="faq-top-content">
                 <div class="faq-icon-wrapper">
                   <div class="faq-icon-1"></div>
                   <div class="faq-icon-2"></div>
                 </div>
-                <h3 class="title faq">Do you have examples of past case results?</h3>
+                <h3 class="title faq" data-en="What legal services does Khbrah provide?" data-ar="ما هي الخدمات القانونية التي تقدمها خبرة؟">What legal services does Khbrah provide?</h3>
               </div>
               <div class="faq-content">
                 <div class="space faq-content-space"></div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at maecenas auctor hendrerit
-                  velit, nulla facilisis porttitor. Adipiscing risus in nisl scelerisque. Quis orci, purus in hac urna
-                  nisl nunc, ut purus. In quis proin dignissim netus lectus pharetra, suscipit venenatis. Sodales et
-                  amet iaculis turpis venenatis.</p>
+                <p data-en="Khbrah offers a range of legal services including virtual consultations via audio, video, or chat; assistance with legal documents; professional legal representation; and informative legal insights through videos and articles." 
+                   data-ar="تقدم خبرة مجموعة من الخدمات القانونية بما في ذلك الاستشارات الافتراضية عبر الصوت أو الفيديو أو الدردشة؛ المساعدة في المستندات القانونية؛ التمثيل القانوني المحترف؛ ورؤى قانونية إعلامية من خلال مقاطع الفيديو والمقالات.">
+                  Khbrah offers a range of legal services including virtual consultations via audio, video, or chat; assistance with legal documents; professional legal representation; and informative legal insights through videos and articles.
+                </p>
               </div>
             </div>
+    
             <div class="card faq">
               <div class="faq-top-content">
                 <div class="faq-icon-wrapper">
                   <div class="faq-icon-1"></div>
                   <div class="faq-icon-2"></div>
                 </div>
-                <h3 class="title faq">Do you offer consulting for international cases?</h3>
+                <h3 class="title faq" data-en="Can I consult a lawyer virtually?" data-ar="هل يمكنني استشارة محامٍ افتراضيًا؟">Can I consult a lawyer virtually?</h3>
               </div>
               <div class="faq-content">
                 <div class="space faq-content-space"></div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at maecenas auctor hendrerit
-                  velit, nulla facilisis porttitor. Adipiscing risus in nisl scelerisque. Quis orci, purus in hac urna
-                  nisl nunc, ut purus. In quis proin dignissim netus lectus pharetra, suscipit venenatis. Sodales et
-                  amet iaculis turpis venenatis.</p>
+                <p data-en="Yes, Khbrah allows you to connect with experienced lawyers from anywhere using audio, video, or chat for seamless consultations on your legal matters." 
+                   data-ar="نعم، تتيح لك خبرة التواصل مع محامين ذوي خبرة من أي مكان باستخدام الصوت أو الفيديو أو الدردشة لإجراء استشارات سلسة بشأن مسائلك القانونية.">
+                  Yes, Khbrah allows you to connect with experienced lawyers from anywhere using audio, video, or chat for seamless consultations on your legal matters.
+                </p>
               </div>
             </div>
+    
             <div class="card faq last">
               <div class="faq-top-content">
                 <div class="faq-icon-wrapper">
                   <div class="faq-icon-1"></div>
                   <div class="faq-icon-2"></div>
                 </div>
-                <h3 class="title faq">How big is the team on your Law Firm?</h3>
+                <h3 class="title faq" data-en="Do you help with legal document preparation?" data-ar="هل تساعدون في إعداد المستندات القانونية؟">Do you help with legal document preparation?</h3>
               </div>
               <div class="faq-content">
                 <div class="space faq-content-space"></div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at maecenas auctor hendrerit
-                  velit, nulla facilisis porttitor. Adipiscing risus in nisl scelerisque. Quis orci, purus in hac urna
-                  nisl nunc, ut purus. In quis proin dignissim netus lectus pharetra, suscipit venenatis. Sodales et
-                  amet iaculis turpis venenatis.</p>
+                <p data-en="Absolutely. Our platform offers expert support in preparing, reviewing, and managing legal documents. You can also access and store documents securely through your account." 
+                   data-ar="بالتأكيد. تقدم منصتنا دعمًا خبيرًا في إعداد المستندات القانونية ومراجعتها وإدارتها. يمكنك أيضًا الوصول إلى المستندات وتخزينها بأمان من خلال حسابك.">
+                  Absolutely. Our platform offers expert support in preparing, reviewing, and managing legal documents. You can also access and store documents securely through your account.
+                </p>
               </div>
             </div>
           </div>
+    
           <div data-w-id="bf49852f-6efd-8e97-d3c2-44aca129e9b3"
-            style="-webkit-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
+            style="transform:translate3d(0, 40px, 0) scale3d(1, 1, 1);opacity:0"
             class="faqs-wrapper">
+    
             <div class="card faq">
               <div class="faq-top-content">
                 <div class="faq-icon-wrapper">
                   <div class="faq-icon-1"></div>
                   <div class="faq-icon-2"></div>
                 </div>
-                <h3 class="title faq">Can I get a free case consultation?</h3>
+                <h3 class="title faq" data-en="Is legal representation available through Khbrah?" data-ar="هل يتوفر تمثيل قانوني من خلال خبرة؟">Is legal representation available through Khbrah?</h3>
               </div>
               <div class="faq-content">
                 <div class="space faq-content-space"></div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at maecenas auctor hendrerit
-                  velit, nulla facilisis porttitor. Adipiscing risus in nisl scelerisque. Quis orci, purus in hac urna
-                  nisl nunc, ut purus. In quis proin dignissim netus lectus pharetra, suscipit venenatis. Sodales et
-                  amet iaculis turpis venenatis.</p>
+                <p data-en="Yes, we provide expert legal representation for court sessions and legal proceedings through our network of experienced attorneys." 
+                   data-ar="نعم، نقدم تمثيلًا قانونيًا خبيرًا لجلسات المحكمة والإجراءات القانونية من خلال شبكتنا من المحامين ذوي الخبرة.">
+                  Yes, we provide expert legal representation for court sessions and legal proceedings through our network of experienced attorneys.
+                </p>
               </div>
             </div>
+    
             <div class="card faq">
               <div class="faq-top-content">
                 <div class="faq-icon-wrapper">
                   <div class="faq-icon-1"></div>
                   <div class="faq-icon-2"></div>
                 </div>
-                <h3 class="title faq">How long has this Law Firm been active for?</h3>
+                <h3 class="title faq" data-en="How do I access legal insights on your platform?" data-ar="كيف يمكنني الوصول إلى الرؤى القانونية على منصتكم؟">How do I access legal insights on your platform?</h3>
               </div>
               <div class="faq-content">
                 <div class="space faq-content-space"></div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at maecenas auctor hendrerit
-                  velit, nulla facilisis porttitor. Adipiscing risus in nisl scelerisque. Quis orci, purus in hac urna
-                  nisl nunc, ut purus. In quis proin dignissim netus lectus pharetra, suscipit venenatis. Sodales et
-                  amet iaculis turpis venenatis.</p>
+                <p data-en="You can access legal insights through our educational video content and articles, designed to keep you informed about legal topics and recent developments." 
+                   data-ar="يمكنك الوصول إلى الرؤى القانونية من خلال محتوى الفيديو التعليمي والمقالات لدينا، المصممة لإبقائك على اطلاع بالموضوعات القانونية والتطورات الأخيرة.">
+                  You can access legal insights through our educational video content and articles, designed to keep you informed about legal topics and recent developments.
+                </p>
               </div>
             </div>
+    
             <div class="card faq last">
               <div class="faq-top-content">
                 <div class="faq-icon-wrapper">
                   <div class="faq-icon-1"></div>
                   <div class="faq-icon-2"></div>
                 </div>
-                <h3 class="title faq">How do I get in touch with your Law Firm?</h3>
+                <h3 class="title faq" data-en="How do I contact Khbrah for support?" data-ar="كيف يمكنني التواصل مع خبرة للحصول على الدعم؟">How do I contact Khbrah for support?</h3>
               </div>
               <div class="faq-content">
                 <div class="space faq-content-space"></div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at maecenas auctor hendrerit
-                  velit, nulla facilisis porttitor. Adipiscing risus in nisl scelerisque. Quis orci, purus in hac urna
-                  nisl nunc, ut purus. In quis proin dignissim netus lectus pharetra, suscipit venenatis. Sodales et
-                  amet iaculis turpis venenatis.</p>
+                <p data-en="You can reach out via our app's contact form or visit our <a href='#Contact'>Contact</a> section. We're here to help with any legal questions or service inquiries you may have." 
+                   data-ar="يمكنك التواصل عبر نموذج الاتصال في التطبيق الخاص بنا أو زيارة قسم <a href='#Contact'>الاتصال</a>. نحن هنا لمساعدتك في أي استفسارات قانونية أو استفسارات عن الخدمة قد تكون لديك.">
+                  You can reach out via our app's contact form or visit our <a href="#Contact">Contact</a> section. We're here to help with any legal questions or service inquiries you may have.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
+    
       <div data-w-id="66864bbf-0e1b-780d-aaf8-98e1d7a69c1f"
-        style="-webkit-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
+        style="transform:translate3d(0, 40px, 0) scale3d(1, 1, 1);opacity:0"
         class="container-medium-600px faqs">
-        <h3 class="title faqs-contact">Could find the answer you are looking for?</h3>
-        <p class="paragraph faqs-contact">Please <a href="#Contact">get in touch</a> and we will help you to get all
-          your questions answered.</p>
+        <h3 class="title faqs-contact" data-en="Couldn't find the answer you are looking for?" data-ar="لم تجد الإجابة التي تبحث عنها؟">Couldn't find the answer you are looking for?</h3>
+        <p class="paragraph faqs-contact" data-en="Please contact us and we will help you to get all your questions answered." 
+           data-ar="يرجى الاتصال بنا وسنساعدك في الحصول على إجابات لجميع أسئلتك.">
+          Please contact us and we will help you to get all your questions answered.
+        </p>
       </div>
     </section>
+    
     <div class="container-default w-container">
       <div class="divider"></div>
     </div>
@@ -481,13 +445,9 @@
           class="title contact-social-media">Follow us</h2>
         <div data-w-id="8e67f6df-d8ab-5d9a-5753-7001dd7e0e20"
           style="-webkit-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
-          class="w-layout-grid contact-social-media-grid"><a href="https://www.facebook.com/" target="_blank"
-            class="contact-social-media-link"></a><a href="https://twitter.com/" target="_blank"
-            class="contact-social-media-link icon-size-27px"></a><a href="https://www.instagram.com/" target="_blank"
-            class="contact-social-media-link icon-size-32px"></a><a href="https://www.linkedin.com/" target="_blank"
-            class="contact-social-media-link"></a><a href="https://www.youtube.com/" target="_blank"
-            class="contact-social-media-link icon-size-25px"></a><a href="https://telegram.org/" target="_blank"
-            class="contact-social-media-link"></a></div>
+          class="w-layout-grid contact-social-media-grid"><a href="https://wa.me/966537166646" target="_blank"
+            class="contact-social-media-link"><i class="fa-brands fa-whatsapp"></i></a><a href="https://x.com/khbra_sa" target="_blank"
+            class="contact-social-media-link icon-size-27px"><i class="fa-brands fa-x-twitter"></i></a> </div>
       </div>
     </section>
     <footer class="footer">
@@ -524,10 +484,10 @@
                   <li class="footer-nav-item">
                     <div class="contact-info">
                       <p class="phone-title" data-en="Phone" data-ar="عبر الهاتف"><i class="fa-solid fa-phone" style="margin-right: 5px;"></i>Phone</p>
-                      <p class="phone"><a href="https://wa.me/966537166646" class="phone-link" target="_blank">00966537166646</a></p>
-                      <p class="phone" style="margin-bottom: 15px;"><a href="tel:+966114555520" class="phone-link">00966114555520</a></p>
+                      <p class="phone"><a href="https://wa.me/966537166646" class="phone-link preserve-ltr" target="_blank">+966 53 716 6646</a></p>
+                      <p class="phone" style="margin-bottom: 15px;"><a href="tel:+966114555520" class="phone-link preserve-ltr">00966114555520</a></p>
                       <p class="email-title" data-en="Email" data-ar="عبر البريد الإلكتروني"><i class="fa-solid fa-envelope" style="margin-right: 5px;"></i> Email</p>
-                      <p class="email"><a href="mailto:info@khbra.sa" class="email-link">info@khbra.sa</a></p>
+                      <p class="email"><a href="mailto:info@khbra.sa" class="email-link preserve-ltr">info@khbra.sa</a></p>
                     </div>
                   </li>
                 </ul>
@@ -583,11 +543,11 @@
       const subject = document.getElementById('Subject').value;
       const message = document.getElementById('Message').value;
       
-      const emailBody = `Name: ${name}%0AEmail: ${email}%0APhone: ${phone}%0ASubject: ${subject}%0AMessage: ${message}`;
+      const whatsappMessage = `*New Contact Form Submission*%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Phone:* ${phone}%0A*Subject:* ${subject}%0A*Message:* ${message}`;
       
-      const mailtoLink = `mailto:info@khbra.sa?subject=${encodeURIComponent(subject)}&body=${emailBody}`;
+      const whatsappLink = `https://wa.me/966537166646?text=${whatsappMessage}`;
       
-      window.location.href = mailtoLink;
+      window.open(whatsappLink, '_blank');
     }
   </script>
 </body>

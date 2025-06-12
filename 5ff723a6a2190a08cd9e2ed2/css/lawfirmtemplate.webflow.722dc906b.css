@@ -4707,7 +4707,7 @@ figcaption {
   width: 88px;
   min-width: 88px;
   height: 88px;
-  margin-right: 19px;
+  margin: 0px 19px;
   padding: 15px;
   display: flex;
 }

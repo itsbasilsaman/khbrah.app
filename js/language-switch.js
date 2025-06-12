@@ -33,9 +33,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 item.style.textAlign = 'left';
             });
         }
+
+        // Keep home-about-us and testimonials sections in LTR
+        const fixedSections = document.querySelectorAll('.home-about-us, .testimonials');
+        fixedSections.forEach(section => {
+            section.setAttribute('dir', 'ltr');
+            section.querySelectorAll('*').forEach(element => {
+                element.setAttribute('dir', 'ltr');
+            });
+        });
         
         // Set direction for the rest of the document
-        document.querySelectorAll('body > *:not(.header)').forEach(element => {
+        document.querySelectorAll('body > *:not(.header):not(.home-about-us):not(.testimonials)').forEach(element => {
             element.setAttribute('dir', language === 'ar' ? 'rtl' : 'ltr');
         });
         
