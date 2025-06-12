@@ -3749,12 +3749,7 @@ figcaption {
   align-items: start;
 }
 
-.header {
-  background-color: var(--neutral-100);
-  max-width: 1360px;
-  margin-left: auto;
-  margin-right: auto;
-}
+ 
 
 .header-navigation {
   align-items: center;
@@ -7039,9 +7034,7 @@ figcaption {
     margin-bottom: 10px;
   }
 
-  .header {
-    max-width: 1460px;
-  }
+ 
 
   /* .container-header {
     max-width: 1324px;
