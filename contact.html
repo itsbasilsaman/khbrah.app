@@ -176,10 +176,11 @@
 </head>
 
 <body class="bg-neutral-200">
-  <div class="page-wrapper contact">
+  <div style="opacity:0" class="page-wrapper">
+    <!-- Header -->
     <header class="fixed top-0 left-0 w-full z-50 px-4 sm:px-6 lg:px-8 header">
       <div class="max-w-screen-xl mx-auto">
-        <div class="flex justify-between items-center bg-black/30 backdrop-blur-xl rounded-full px-6 py-3 mt-4 shadow-lg relative">
+        <div class="flex justify-between items-center bg-black/30 backdrop-blur-xl rounded-full px-6 py-2 sm:py-3 mt-4 shadow-lg relative">
           
           <!-- Logo -->
           <a href="index.html" class="flex items-center gap-2 shrink-0">
@@ -188,35 +189,53 @@
     
           <!-- Desktop Nav -->
           <nav class="hidden lg:flex space-x-6 text-white font-medium">
-            <a href="index.html" class="nav-link font-semibold w--current text-white">Home</a>
-            <a href="about.html" class="nav-link text-white font-semibold">About</a>
-            <a href="features.html" class="nav-link text-white font-semibold">Features</a>
-            <a href="packages.html" class="nav-link text-white font-semibold">Plans</a>
-            <a href="contact.html" class="nav-link text-white font-semibold">Contact</a>
+            <a href="index.html" class="nav-link font-semibold w--current text-white">
+              <span class="en">Home</span>
+              <span class="ar hidden">الرئيسية</span>
+            </a>
+            <a href="about.html" class="nav-link text-white font-semibold">
+              <span class="en">About</span>
+              <span class="ar hidden">من نحن</span>
+            </a>
+            <a href="features.html" class="nav-link text-white font-semibold">
+              <span class="en">Features</span>
+              <span class="ar hidden">المميزات</span>
+            </a>
+            <a href="packages.html" class="nav-link text-white font-semibold">
+              <span class="en">Plans</span>
+              <span class="ar hidden">الباقات</span>
+            </a>
+            <a href="contact.html" class="nav-link text-white font-semibold">
+              <span class="en">Contact</span>
+              <span class="ar hidden">اتصل بنا</span>
+            </a>
           </nav>
     
           <!-- Desktop Right -->
           <div class="hidden lg:flex items-center space-x-4">
             <div class="language-switch">
               <label class="switch">
-                <input type="checkbox" id="languageToggle">
+                <input type="checkbox" id="languageToggle" checked>
                 <span class="slider round">
-                  <span class="lang-text en">EN</span>
-                  <span class="lang-text ar">AR</span>
+                  <span class="lang-text en absolute left-2 top-1/2 -translate-y-1/2">EN</span>
+                  <span class="lang-text ar absolute right-2 top-1/2 -translate-y-1/2">AR</span>
                 </span>
               </label>
             </div>
-            <a href="contact.html" class="text-white font-medium bg-black hover:bg-gray-800 px-4 py-2 rounded-full transition">Download App</a>
+            <a href="contact.html" class="text-white flex justify-center items-center font-medium bg-black hover:bg-gray-100 hover:scale-105 px-4 py-2 rounded-full transition-all duration-300 ease-in-out w-[170px]">
+              <span class="en">Download App</span>
+              <span class="ar hidden">تحميل التطبيق</span>
+            </a>
           </div>
     
           <!-- Mobile Right -->
           <div class="flex items-center gap-3 lg:hidden z-50">
             <div class="language-switch">
               <label class="switch">
-                <input type="checkbox" id="languageToggleMobile">
+                <input type="checkbox" id="languageToggleMobile" checked>
                 <span class="slider round">
-                  <span class="lang-text en">EN</span>
-                  <span class="lang-text ar">AR</span>
+                  <span class="lang-text en absolute left-2 top-1/2 -translate-y-1/2">EN</span>
+                  <span class="lang-text ar absolute right-2 top-1/2 -translate-y-1/2">AR</span>
                 </span>
               </label>
             </div>
@@ -241,20 +260,35 @@
     
       <!-- Navigation -->
       <nav class="flex flex-col space-y-4 text-lg font-medium">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="features.html">Features</a>
-        <a href="packages.html">Plans</a>
-        <a href="contact.html">Contact</a>
+        <a href="index.html">
+          <span class="en">Home</span>
+          <span class="ar hidden">الرئيسية</span>
+        </a>
+        <a href="about.html">
+          <span class="en">About</span>
+          <span class="ar hidden">من نحن</span>
+        </a>
+        <a href="features.html">
+          <span class="en">Features</span>
+          <span class="ar hidden">المميزات</span>
+        </a>
+        <a href="packages.html">
+          <span class="en">Plans</span>
+          <span class="ar hidden">الباقات</span>
+        </a>
+        <a href="contact.html">
+          <span class="en">Contact</span>
+          <span class="ar hidden">اتصل بنا</span>
+        </a>
       </nav>
     
       <!-- Divider -->
       <div class="border-t border-white/20 pt-6">
-        <!-- Language Switch -->
-        
-    
         <!-- Download Button -->
-        <a href="contact.html" class="block text-center text-white font-medium bg-black hover:bg-gray-800 px-4 py-2 rounded-full transition">Download App</a>
+        <a href="contact.html" class="block text-center text-white font-medium bg-black hover:bg-gray-800 px-4 py-2 rounded-full transition">
+          <span class="en">Download App</span>
+          <span class="ar hidden">تحميل التطبيق</span>
+        </a>
       </div>
     </div>
     
@@ -599,6 +633,44 @@
       window.open(whatsappLink, '_blank');
     }
   </script>
+    <script>
+      // Language switching functionality
+      function toggleLanguage(isArabic) {
+        const englishElements = document.querySelectorAll('.en:not(.lang-text)');
+        const arabicElements = document.querySelectorAll('.ar:not(.lang-text)');
+        
+        if (isArabic) {
+          englishElements.forEach(el => el.classList.add('hidden'));
+          arabicElements.forEach(el => el.classList.remove('hidden'));
+          // Show EN text when in Arabic mode
+          document.querySelectorAll('.lang-text.en').forEach(el => el.classList.remove('hidden'));
+          document.querySelectorAll('.lang-text.ar').forEach(el => el.classList.add('hidden'));
+        } else {
+          englishElements.forEach(el => el.classList.remove('hidden'));
+          arabicElements.forEach(el => el.classList.add('hidden'));
+          // Show AR text when in English mode
+          document.querySelectorAll('.lang-text.en').forEach(el => el.classList.add('hidden'));
+          document.querySelectorAll('.lang-text.ar').forEach(el => el.classList.remove('hidden'));
+        }
+      }
+  
+      // Set initial language to Arabic
+      document.addEventListener('DOMContentLoaded', () => {
+        toggleLanguage(true);
+      });
+  
+      // Desktop language toggle
+      const languageToggle = document.getElementById('languageToggle');
+      languageToggle.addEventListener('change', (e) => {
+        toggleLanguage(e.target.checked);
+      });
+  
+      // Mobile language toggle
+      const languageToggleMobile = document.getElementById('languageToggleMobile');
+      languageToggleMobile.addEventListener('change', (e) => {
+        toggleLanguage(e.target.checked);
+      });
+    </script>
 </body>
 
 </html>

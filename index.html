@@ -230,7 +230,7 @@ referrerpolicy="no-referrer"
     <!-- Header -->
 <header class="fixed top-0 left-0 w-full z-50 px-4 sm:px-6 lg:px-8 header">
   <div class="max-w-screen-xl mx-auto">
-    <div class="flex justify-between items-center bg-black/30 backdrop-blur-xl rounded-full px-6 py-3 mt-4 shadow-lg relative">
+    <div class="flex justify-between items-center bg-black/30 backdrop-blur-xl rounded-full px-6 py-2 sm:py-3 mt-4 shadow-lg relative">
       
       <!-- Logo -->
       <a href="index.html" class="flex items-center gap-2 shrink-0">
@@ -239,35 +239,53 @@ referrerpolicy="no-referrer"
 
       <!-- Desktop Nav -->
       <nav class="hidden lg:flex space-x-6 text-white font-medium">
-        <a href="index.html" class="nav-link font-semibold w--current text-white">Home</a>
-        <a href="about.html" class="nav-link text-white font-semibold">About</a>
-        <a href="features.html" class="nav-link text-white font-semibold">Features</a>
-        <a href="packages.html" class="nav-link text-white font-semibold">Plans</a>
-        <a href="contact.html" class="nav-link text-white font-semibold">Contact</a>
+        <a href="index.html" class="nav-link font-semibold w--current text-white">
+          <span class="en">Home</span>
+          <span class="ar hidden">الرئيسية</span>
+        </a>
+        <a href="about.html" class="nav-link text-white font-semibold">
+          <span class="en">About</span>
+          <span class="ar hidden">من نحن</span>
+        </a>
+        <a href="features.html" class="nav-link text-white font-semibold">
+          <span class="en">Features</span>
+          <span class="ar hidden">المميزات</span>
+        </a>
+        <a href="packages.html" class="nav-link text-white font-semibold">
+          <span class="en">Plans</span>
+          <span class="ar hidden">الباقات</span>
+        </a>
+        <a href="contact.html" class="nav-link text-white font-semibold">
+          <span class="en">Contact</span>
+          <span class="ar hidden">اتصل بنا</span>
+        </a>
       </nav>
 
       <!-- Desktop Right -->
       <div class="hidden lg:flex items-center space-x-4">
         <div class="language-switch">
           <label class="switch">
-            <input type="checkbox" id="languageToggle">
+            <input type="checkbox" id="languageToggle" checked>
             <span class="slider round">
-              <span class="lang-text en">EN</span>
-              <span class="lang-text ar">AR</span>
+              <span class="lang-text en absolute left-2 top-1/2 -translate-y-1/2">EN</span>
+              <span class="lang-text ar absolute right-2 top-1/2 -translate-y-1/2">AR</span>
             </span>
           </label>
         </div>
-        <a href="contact.html" class="text-white font-medium bg-black hover:bg-gray-100 hover:scale-105 px-4 py-2 rounded-full transition-all duration-300 ease-in-out">Download App</a>
+        <a href="contact.html" class="text-white flex justify-center items-center font-medium bg-black hover:bg-gray-100 hover:scale-105 px-4 py-2 rounded-full transition-all duration-300 ease-in-out w-[170px]">
+          <span class="en">Download App</span>
+          <span class="ar hidden">تحميل التطبيق</span>
+        </a>
       </div>
 
       <!-- Mobile Right -->
       <div class="flex items-center gap-3 lg:hidden z-50">
         <div class="language-switch">
           <label class="switch">
-            <input type="checkbox" id="languageToggleMobile">
+            <input type="checkbox" id="languageToggleMobile" checked>
             <span class="slider round">
-              <span class="lang-text en">EN</span>
-              <span class="lang-text ar">AR</span>
+              <span class="lang-text en absolute left-2 top-1/2 -translate-y-1/2">EN</span>
+              <span class="lang-text ar absolute right-2 top-1/2 -translate-y-1/2">AR</span>
             </span>
           </label>
         </div>
@@ -356,7 +374,7 @@ referrerpolicy="no-referrer"
 
                   <!-- Main Heading -->
                   <div class="space-y-4">
-                      <h1 class="text-4xl font-bold leading-tight text-gray-900 opacity-0 md:text-5xl lg:text-6xl xl:text-7xl animate-slide-up animate-delay-400">
+                      <h1 class="text-4xl font-bold leading-tight text-gray-900 opacity-0 md:text-5xl lg:text-6xl xl:text-7xl animate-slide-up animate-delay-400 ">
                           <span data-en="Your Digital" data-ar="شريكك الرقمي">Your Digital</span>
                           <span class="block text-gradient" data-en="Legal Partner" data-ar="القانوني">Legal Partner</span>
                       </h1>
@@ -369,7 +387,7 @@ referrerpolicy="no-referrer"
                   </div>
 
                   <!-- CTA Buttons -->
-                  <div class="flex flex-col gap-4 opacity-0 sm:flex-row animate-slide-up animate-delay-1000">
+                  <div class="flex flex-col gap-4 opacity-0 sm:flex-row animate-slide-up animate-delay-1000 hidden sm:flex">
                       <button class="inline-flex items-center justify-center px-6 py-4 font-semibold text-white transition-all duration-300 transform bg-gray-800 group hover:bg-gray-900 hover:scale-105">
                         <i class="mr-2 fab pl-2 fa-android"></i>  
                         <span data-en="Download for Android" data-ar="تحميل للأندرويد">Download for Android</span>
@@ -389,7 +407,8 @@ referrerpolicy="no-referrer"
                           <!-- Main Center Phone -->
                           <div class="relative z-20 mx-auto opacity-0 animate-scale-in animate-delay-800">
                               <div class="relative mx-auto w-72 h-[580px] bg-black rounded-[3rem] p-2 shadow-2xl">
-                                  <img src="/Assets/banner-mobile-one.jpg"
+                                <div class="absolute top-4  z-30 w-32 h-6 transform -translate-x-1/2 bg-black rounded-full left-1/2"></div>
+                                  <img src="/Assets/banner-mobile-two.jpg"
                                        alt="App Screen"
                                        class="w-full h-full bg-white rounded-[2.5rem] object-cover"/>
                               </div>
@@ -399,8 +418,8 @@ referrerpolicy="no-referrer"
                           <div class="absolute z-10 opacity-0 -left-4 top-10 animate-slide-in-right animate-delay-1200">
                               <div class="w-60 h-[480px] bg-black rounded-[2.5rem] p-2 shadow-xl opacity-80 transform rotate-[-8deg] hover:rotate-[-6deg] transition-transform duration-300">
                                   <div class="w-full h-full bg-white rounded-[2rem] overflow-hidden relative">
-                                      <div class="absolute top-0 z-30 w-24 h-5 transform -translate-x-1/2 bg-black rounded-b-lg left-1/2"></div>
-                                      <img src="/Assets/banner-mobile-two.jpg" alt="App Preview" class="w-full h-full object-cover rounded-[2rem]" />
+                                    <div class="absolute top-2  z-30 w-20 h-5 transform -translate-x-1/2 bg-black rounded-full left-1/2"></div>
+                                    <img src="/Assets/banner-mobile-two.jpg" alt="App Preview" class="w-full h-full object-cover rounded-[2rem]" />
                                   </div>
                               </div>
                           </div>
@@ -409,6 +428,7 @@ referrerpolicy="no-referrer"
                           <div class="absolute z-10 opacity-0 -right-4 top-16 animate-slide-in-right animate-delay-1400">
                               <div class="w-60 h-[480px] bg-black rounded-[2.5rem] p-2 shadow-xl opacity-80 transform rotate-[8deg] hover:rotate-[6deg] transition-transform duration-300">
                                   <div class="w-full h-full bg-gray-900 rounded-[2rem] overflow-hidden flex items-center justify-center">
+                                    <div class="absolute top-4  z-30 w-20 h-5 transform -translate-x-1/2 bg-black rounded-full left-1/2"></div>
                                       <img src="/Assets/banner-mobile-three.jpg" alt="App Preview" class="w-full h-full object-cover rounded-[2rem]" />
                                   </div>
                               </div>
@@ -419,31 +439,41 @@ referrerpolicy="no-referrer"
                       <div class="w-full overflow-x-hidden">
                         <div class="block lg:hidden relative w-full">
                           <!-- Main Center Phone -->
-                          <div class="relative z-20 mx-auto opacity-0 animate-scale-in animate-delay-800">
-                              <div class="relative mx-auto w-56 h-[450px] bg-black rounded-[2.5rem] p-1.5 shadow-2xl">
-                                  <img src="/Assets/banner-mobile-one.jpg"
+                          <div class="relative z-20 mx-auto opacity-0 animate-scale-in animate-delay-800 mb-4">
+                              <div class="relative mx-auto w-56 h-[480px] bg-black rounded-[2.5rem] p-1.5 shadow-2xl">
+                                  <div class="absolute top-4 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-full"></div>
+                                  <img src="/Assets/banner-mobile-two.jpg"
                                        alt="App Screen"
-                                       class="w-full h-full bg-white rounded-[2rem] object-cover"/>
+                                       class="w-full h-full bg-white rounded-[2.2rem] object-cover"/>
                               </div>
                           </div>
 
                           <!-- Left Phone -->
                           <div class="absolute z-10 opacity-0 top-10 left-0 w-1/2 max-w-xs mx-0 animate-slide-in-right animate-delay-1200">
-                              <div class="w-48 h-[380px] bg-black rounded-[2rem] p-1.5 shadow-xl opacity-80 transform rotate-[-8deg] hover:rotate-[-6deg] transition-transform duration-300">
-                                  <div class="w-full h-full bg-white rounded-[1.8rem] overflow-hidden relative">
-                                      <div class="absolute top-0 z-30 w-20 h-4 transform -translate-x-1/2 bg-black rounded-b-lg left-1/2"></div>
-                                      <img src="/Assets/banner-mobile-two.jpg" alt="App Preview" class="w-full h-full object-cover rounded-[1.8rem]" />
-                                  </div>
+                              <div class="w-48 h-[420px] bg-black rounded-[2.2rem] p-1.5 shadow-xl opacity-80 transform rotate-[-8deg] hover:rotate-[-6deg] transition-transform duration-300">
+                                <div class="absolute top-4 left-1/2 -translate-x-1/2 w-20 h-5 bg-black rounded-full"></div>
+                                <img src="/Assets/banner-mobile-two.jpg" alt="App Preview" class="w-full h-full object-cover rounded-[2.2rem]" />
                               </div>
                           </div>
 
                           <!-- Right Phone -->
                           <div class="absolute z-10 opacity-0 top-16 right-0 w-1/2 max-w-xs mx-0 animate-slide-in-right animate-delay-1400">
-                              <div class="w-48 h-[380px] bg-black rounded-[2rem] p-1.5 shadow-xl opacity-80 transform rotate-[8deg] hover:rotate-[6deg] transition-transform duration-300">
-                                  <div class="w-full h-full bg-gray-900 rounded-[1.8rem] overflow-hidden flex items-center justify-center">
-                                      <img src="/Assets/banner-mobile-three.jpg" alt="App Preview" class="w-full h-full object-cover rounded-[1.8rem]" />
-                                  </div>
+                              <div class="w-48 h-[420px] bg-black rounded-[3rem] p-1.5 shadow-xl opacity-80 transform rotate-[8deg] hover:rotate-[6deg] transition-transform duration-300">
+                                <div class="absolute top-4 left-1/2 -translate-x-1/2 w-20 h-5 bg-black rounded-full"></div>
+                                  <img src="/Assets/banner-mobile-three.jpg" alt="App Preview" class="w-full h-full object-cover rounded-[2.2rem]" />
                               </div>
+                          </div>
+
+                          <!-- CTA Buttons for Mobile View -->
+                          <div class="flex flex-col gap-4 mt-4 opacity-0 sm:hidden animate-slide-up animate-delay-1000 pt-3">
+                              <button class="inline-flex items-center justify-center px-6 py-4 font-semibold text-white transition-all duration-300 transform bg-gray-800 group hover:bg-gray-900 hover:scale-105">
+                                <i class="mr-2 fab pl-2 fa-android"></i>  
+                                <span data-en="Download for Android" data-ar="تحميل للأندرويد">Download for Android</span>
+                              </button>
+                              <button class="inline-flex items-center justify-center px-6 py-4 font-semibold text-black transition-all duration-300 transform bg-gray-200 group hover:bg-gray-300 hover:scale-105">
+                                <i class="mr-2 pl-2 fab fa-apple"></i>  
+                                <span data-en="Download for iOS" data-ar="تحميل للآيفون">Download for iOS</span>
+                              </button>
                           </div>
                         </div>
                       </div>
@@ -1007,6 +1037,44 @@ referrerpolicy="no-referrer"
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="5ff723a6a2190a08cd9e2ed2/js/webflow.582146835.js" type="text/javascript"></script>
   <script src="js/language-switch.js" type="text/javascript"></script>
+  <script>
+    // Language switching functionality
+    function toggleLanguage(isArabic) {
+      const englishElements = document.querySelectorAll('.en:not(.lang-text)');
+      const arabicElements = document.querySelectorAll('.ar:not(.lang-text)');
+      
+      if (isArabic) {
+        englishElements.forEach(el => el.classList.add('hidden'));
+        arabicElements.forEach(el => el.classList.remove('hidden'));
+        // Show EN text when in Arabic mode
+        document.querySelectorAll('.lang-text.en').forEach(el => el.classList.remove('hidden'));
+        document.querySelectorAll('.lang-text.ar').forEach(el => el.classList.add('hidden'));
+      } else {
+        englishElements.forEach(el => el.classList.remove('hidden'));
+        arabicElements.forEach(el => el.classList.add('hidden'));
+        // Show AR text when in English mode
+        document.querySelectorAll('.lang-text.en').forEach(el => el.classList.add('hidden'));
+        document.querySelectorAll('.lang-text.ar').forEach(el => el.classList.remove('hidden'));
+      }
+    }
+
+    // Set initial language to Arabic
+    document.addEventListener('DOMContentLoaded', () => {
+      toggleLanguage(true);
+    });
+
+    // Desktop language toggle
+    const languageToggle = document.getElementById('languageToggle');
+    languageToggle.addEventListener('change', (e) => {
+      toggleLanguage(e.target.checked);
+    });
+
+    // Mobile language toggle
+    const languageToggleMobile = document.getElementById('languageToggleMobile');
+    languageToggleMobile.addEventListener('change', (e) => {
+      toggleLanguage(e.target.checked);
+    });
+  </script>
 </body>
 
 </html>
