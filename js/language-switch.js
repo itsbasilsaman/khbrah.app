@@ -1,20 +1,40 @@
 // Language switching functionality
 document.addEventListener('DOMContentLoaded', function() {
     const languageToggle = document.getElementById('languageToggle');
+    const languageToggleMobile = document.getElementById('languageToggleMobile');
     const htmlElement = document.documentElement;
+    
+    // Function to handle language switch
+    function handleLanguageSwitch(isChecked) {
+        const language = isChecked ? 'ar' : 'en';
+        switchLanguage(language);
+        localStorage.setItem('language', language);
+    }
     
     // Check for saved language preference
     const savedLanguage = localStorage.getItem('language');
     if (savedLanguage === 'ar') {
-        languageToggle.checked = true;
+        if (languageToggle) languageToggle.checked = true;
+        if (languageToggleMobile) languageToggleMobile.checked = true;
         switchLanguage('ar');
     }
     
-    languageToggle.addEventListener('change', function() {
-        const language = this.checked ? 'ar' : 'en';
-        switchLanguage(language);
-        localStorage.setItem('language', language);
-    });
+    // Add event listeners for both toggles
+    if (languageToggle) {
+        languageToggle.addEventListener('change', function() {
+            handleLanguageSwitch(this.checked);
+            // Sync mobile toggle
+            if (languageToggleMobile) languageToggleMobile.checked = this.checked;
+        });
+    }
+    
+    if (languageToggleMobile) {
+        languageToggleMobile.addEventListener('change', function() {
+            handleLanguageSwitch(this.checked);
+            // Sync desktop toggle
+            if (languageToggle) languageToggle.checked = this.checked;
+        });
+    }
     
     function switchLanguage(language) {
         // Force header and all its contents to stay LTR
