@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html data-wf-domain="lawfirmtemplate.webflow.io" data-wf-page="5ff7b19427bd828501c3e61c"
+  data-wf-site="5ff723a6a2190a08cd9e2ed2" data-wf-status="1" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Khbrah – Legal Services & Pricing</title>
+  <meta
+    name="description"
+    content="Explore Khbrah's comprehensive legal services including text chat, video/audio consultations, and case studies. Choose between subscription and pay-per-service options.">
+  <meta property="og:title" content="Khbrah – Legal Services & Pricing">
+  <meta
+    property="og:description"
+    content="Access professional legal services through text chat, video consultations, and case studies. Flexible pricing options available.">
+  <meta property="og:type" content="website">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="5ff723a6a2190a08cd9e2ed2/css/lawfirmtemplate.webflow.722dc906b.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
+  <link href="/Assets/khbrah-logo.png" rel="shortcut icon" type="image/x-icon">
+  <link href="/Assets/khbrah-logo.png" rel="apple-touch-icon">
+  <link href="css/language-switch.css" rel="stylesheet" type="text/css">
+
+  <!-- Stripe.js -->
+  <script src="https://js.stripe.com/v3/"></script>
+
+  <style>
+    /* Enhanced Service Card Styles */
+    .service-card {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeInUp 0.8s ease forwards;
+      background: white;
+      border-radius: 1rem;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-card:hover .service-icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    .service-icon {
+      transition: all 0.4s ease;
+      background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+      padding: 1.5rem;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .service-card:nth-child(1) { animation-delay: 0.1s; }
+    .service-card:nth-child(2) { animation-delay: 0.2s; }
+    .service-card:nth-child(3) { animation-delay: 0.3s; }
+
+    /* Enhanced Price Tag Styles */
+    .price-tag {
+      background: linear-gradient(135deg, #000000 0%, #333333 100%);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      font-weight: bold;
+      display: inline-block;
+      margin: 1rem 0;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .price-tag:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Enhanced Subscription Badge */
+    .subscription-badge {
+      background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.875rem;
+      display: inline-block;
+      margin-left: 0.5rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .subscription-badge:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Enhanced Button Styles */
+    .button-primary {
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .button-primary::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.6s ease, height 0.6s ease;
+    }
+
+    .button-primary:hover::after {
+      width: 300px;
+      height: 300px;
+    }
+
+    /* Responsive Grid Layout */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+      }
+    }
+
+    /* Loading Spinner */
+    .loading-spinner {
+      display: none;
+      width: 40px;
+      height: 40px;
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #3498db;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Payment Modal */
+    .payment-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+    }
+
+    .payment-modal.active {
+      display: flex;
+    }
+
+    .payment-form {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      width: 90%;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    .success-message {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .success-message.active {
+      display: block;
+    }
+
+    .success-icon {
+      color: #4CAF50;
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100">
+  <div style="opacity:0" class="page-wrapper">
+    <!-- Header (Same as other pages) -->
+    <header class="fixed top-0 left-0 w-full z-50 px-4 sm:px-6 lg:px-8 header">
+        <div class="max-w-screen-xl mx-auto">
+          <div class="flex justify-between items-center bg-black/30 backdrop-blur-xl rounded-full px-6 py-2 sm:py-3 mt-4 shadow-lg relative">
+            
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center gap-2 shrink-0">
+              <img src="./Assets/khbrah-logo.png" alt="Khbrah Logo" class="h-12 w-20 object-contain">
+            </a>
+      
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex space-x-6 text-white font-medium">
+              <a href="index.html" class="nav-link font-semibold w--current text-white">
+                <span class="en">Home</span>
+                <span class="ar hidden">الرئيسية</span>
+              </a>
+              <a href="about.html" class="nav-link text-white font-semibold">
+                <span class="en">About</span>
+                <span class="ar hidden">من نحن</span>
+              </a>
+              <a href="features.html" class="nav-link text-white font-semibold">
+                <span class="en">Features</span>
+                <span class="ar hidden">المميزات</span>
+              </a>
+              <a href="packages.html" class="nav-link text-white font-semibold">
+                <span class="en">Plans</span>
+                <span class="ar hidden">الباقات</span>
+              </a>
+              <a href="contact.html" class="nav-link text-white font-semibold">
+                <span class="en">Contact</span>
+                <span class="ar hidden">اتصل بنا</span>
+              </a>
+            </nav>
+      
+            <!-- Desktop Right -->
+            <div class="hidden lg:flex items-center space-x-4">
+              <div class="language-switch">
+                <label class="switch">
+                  <input type="checkbox" id="languageToggle">
+                  <span class="slider round">
+                    <span class="lang-text en absolute left-2 top-1/2 -translate-y-1/2">EN</span>
+                    <span class="lang-text ar absolute right-2 top-1/2 -translate-y-1/2">AR</span>
+                  </span>
+                </label>
+              </div>
+              <a href="contact.html" class="text-white flex justify-center items-center font-medium bg-black hover:bg-gray-100 hover:scale-105 px-4 py-2 rounded-full transition-all duration-300 ease-in-out w-[170px]">
+                <span class="en">Download App</span>
+                <span class="ar hidden">تحميل التطبيق</span>
+              </a>
+            </div>
+      
+            <!-- Mobile Right -->
+            <div class="flex items-center gap-3 lg:hidden z-50">
+              <div class="language-switch">
+                <label class="switch">
+                  <input type="checkbox" id="languageToggleMobile">
+                  <span class="slider round">
+                    <span class="lang-text en absolute left-2 top-1/2 -translate-y-1/2">EN</span>
+                    <span class="lang-text ar absolute right-2 top-1/2 -translate-y-1/2">AR</span>
+                  </span>
+                </label>
+              </div>
+              <button id="menu-toggle" class="text-white focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2"
+                     viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+    <!-- Mobile Menu (Same as other pages) -->
+    <div id="mobile-menu" class="fixed z-50 top-0 right-0 h-full w-72 bg-black/90 text-white backdrop-blur-lg transform translate-x-full transition-transform duration-300 ease-in-out z-40 flex flex-col p-6 space-y-6 shadow-2xl lg:hidden">
+      <!-- Mobile menu content (same as other pages) -->
+    </div>
+
+    <!-- Main Content -->
+    <main class="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <!-- Hero Section -->
+        <div class="text-center mb-16">
+          <h1 class="text-4xl md:text-5xl font-bold mb-4" data-en="Our Services" data-ar="خدماتنا">Our Services</h1>
+          <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-en="Choose from our range of professional legal services" data-ar="اختر من بين مجموعة خدماتنا القانونية المهنية">Choose from our range of professional legal services</p>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Text Chat Service -->
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+            <div class="p-8">
+              <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-6">
+                <i class="fas fa-comments text-2xl text-gray-800"></i>
+              </div>
+              <h3 class="text-2xl font-bold mb-4" data-en="Text Chat Consultation" data-ar="استشارة عبر الدردشة النصية">Text Chat Consultation</h3>
+              <div class="inline-block bg-gray-900 text-white px-4 py-2 rounded-full text-lg font-semibold mb-4">50 SAR</div>
+              <p class="text-gray-600 mb-6" data-en="Get instant legal advice through our text chat service. Available for both subscription and non-subscription users." data-ar="احصل على مشورة قانونية فورية من خلال خدمة الدردشة النصية. متاح للمشتركين وغير المشتركين.">Get instant legal advice through our text chat service. Available for both subscription and non-subscription users.</p>
+              <button onclick="redirectToCheckout('text_chat', 50)" class="w-full bg-black text-white py-3 px-6 rounded-full font-semibold hover:bg-gray-800 transition-colors duration-300" data-en="Get Started" data-ar="ابدأ الآن">Get Started</button>
+            </div>
+          </div>
+
+          <!-- Video/Audio Call Service -->
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+            <div class="p-8">
+              <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-6">
+                <i class="fas fa-video text-2xl text-gray-800"></i>
+              </div>
+              <h3 class="text-2xl font-bold mb-4" data-en="Video & Audio Consultation" data-ar="استشارة عبر الفيديو والصوت">Video & Audio Consultation</h3>
+              <div class="inline-block bg-gray-900 text-white px-4 py-2 rounded-full text-lg font-semibold mb-4">200 SAR</div>
+              <span class="inline-block bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium mb-4" data-en="Free with Subscription" data-ar="مجاني مع الاشتراك">Free with Subscription</span>
+              <p class="text-gray-600 mb-6" data-en="Connect with our legal experts through video or audio calls. Free for subscription users up to their plan limit." data-ar="تواصل مع خبرائنا القانونيين عبر مكالمات الفيديو أو الصوت. مجاني للمشتركين حتى الحد المسموح به في خطتهم.">Connect with our legal experts through video or audio calls. Free for subscription users up to their plan limit.</p>
+              <button onclick="redirectToCheckout('video_call', 200)" class="w-full bg-black text-white py-3 px-6 rounded-full font-semibold hover:bg-gray-800 transition-colors duration-300" data-en="Get Started" data-ar="ابدأ الآن">Get Started</button>
+            </div>
+          </div>
+
+          <!-- Case Study Service -->
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+            <div class="p-8">
+              <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-6">
+                <i class="fas fa-gavel text-2xl text-gray-800"></i>
+              </div>
+              <h3 class="text-2xl font-bold mb-4" data-en="Case Study & Analysis" data-ar="دراسة وتحليل القضية">Case Study & Analysis</h3>
+              <div class="inline-block bg-gray-900 text-white px-4 py-2 rounded-full text-lg font-semibold mb-4">500 - 500,000 SAR</div>
+              <p class="text-gray-600 mb-6" data-en="Comprehensive case study and legal analysis. Price varies based on case complexity. Available for all users." data-ar="دراسة شاملة وتحليل قانوني. يختلف السعر حسب تعقيد القضية. متاح لجميع المستخدمين.">Comprehensive case study and legal analysis. Price varies based on case complexity. Available for all users.</p>
+              <button onclick="redirectToCheckout('case_study', 500)" class="w-full bg-black text-white py-3 px-6 rounded-full font-semibold hover:bg-gray-800 transition-colors duration-300" data-en="Get Started" data-ar="ابدأ الآن">Get Started</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="payment-modal">
+      <div class="payment-form">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-2xl font-bold" data-en="Complete Payment" data-ar="إتمام الدفع">Complete Payment</h2>
+          <button onclick="closePaymentModal()" class="text-gray-500 hover:text-gray-700">
+            <i class="fas fa-times text-xl"></i>
+          </button>
+        </div>
+
+        <!-- Payment Form -->
+        <div id="paymentForm">
+          <div class="mb-4">
+            <label class="block text-gray-700 text-sm font-bold mb-2" data-en="Card Number" data-ar="رقم البطاقة">Card Number</label>
+            <input type="text" class="w-full px-3 py-2 border rounded-lg" placeholder="1234 5678 9012 3456" maxlength="19">
+          </div>
+          <div class="grid grid-cols-2 gap-4 mb-4">
+            <div>
+              <label class="block text-gray-700 text-sm font-bold mb-2" data-en="Expiry Date" data-ar="تاريخ الانتهاء">Expiry Date</label>
+              <input type="text" class="w-full px-3 py-2 border rounded-lg" placeholder="MM/YY" maxlength="5">
+            </div>
+            <div>
+              <label class="block text-gray-700 text-sm font-bold mb-2" data-en="CVV" data-ar="رمز الأمان">CVV</label>
+              <input type="text" class="w-full px-3 py-2 border rounded-lg" placeholder="123" maxlength="3">
+            </div>
+          </div>
+          <button onclick="processPayment()" class="w-full bg-black text-white py-3 px-6 rounded-full font-semibold hover:bg-gray-800 transition-colors duration-300" data-en="Pay Now" data-ar="ادفع الآن">Pay Now</button>
+        </div>
+
+        <!-- Success Message -->
+        <div id="successMessage" class="success-message">
+          <i class="fas fa-check-circle success-icon"></i>
+          <h3 class="text-2xl font-bold mb-2" data-en="Payment Successful!" data-ar="تم الدفع بنجاح!">Payment Successful!</h3>
+          <p class="text-gray-600" data-en="Thank you for your payment. We will contact you shortly." data-ar="شكراً لدفعك. سنتواصل معك قريباً.">Thank you for your payment. We will contact you shortly.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer (Same as other pages) -->
+    <footer class="footer">
+      <!-- Footer content (same as other pages) -->
+    </footer>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/language-switch.js" type="text/javascript"></script>
+  <script src="js/jquery-3.5.1.min.dc5e7f18c8.js" type="text/javascript"></script>
+  <script src="5ff723a6a2190a08cd9e2ed2/js/webflow.582146835.js" type="text/javascript"></script>
+  
+  <!-- Enhanced Payment Integration Script -->
+  <script>
+    let currentPayment = {
+      serviceType: '',
+      amount: 0
+    };
+
+    function showPaymentModal(serviceType, amount) {
+      currentPayment = { serviceType, amount };
+      document.getElementById('paymentModal').classList.add('active');
+      document.getElementById('paymentForm').style.display = 'block';
+      document.getElementById('successMessage').classList.remove('active');
+    }
+
+    function closePaymentModal() {
+      document.getElementById('paymentModal').classList.remove('active');
+    }
+
+    function processPayment() {
+      // Simulate payment processing
+      document.getElementById('paymentForm').style.display = 'none';
+      document.getElementById('successMessage').classList.add('active');
+
+      // Close modal after 3 seconds
+      setTimeout(() => {
+        closePaymentModal();
+        // Reset form
+        document.getElementById('paymentForm').style.display = 'block';
+        document.getElementById('successMessage').classList.remove('active');
+      }, 3000);
+    }
+
+    // Close modal when clicking outside
+    window.onclick = function(event) {
+      const modal = document.getElementById('paymentModal');
+      if (event.target === modal) {
+        closePaymentModal();
+      }
+    }
+
+    // Format card number input
+    document.querySelector('input[placeholder="1234 5678 9012 3456"]').addEventListener('input', function(e) {
+      let value = e.target.value.replace(/\D/g, '');
+      let formattedValue = '';
+      for(let i = 0; i < value.length; i++) {
+        if(i > 0 && i % 4 === 0) {
+          formattedValue += ' ';
+        }
+        formattedValue += value[i];
+      }
+      e.target.value = formattedValue;
+    });
+
+    // Format expiry date input
+    document.querySelector('input[placeholder="MM/YY"]').addEventListener('input', function(e) {
+      let value = e.target.value.replace(/\D/g, '');
+      if(value.length >= 2) {
+        value = value.slice(0,2) + '/' + value.slice(2);
+      }
+      e.target.value = value;
+    });
+
+    // Initialize Stripe with your publishable key
+    const stripe = Stripe('pk_test_51RaVxdQpWtvte8Ay9NwYmcndJCYXMgd93crBHKCfjGna4DdlhxuKSdazQqjApfnzCL90GBbYIAHJjVnAbwQyfpNv00l5llZqQZ');
+
+    async function redirectToCheckout(serviceType, amount) {
+      try {
+        // Show loading state
+        const button = event.target;
+        const originalText = button.innerHTML;
+        button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+        button.disabled = true;
+
+        // Create a checkout session on your server
+        const response = await fetch('https://khbra-backend.onrender.com//create-checkout-session', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            serviceType: serviceType,
+            amount: amount,
+            currency: 'sar',
+            successUrl: window.location.origin + '/success.html',
+            cancelUrl: window.location.origin + '/services.html',
+          }),
+        });
+
+        const session = await response.json();
+
+        // Redirect to Stripe Checkout
+        const result = await stripe.redirectToCheckout({
+          sessionId: session.id
+        });
+
+        if (result.error) {
+          alert(result.error.message);
+          // Reset button state
+          button.innerHTML = originalText;
+          button.disabled = false;
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('An error occurred. Please try again.');
+        // Reset button state
+        button.innerHTML = originalText;
+        button.disabled = false;
+      }
+    }
+  </script>
+</body>
+</html> 
