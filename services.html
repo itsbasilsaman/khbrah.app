@@ -24,6 +24,7 @@
   <link href="/Assets/khbrah-logo.png" rel="shortcut icon" type="image/x-icon">
   <link href="/Assets/khbrah-logo.png" rel="apple-touch-icon">
   <link href="css/language-switch.css" rel="stylesheet" type="text/css">
+  <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Stripe.js -->
   <script src="https://js.stripe.com/v3/"></script>
@@ -149,6 +150,7 @@
       border-radius: 1rem;
       overflow: hidden;
       position: relative;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     .service-card::before {
@@ -302,6 +304,8 @@
 
     .payment-modal.active {
       display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .payment-form {
@@ -327,6 +331,189 @@
       color: #4CAF50;
       font-size: 4rem;
       margin-bottom: 1rem;
+    }
+
+    /* Budget Selector Styles */
+    .budget-selector {
+      display: flex;
+      gap: 1rem;
+      margin: 1rem 0;
+      flex-wrap: wrap;
+    }
+
+    .budget-option {
+      padding: 0.5rem 1rem;
+      border: 2px solid #e5e7eb;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .budget-option.selected {
+      background: #000;
+      color: white;
+      border-color: #000;
+    }
+
+    /* Chat Interface Styles */
+    .chat-interface {
+      display: none; /* Hidden by default */
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 350px;
+      height: 500px;
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+      transition: all 0.3s ease;
+    }
+
+    .chat-header {
+      padding: 1rem;
+      background: #000;
+      color: white;
+      border-radius: 1rem 1rem 0 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .chat-messages {
+      height: 350px;
+      overflow-y: auto;
+      padding: 1rem;
+    }
+
+    .chat-input {
+      padding: 1rem;
+      border-top: 1px solid #e5e7eb;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .chat-input input {
+      flex: 1;
+      padding: 0.75rem;
+      border: 1px solid #e5e7eb;
+      border-radius: 9999px;
+      transition: all 0.3s ease;
+    }
+
+    .chat-input input:disabled {
+      background-color: #f3f4f6;
+      cursor: not-allowed;
+    }
+
+    /* File Upload Styles */
+    .file-upload {
+      border: 2px dashed #e5e7eb;
+      padding: 2rem;
+      text-align: center;
+      border-radius: 1rem;
+      margin: 1rem 0;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .file-upload:hover {
+      border-color: #000;
+      background-color: #f9fafb;
+    }
+
+    .file-upload i {
+      font-size: 2rem;
+      color: #6b7280;
+      margin-bottom: 1rem;
+    }
+
+    .file-upload.has-files {
+      border-color: #10b981;
+      background-color: #f0fdf4;
+    }
+
+    .file-upload.has-files i {
+      color: #10b981;
+    }
+
+    /* Video/Audio Call Interface */
+    .call-interface {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      max-width: 600px;
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      z-index: 1000;
+    }
+
+    .call-options {
+      display: flex;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .call-option {
+      flex: 1;
+      padding: 1rem;
+      border: 2px solid #e5e7eb;
+      border-radius: 1rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .call-option:hover {
+      border-color: #000;
+    }
+
+    .call-option.selected {
+      background: #000;
+      color: white;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .chat-interface {
+        display: none; /* Hide chat interface on mobile */
+      }
+
+      .call-interface {
+        width: 95%;
+        padding: 1rem;
+      }
+
+      .budget-selector {
+        justify-content: center;
+      }
+
+      /* Adjust payment form padding for smaller screens */
+      .payment-form {
+        padding: 1.5rem; /* Reduced padding for screens <= 768px */
+      }
+    }
+
+    /* Specific adjustments for very small screens */
+    @media (max-width: 480px) {
+      .service-card {
+        padding: 1.5rem; /* Reduce padding for smaller screens */
+      }
+      .text-4xl {
+        font-size: 2.25rem; /* Adjust h1 size for very small screens */
+      }
+      .text-xl {
+        font-size: 1.125rem; /* Adjust paragraph size for very small screens */
+      }
+      .header-navigation {
+        padding-top: 1rem; /* Add some top padding to header links */
+        padding-bottom: 1rem;
+      }
     }
   </style>
 </head>
@@ -434,9 +621,16 @@
                 <i class="fas fa-comments text-2xl text-gray-800"></i>
               </div>
               <h3 class="text-2xl font-bold mb-4" data-en="Text Chat Consultation" data-ar="استشارة عبر الدردشة النصية">Text Chat Consultation</h3>
-              <div class="inline-block bg-gray-900 text-white px-4 py-2 rounded-full text-lg font-semibold mb-4">50 SAR</div>
+              
+              <!-- Budget Options -->
+              <div class="budget-selector">
+                <div class="budget-option" data-price="50">50 SAR</div>
+                <div class="budget-option" data-price="100">100 SAR</div>
+                <div class="budget-option" data-price="200">200 SAR</div>
+              </div>
+
               <p class="text-gray-600 mb-6" data-en="Get instant legal advice through our text chat service. Available for both subscription and non-subscription users." data-ar="احصل على مشورة قانونية فورية من خلال خدمة الدردشة النصية. متاح للمشتركين وغير المشتركين.">Get instant legal advice through our text chat service. Available for both subscription and non-subscription users.</p>
-              <button onclick="redirectToCheckout('text_chat', 50, event)" class="w-full bg-black text-white py-3 px-6 rounded-full font-semibold hover:bg-gray-800 transition-colors duration-300" data-en="Get Started" data-ar="ابدأ الآن">Get Started</button>
+              <button onclick="startChat()" class="w-full bg-black text-white py-3 px-6 rounded-full font-semibold hover:bg-gray-800 transition-colors duration-300" data-en="Start Chat" data-ar="ابدأ المحادثة">Start Chat</button>
             </div>
           </div>
 
@@ -447,10 +641,17 @@
                 <i class="fas fa-video text-2xl text-gray-800"></i>
               </div>
               <h3 class="text-2xl font-bold mb-4" data-en="Video & Audio Consultation" data-ar="استشارة عبر الفيديو والصوت">Video & Audio Consultation</h3>
-              <div class="inline-block bg-gray-900 text-white px-4 py-2 rounded-full text-lg font-semibold mb-4">200 SAR</div>
+              
+              <!-- Budget Options -->
+              <div class="budget-selector">
+                <div class="budget-option" data-price="200">200 SAR</div>
+                <div class="budget-option" data-price="500">500 SAR</div>
+                <div class="budget-option" data-price="1000">1000 SAR</div>
+              </div>
+
               <span class="inline-block bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium mb-4" data-en="Free with Subscription" data-ar="مجاني مع الاشتراك">Free with Subscription</span>
               <p class="text-gray-600 mb-6" data-en="Connect with our legal experts through video or audio calls. Free for subscription users up to their plan limit." data-ar="تواصل مع خبرائنا القانونيين عبر مكالمات الفيديو أو الصوت. مجاني للمشتركين حتى الحد المسموح به في خطتهم.">Connect with our legal experts through video or audio calls. Free for subscription users up to their plan limit.</p>
-              <button onclick="redirectToCheckout('video_call', 200, event)" class="w-full bg-black text-white py-3 px-6 rounded-full font-semibold hover:bg-gray-800 transition-colors duration-300" data-en="Get Started" data-ar="ابدأ الآن">Get Started</button>
+              <button onclick="startCall()" class="w-full bg-black text-white py-3 px-6 rounded-full font-semibold hover:bg-gray-800 transition-colors duration-300" data-en="Start Call" data-ar="ابدأ المكالمة">Start Call</button>
             </div>
           </div>
 
@@ -461,50 +662,133 @@
                 <i class="fas fa-gavel text-2xl text-gray-800"></i>
               </div>
               <h3 class="text-2xl font-bold mb-4" data-en="Case Study & Analysis" data-ar="دراسة وتحليل القضية">Case Study & Analysis</h3>
-              <div class="inline-block bg-gray-900 text-white px-4 py-2 rounded-full text-lg font-semibold mb-4">500 - 500,000 SAR</div>
+              
+              <!-- Budget Options -->
+              <div class="budget-selector">
+                <div class="budget-option" data-price="500">500 SAR</div>
+                <div class="budget-option" data-price="1000">1000 SAR</div>
+                <div class="budget-option" data-price="5000">5000 SAR</div>
+              </div>
+
+              <!-- File Upload Section -->
+              <div class="file-upload" onclick="document.getElementById('caseFile').click()">
+                <i class="fas fa-cloud-upload-alt"></i>
+                <p class="text-gray-600" data-en="Click to upload case documents" data-ar="انقر لتحميل وثائق القضية">Click to upload case documents</p>
+                <input type="file" id="caseFile" class="hidden" multiple accept=".pdf,.doc,.docx">
+              </div>
+
               <p class="text-gray-600 mb-6" data-en="Comprehensive case study and legal analysis. Price varies based on case complexity. Available for all users." data-ar="دراسة شاملة وتحليل قانوني. يختلف السعر حسب تعقيد القضية. متاح لجميع المستخدمين.">Comprehensive case study and legal analysis. Price varies based on case complexity. Available for all users.</p>
-              <button onclick="redirectToCheckout('case_study', 500, event)" class="w-full bg-black text-white py-3 px-6 rounded-full font-semibold hover:bg-gray-800 transition-colors duration-300" data-en="Get Started" data-ar="ابدأ الآن">Get Started</button>
+              <button onclick="startCaseStudy()" class="w-full bg-black text-white py-3 px-6 rounded-full font-semibold hover:bg-gray-800 transition-colors duration-300" data-en="Start Analysis" data-ar="ابدأ التحليل">Start Analysis</button>
             </div>
           </div>
         </div>
       </div>
     </main>
 
-    <!-- Payment Modal -->
-    <div id="paymentModal" class="payment-modal">
+    <!-- Chat Interface -->
+    <div id="chatInterface" class="chat-interface">
+      <div class="chat-header">
+        <h3 class="font-bold">Legal Chat Consultation</h3>
+        <button onclick="closeChat()" class="text-white">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="chat-messages" id="chatMessages">
+        <div class="bg-gray-100 p-4 rounded-lg mb-4">
+          <p class="text-gray-600">Welcome to Khbrah Legal Chat! Please complete the payment to start chatting with our legal experts.</p>
+        </div>
+      </div>
+      <div class="chat-input">
+        <input type="text" placeholder="Type your message..." id="chatInput" disabled>
+        <button onclick="sendMessage()" class="bg-black text-white px-4 py-2 rounded-full">
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Call Interface -->
+    <div id="callInterface" class="call-interface">
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="text-xl font-bold">Start Consultation</h3>
+        <button onclick="closeCall()" class="text-gray-500">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="call-options">
+        <div class="call-option" onclick="selectCallType('video')">
+          <i class="fas fa-video mb-2"></i>
+          <p>Video Call</p>
+        </div>
+        <div class="call-option" onclick="selectCallType('audio')">
+          <i class="fas fa-phone mb-2"></i>
+          <p>Audio Call</p>
+        </div>
+      </div>
+      <button onclick="proceedToPayment()" class="w-full bg-black text-white py-3 px-6 rounded-full font-semibold mt-4">Proceed to Payment</button>
+    </div>
+
+    <!-- Chat Payment Modal -->
+    <div id="chatPaymentModal" class="payment-modal">
       <div class="payment-form">
         <div class="flex justify-between items-center mb-6">
-          <h2 class="text-2xl font-bold" data-en="Complete Payment" data-ar="إتمام الدفع">Complete Payment</h2>
-          <button onclick="closePaymentModal()" class="text-gray-500 hover:text-gray-700">
+          <h2 class="text-2xl font-bold" data-en="Chat Payment Required" data-ar="الدفع مطلوب للمحادثة">Chat Payment Required</h2>
+          <button onclick="closeChatPaymentModal()" class="text-gray-500 hover:text-gray-700">
             <i class="fas fa-times text-xl"></i>
           </button>
         </div>
-
-        <!-- Payment Form -->
-        <div id="paymentForm">
-          <div class="mb-4">
-            <label class="block text-gray-700 text-sm font-bold mb-2" data-en="Card Number" data-ar="رقم البطاقة">Card Number</label>
-            <input type="text" class="w-full px-3 py-2 border rounded-lg" placeholder="1234 5678 9012 3456" maxlength="19">
-          </div>
-          <div class="grid grid-cols-2 gap-4 mb-4">
-            <div>
-              <label class="block text-gray-700 text-sm font-bold mb-2" data-en="Expiry Date" data-ar="تاريخ الانتهاء">Expiry Date</label>
-              <input type="text" class="w-full px-3 py-2 border rounded-lg" placeholder="MM/YY" maxlength="5">
-            </div>
-            <div>
-              <label class="block text-gray-700 text-sm font-bold mb-2" data-en="CVV" data-ar="رمز الأمان">CVV</label>
-              <input type="text" class="w-full px-3 py-2 border rounded-lg" placeholder="123" maxlength="3">
-            </div>
-          </div>
-          <button onclick="processPayment()" class="w-full bg-black text-white py-3 px-6 rounded-full font-semibold hover:bg-gray-800 transition-colors duration-300" data-en="Pay Now" data-ar="ادفع الآن">Pay Now</button>
+        <p class="text-gray-600 mb-6" data-en="Please complete the payment to start chatting with our legal experts." data-ar="يرجى إتمام الدفع لبدء المحادثة مع خبرائنا القانونيين.">Please complete the payment to start chatting with our legal experts.</p>
+        <div class="flex gap-4">
+          <button onclick="closeChatPaymentModal()" class="flex-1 bg-gray-200 text-gray-800 py-3 px-6 rounded-full font-semibold hover:bg-gray-300 transition-colors duration-300" data-en="Cancel" data-ar="إلغاء">Cancel</button>
+          <button onclick="proceedToChatPayment()" class="flex-1 bg-black text-white py-3 px-6 rounded-full font-semibold hover:bg-gray-800 transition-colors duration-300" data-en="Proceed to Payment" data-ar="المتابعة للدفع">Proceed to Payment</button>
         </div>
+      </div>
+    </div>
 
-        <!-- Success Message -->
-        <div id="successMessage" class="success-message">
-          <i class="fas fa-check-circle success-icon"></i>
-          <h3 class="text-2xl font-bold mb-2" data-en="Payment Successful!" data-ar="تم الدفع بنجاح!">Payment Successful!</h3>
-          <p class="text-gray-600" data-en="Thank you for your payment. We will contact you shortly." data-ar="شكراً لدفعك. سنتواصل معك قريباً.">Thank you for your payment. We will contact you shortly.</p>
+    <!-- Case Study Payment Modal -->
+    <div id="caseStudyPaymentModal" class="payment-modal">
+      <div class="payment-form">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-2xl font-bold" data-en="Case Study Payment Required" data-ar="الدفع مطلوب لدراسة القضية">Case Study Payment Required</h2>
+          <button onclick="closeCaseStudyPaymentModal()" class="text-gray-500 hover:text-gray-700">
+            <i class="fas fa-times text-xl"></i>
+          </button>
         </div>
+        <p class="text-gray-600 mb-6" data-en="Please complete the payment to start the case study analysis." data-ar="يرجى إتمام الدفع لبدء تحليل دراسة القضية.">Please complete the payment to start the case study analysis.</p>
+        <div class="flex gap-4">
+          <button onclick="closeCaseStudyPaymentModal()" class="flex-1 bg-gray-200 text-gray-800 py-3 px-6 rounded-full font-semibold hover:bg-gray-300 transition-colors duration-300" data-en="Cancel" data-ar="إلغاء">Cancel</button>
+          <button onclick="proceedToCaseStudyPayment()" class="flex-1 bg-black text-white py-3 px-6 rounded-full font-semibold hover:bg-gray-800 transition-colors duration-300" data-en="Proceed to Payment" data-ar="المتابعة للدفع">Proceed to Payment</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fallback Payment Section -->
+    <div id="fallbackPaymentSection" class="payment-modal">
+      <div class="payment-form">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-2xl font-bold" data-en="Complete Payment" data-ar="إتمام الدفع">Complete Payment</h2>
+          <button onclick="closeFallbackPayment()" class="text-gray-500 hover:text-gray-700">
+            <i class="fas fa-times text-xl"></i>
+          </button>
+        </div>
+        <div class="mb-6">
+          <p class="text-gray-600" data-en="Amount to Pay:" data-ar="المبلغ المطلوب:">Amount to Pay:</p>
+          <p class="text-2xl font-bold" id="fallbackAmount">0 SAR</p>
+        </div>
+        <div class="mb-4">
+          <label class="block text-gray-700 text-sm font-bold mb-2" data-en="Card Number" data-ar="رقم البطاقة">Card Number</label>
+          <input type="text" class="w-full px-3 py-2 border rounded-lg" placeholder="1234 5678 9012 3456" maxlength="19">
+        </div>
+        <div class="grid grid-cols-2 gap-4 mb-4">
+          <div>
+            <label class="block text-gray-700 text-sm font-bold mb-2" data-en="Expiry Date" data-ar="تاريخ الانتهاء">Expiry Date</label>
+            <input type="text" class="w-full px-3 py-2 border rounded-lg" placeholder="MM/YY" maxlength="5">
+          </div>
+          <div>
+            <label class="block text-gray-700 text-sm font-bold mb-2" data-en="CVV" data-ar="رمز الأمان">CVV</label>
+            <input type="text" class="w-full px-3 py-2 border rounded-lg" placeholder="123" maxlength="3">
+          </div>
+        </div>
+        <button onclick="processFallbackPayment()" class="w-full bg-black text-white py-3 px-6 rounded-full font-semibold hover:bg-gray-800 transition-colors duration-300" data-en="Pay Now" data-ar="ادفع الآن">Pay Now</button>
       </div>
     </div>
 
@@ -523,7 +807,8 @@
   <script>
     let currentPayment = {
       serviceType: '',
-      amount: 0
+      amount: 0,
+      paymentType: '' // 'chat', 'caseStudy', or 'call'
     };
 
     function showPaymentModal(serviceType, amount) {
@@ -630,6 +915,211 @@
           event.target.disabled = false;
         }
       }
+    }
+
+    // Budget Selection
+    document.querySelectorAll('.budget-option').forEach(option => {
+      option.addEventListener('click', function() {
+        // Remove selected class from siblings
+        this.parentElement.querySelectorAll('.budget-option').forEach(opt => {
+          opt.classList.remove('selected');
+        });
+        // Add selected class to clicked option
+        this.classList.add('selected');
+      });
+    });
+
+    // Chat Interface
+    function startChat() {
+      const selectedBudget = document.querySelector('.budget-option.selected');
+      if (!selectedBudget) {
+        alert('Please select a budget first');
+        return;
+      }
+      showChatPaymentModal(selectedBudget.dataset.price);
+    }
+
+    function showChatPaymentModal(amount) {
+      currentPayment = {
+        serviceType: 'chat',
+        amount: amount,
+        paymentType: 'chat'
+      };
+      document.getElementById('chatPaymentModal').classList.add('active');
+    }
+
+    function closeChatPaymentModal() {
+      document.getElementById('chatPaymentModal').classList.remove('active');
+    }
+
+    function proceedToChatPayment() {
+      try {
+        const selectedBudget = document.querySelector('.budget-option.selected');
+        redirectToCheckout('chat', selectedBudget.dataset.price, event);
+      } catch (error) {
+        console.error('Error with Stripe:', error);
+        showFallbackPayment(selectedBudget.dataset.price, 'chat');
+      }
+    }
+
+    // Case Study
+    function startCaseStudy() {
+      const selectedBudget = document.querySelector('.budget-option.selected');
+      const files = document.getElementById('caseFile').files;
+      
+      if (!selectedBudget) {
+        alert('Please select a budget first');
+        return;
+      }
+      
+      if (files.length === 0) {
+        alert('Please upload case documents first');
+        return;
+      }
+      
+      // Show payment modal immediately
+      showCaseStudyPaymentModal(selectedBudget.dataset.price);
+    }
+
+    function showCaseStudyPaymentModal(amount) {
+      currentPayment = {
+        serviceType: 'caseStudy',
+        amount: amount,
+        paymentType: 'caseStudy'
+      };
+      document.getElementById('caseStudyPaymentModal').classList.add('active');
+    }
+
+    function closeCaseStudyPaymentModal() {
+      document.getElementById('caseStudyPaymentModal').classList.remove('active');
+    }
+
+    function proceedToCaseStudyPayment() {
+      try {
+        const selectedBudget = document.querySelector('.budget-option.selected');
+        redirectToCheckout('caseStudy', selectedBudget.dataset.price, event);
+      } catch (error) {
+        console.error('Error with Stripe:', error);
+        showFallbackPayment(selectedBudget.dataset.price, 'caseStudy');
+      }
+    }
+
+    // Fallback Payment
+    function showFallbackPayment(amount, type) {
+      currentPayment.paymentType = type;
+      document.getElementById('fallbackAmount').textContent = `${amount} SAR`;
+      document.getElementById('fallbackPaymentSection').classList.add('active');
+    }
+
+    function closeFallbackPayment() {
+      document.getElementById('fallbackPaymentSection').classList.remove('active');
+    }
+
+    function processFallbackPayment() {
+      // Simulate payment processing
+      const loadingButton = document.querySelector('#fallbackPaymentSection button');
+      const originalText = loadingButton.innerHTML;
+      loadingButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+      loadingButton.disabled = true;
+
+      setTimeout(() => {
+        loadingButton.innerHTML = originalText;
+        loadingButton.disabled = false;
+        alert('Payment processed successfully!');
+        closeFallbackPayment();
+        
+        // Open the appropriate interface based on payment type
+        if (currentPayment.paymentType === 'chat') {
+          document.getElementById('chatInterface').dataset.paid = 'true';
+          document.getElementById('chatInput').disabled = false;
+          document.getElementById('chatInput').placeholder = 'Type your message...';
+        } else if (currentPayment.paymentType === 'caseStudy') {
+          alert('Your case study analysis will begin shortly. We will contact you with the results.');
+        }
+      }, 2000);
+    }
+
+    // Modify the chat input to check for payment
+    document.getElementById('chatInput').addEventListener('focus', function() {
+      if (!document.getElementById('chatInterface').dataset.paid) {
+        this.blur();
+        showChatPaymentModal(currentPayment.amount);
+      }
+    });
+
+    // Modify sendMessage to check for payment
+    function sendMessage() {
+      if (!document.getElementById('chatInterface').dataset.paid) {
+        showChatPaymentModal(currentPayment.amount);
+        return;
+      }
+
+      const input = document.getElementById('chatInput');
+      const message = input.value.trim();
+      if (message) {
+        const chatMessages = document.getElementById('chatMessages');
+        const messageElement = document.createElement('div');
+        messageElement.className = 'bg-gray-100 p-3 rounded-lg mb-2';
+        messageElement.textContent = message;
+        chatMessages.appendChild(messageElement);
+        input.value = '';
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+      }
+    }
+
+    // Call Interface
+    function startCall() {
+      const selectedBudget = document.querySelector('.budget-option.selected');
+      if (!selectedBudget) {
+        alert('Please select a budget first');
+        return;
+      }
+      document.getElementById('callInterface').style.display = 'block';
+    }
+
+    function closeCall() {
+      document.getElementById('callInterface').style.display = 'none';
+    }
+
+    function selectCallType(type) {
+      document.querySelectorAll('.call-option').forEach(option => {
+        option.classList.remove('selected');
+      });
+      event.currentTarget.classList.add('selected');
+    }
+
+    // File Upload Preview
+    document.getElementById('caseFile').addEventListener('change', function(e) {
+      const fileUpload = this.parentElement;
+      if (this.files.length > 0) {
+        fileUpload.classList.add('has-files');
+        fileUpload.innerHTML = `
+          <i class="fas fa-check-circle text-green-500"></i>
+          <p class="text-gray-600">${this.files.length} file(s) selected</p>
+          <button onclick="startCaseStudy()" class="mt-4 bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition-colors duration-300">
+            Start Analysis
+          </button>
+        `;
+      } else {
+        fileUpload.classList.remove('has-files');
+        fileUpload.innerHTML = `
+          <i class="fas fa-cloud-upload-alt"></i>
+          <p class="text-gray-600">Click to upload case documents</p>
+        `;
+      }
+    });
+
+    // Initialize chat interface
+    document.addEventListener('DOMContentLoaded', function() {
+      const chatInterface = document.getElementById('chatInterface');
+      // Removed: chatInterface.style.display = 'block'; // Let CSS handle initial display
+      document.getElementById('chatInput').disabled = true;
+      document.getElementById('chatInput').placeholder = 'Complete payment to start chatting...';
+    });
+
+    // Close chat interface
+    function closeChat() {
+      document.getElementById('chatInterface').style.display = 'none';
     }
   </script>
 </body>
