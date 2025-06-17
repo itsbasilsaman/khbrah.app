@@ -17,6 +17,12 @@ document.addEventListener('DOMContentLoaded', function() {
         if (languageToggle) languageToggle.checked = true;
         if (languageToggleMobile) languageToggleMobile.checked = true;
         switchLanguage('ar');
+    } else {
+        // Default to Arabic if no language is saved or if it's English
+        if (languageToggle) languageToggle.checked = true;
+        if (languageToggleMobile) languageToggleMobile.checked = true;
+        switchLanguage('ar');
+        localStorage.setItem('language', 'ar'); // Save Arabic as default
     }
     
     // Add event listeners for both toggles
@@ -63,9 +69,10 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
         
-        // Set direction for the rest of the document
+        // Set direction and text alignment for the rest of the document
         document.querySelectorAll('body > *:not(.header):not(.home-about-us):not(.testimonials)').forEach(element => {
             element.setAttribute('dir', language === 'ar' ? 'rtl' : 'ltr');
+            element.style.textAlign = language === 'ar' ? 'right' : 'left';
         });
         
         // Update all elements with data attributes
