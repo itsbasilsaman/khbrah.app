@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="Payment Completed" data-ar="تم الدفع">Payment Completed</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="Assets/khbrah-logo.png">
+    <style>
+      @keyframes confetti {
+        0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+        100% { transform: translateY(600px) rotate(360deg); opacity: 0; }
+      }
+      .confetti {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        border-radius: 2px;
+        opacity: 0.8;
+        animation: confetti 2.5s linear infinite;
+      }
+      /* Language Switch Styles */
+      .language-switch {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+      }
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 80px;
+        height: 46px;
+      }
+      .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #000000;
+        transition: .4s;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 8px;
+      }
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 39px;
+        width: 39px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: .4s;
+        z-index: 2;
+      }
+      .lang-text {
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        z-index: 1;
+      }
+      .lang-text.en {
+        margin-right: 8px;
+      }
+      .lang-text.ar {
+        margin-left: 8px;
+      }
+      input:checked + .slider {
+        background-color: #000000;
+      }
+      input:checked + .slider:before {
+        transform: translateX(32px);
+      }
+      .slider.round {
+        border-radius: 34px;
+      }
+      .slider.round:before {
+        border-radius: 50%;
+      }
+      @media (max-width: 1024px) {
+        .language-switch-desktop { display: none !important; }
+        .language-switch-mobile { display: flex !important; }
+      }
+      @media (min-width: 1025px) {
+        .language-switch-desktop { display: flex !important; }
+        .language-switch-mobile { display: none !important; }
+      }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-white via-gray-50 to-gray-100 min-h-screen flex items-center justify-center overflow-x-hidden">
+    <!-- Language Switcher Top Bar -->
+    <div class="w-full flex flex-col items-center fixed top-0 left-0 z-50 pt-4 bg-transparent">
+      <div class="language-switch language-switch-desktop mb-2">
+        <label class="switch">
+          <input type="checkbox" id="languageToggle" checked>
+          <span class="slider round">
+            <span class="lang-text en absolute left-2 top-1/2 -translate-y-1/2">EN</span>
+            <span class="lang-text ar absolute right-2 top-1/2 -translate-y-1/2">AR</span>
+          </span>
+        </label>
+      </div>
+      <div class="language-switch language-switch-mobile mb-2" style="display:none;">
+        <label class="switch">
+          <input type="checkbox" id="languageToggleMobile" checked>
+          <span class="slider round">
+            <span class="lang-text en absolute left-2 top-1/2 -translate-y-1/2">EN</span>
+            <span class="lang-text ar absolute right-2 top-1/2 -translate-y-1/2">AR</span>
+          </span>
+        </label>
+      </div>
+    </div>
+    <div class="absolute inset-0 pointer-events-none z-0">
+      <!-- Confetti Elements -->
+      <div id="confetti-container"></div>
+    </div>
+    <main class="relative z-10 w-full max-w-lg mx-2 sm:mx-4 pt-28 sm:pt-32 md:pt-36">
+        <div class="  rounded-2xl sm:rounded-3xl   p-4 sm:p-8 md:p-12 text-center animate-fade-in relative">
+           
+            <img src="Assets/khbrah-logo.png" alt="Khbrah Logo" class="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 animate-float"/>
+            <div class="flex items-center justify-center mb-4 sm:mb-6">
+                <div class="relative w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center">
+                    <!-- Animated Tick Loader -->
+                    <svg id="tick-loader" class="absolute inset-0 w-full h-full" viewBox="0 0 96 96" fill="none">
+                        <circle id="loader-circle" cx="48" cy="48" r="38" stroke="#22c55e" stroke-width="8" fill="none" stroke-linecap="round" stroke-dasharray="238" stroke-dashoffset="0">
+                            <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 48 48" to="360 48 48" dur="1.5s" repeatCount="indefinite"/>
+                        </circle>
+                    </svg>
+                    <svg id="tick-success" class="absolute inset-0 w-full h-full" viewBox="0 0 96 96" fill="none" style="opacity:0;">
+                        <circle cx="48" cy="48" r="44" stroke="#22c55e" stroke-width="8" fill="#dcfce7"/>
+                        <path id="tick-path" d="M32 50l12 12 20-24" stroke="#22c55e" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke-dasharray="44" stroke-dashoffset="44"/>
+                    </svg>
+                </div>
+            </div>
+            <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4 animate-slide-up" data-en="Payment Completed!" data-ar="تم الدفع بنجاح!">Payment Completed!</h1>
+            <p class="text-gray-600 text-base sm:text-lg mb-6 sm:mb-8 animate-fade-in" data-en="Thank you for your payment. Your transaction was successful. Our team will contact you soon." data-ar="شكراً لدفعك. تمت العملية بنجاح. سيتواصل معك فريقنا قريباً.">Thank you for your payment. Your transaction was successful. Our team will contact you soon.</p>
+        </div>
+    </main>
+    <script>
+      // Confetti animation
+      const confettiColors = ["#22c55e", "#fbbf24", "#3b82f6", "#ef4444", "#a21caf", "#f59e42", "#10b981"];
+      const confettiContainer = document.getElementById('confetti-container');
+      for (let i = 0; i < 32; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = Math.random() * 100 + 'vw';
+        confetti.style.background = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+        confetti.style.animationDelay = (Math.random() * 2) + 's';
+        confettiContainer.appendChild(confetti);
+      }
+      // Animate elements on load
+      window.addEventListener('load', () => {
+        document.body.classList.add('loaded');
+        // Tick loader animation
+        setTimeout(() => {
+          document.getElementById('tick-loader').style.display = 'none';
+          const tickSuccess = document.getElementById('tick-success');
+          tickSuccess.style.opacity = 1;
+          const tickPath = document.getElementById('tick-path');
+          tickPath.style.transition = 'stroke-dashoffset 0.7s ease';
+          tickPath.style.strokeDashoffset = 0;
+        }, 1500);
+        // Close page functionality
+        document.getElementById('close-page-btn').onclick = function() {
+          window.close();
+          setTimeout(function() {
+            if (!window.closed) {
+              alert('Please close this tab manually.');
+            }
+          }, 300);
+        };
+      });
+    </script>
+    <script src="js/language-switch.js"></script>
+</body>
+</html> 

@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('language', language);
     }
     
-    // Check for saved language preference
+    // Chec k for saved language preference
     const savedLanguage = localStorage.getItem('language');
     if (savedLanguage === 'ar') {
         if (languageToggle) languageToggle.checked = true;
