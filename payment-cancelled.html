@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-en="Payment Cancelled" data-ar="تم إلغاء الدفع">Payment Cancelled</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" href="Assets/khbrah-logo.png">
+    <style>
+      @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+        20%, 40%, 60%, 80% { transform: translateX(5px); }
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+      }
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateX(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      .shake-animation {
+        animation: shake 0.8s ease-in-out;
+      }
+      .fade-in-up {
+        animation: fadeInUp 0.8s ease-out;
+      }
+      .pulse-animation {
+        animation: pulse 2s infinite;
+      }
+      .float-animation {
+        animation: float 3s ease-in-out infinite;
+      }
+      .slide-in {
+        animation: slideIn 0.6s ease-out;
+      }
+      /* Language Switch Styles */
+      .language-switch {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+      }
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 80px;
+        height: 46px;
+      }
+      .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+      }
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #000000;
+        transition: .4s;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 8px;
+      }
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 39px;
+        width: 39px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: .4s;
+        z-index: 2;
+      }
+      .lang-text {
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        z-index: 1;
+      }
+      .lang-text.en {
+        margin-right: 8px;
+      }
+      .lang-text.ar {
+        margin-left: 8px;
+      }
+      input:checked + .slider {
+        background-color: #000000;
+      }
+      input:checked + .slider:before {
+        transform: translateX(32px);
+      }
+      .slider.round {
+        border-radius: 34px;
+      }
+      .slider.round:before {
+        border-radius: 50%;
+      }
+      @media (max-width: 1024px) {
+        .language-switch-desktop { display: none !important; }
+        .language-switch-mobile { display: flex !important; }
+      }
+      @media (min-width: 1025px) {
+        .language-switch-desktop { display: flex !important; }
+        .language-switch-mobile { display: none !important; }
+      }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-red-50 via-white to-red-50 min-h-screen flex items-center justify-center overflow-x-hidden">
+    <!-- Language Switcher Top Bar -->
+    <div class="w-full flex flex-col items-center fixed top-0 left-0 z-50 pt-4 bg-transparent">
+      <div class="language-switch language-switch-desktop mb-2">
+        <label class="switch">
+          <input type="checkbox" id="languageToggle" checked>
+          <span class="slider round">
+            <span class="lang-text en absolute left-2 top-1/2 -translate-y-1/2">EN</span>
+            <span class="lang-text ar absolute right-2 top-1/2 -translate-y-1/2">AR</span>
+          </span>
+        </label>
+      </div>
+      <div class="language-switch language-switch-mobile mb-2" style="display:none;">
+        <label class="switch">
+          <input type="checkbox" id="languageToggleMobile" checked>
+          <span class="slider round">
+            <span class="lang-text en absolute left-2 top-1/2 -translate-y-1/2">EN</span>
+            <span class="lang-text ar absolute right-2 top-1/2 -translate-y-1/2">AR</span>
+          </span>
+        </label>
+      </div>
+    </div>
+
+    <main class="relative z-10 w-full max-w-lg mx-2 sm:mx-4 pt-28 sm:pt-32 md:pt-36">
+        <div class="bg-white rounded-2xl sm:rounded-3xl shadow-xl p-4 sm:p-8 md:p-12 text-center relative">
+            <!-- Background decorative elements -->
+            <div class="absolute top-4 right-4 w-16 h-16 bg-red-100 rounded-full opacity-20"></div>
+            <div class="absolute bottom-4 left-4 w-12 h-12 bg-red-100 rounded-full opacity-20"></div>
+            
+            <img src="Assets/khbrah-logo.png" alt="Khbrah Logo" class="w-16 h-16 sm:w-20 sm:h-20 mx-auto mb-4 sm:mb-6 float-animation"/>
+            
+            <div class="flex items-center justify-center mb-4 sm:mb-6">
+                <div class="relative w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center">
+                    <!-- Animated X Loader -->
+                    <svg id="x-loader" class="absolute inset-0 w-full h-full" viewBox="0 0 96 96" fill="none">
+                        <circle id="loader-circle" cx="48" cy="48" r="38" stroke="#ef4444" stroke-width="8" fill="none" stroke-linecap="round" stroke-dasharray="238" stroke-dashoffset="0">
+                            <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 48 48" to="360 48 48" dur="1.5s" repeatCount="indefinite"/>
+                        </circle>
+                    </svg>
+                    <svg id="x-success" class="absolute inset-0 w-full h-full" viewBox="0 0 96 96" fill="none" style="opacity:0;">
+                        <circle cx="48" cy="48" r="44" stroke="#ef4444" stroke-width="8" fill="#fef2f2"/>
+                        <path id="x-path-1" d="M32 32l32 32" stroke="#ef4444" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke-dasharray="45" stroke-dashoffset="45"/>
+                        <path id="x-path-2" d="M64 32l-32 32" stroke="#ef4444" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none" stroke-dasharray="45" stroke-dashoffset="45"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4 fade-in-up text-red-600" data-en="Payment Cancelled" data-ar="تم إلغاء الدفع">Payment Cancelled</h1>
+            
+            <p class="text-gray-600 text-base sm:text-lg mb-6 sm:mb-8 fade-in-up" data-en="Your payment was cancelled. No charges were made to your account. You can try again anytime." data-ar="تم إلغاء الدفع. لم يتم خصم أي مبلغ من حسابك. يمكنك المحاولة مرة أخرى في أي وقت.">Your payment was cancelled. No charges were made to your account. You can try again anytime.</p>
+            
+            <!-- Additional Info -->
+            <div class="mt-6 sm:mt-8 p-4 bg-gray-50 rounded-xl slide-in">
+                <div class="flex items-center justify-center mb-2">
+                    <i class="fas fa-info-circle text-blue-500 mx-2"></i>
+                    <span class="text-sm font-medium text-gray-700" data-en="Need Help?" data-ar="تحتاج مساعدة؟">Need Help?</span>
+                </div>
+                <p class="text-xs text-gray-600" data-en="Contact our support team if you have any questions about your payment." data-ar="تواصل مع فريق الدعم إذا كان لديك أي أسئلة حول الدفع.">Contact our support team if you have any questions about your payment.</p>
+                <a href="contact.html" class="text-blue-600 hover:text-blue-800 text-xs font-medium mt-2 inline-block">
+                    <span data-en="Contact Support" data-ar="تواصل مع الدعم">Contact Support</span>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+      // Animate elements on load
+      window.addEventListener('load', () => {
+        document.body.classList.add('loaded');
+        
+        // Add shake animation to the main card
+        const mainCard = document.querySelector('main > div');
+        mainCard.classList.add('shake-animation');
+        
+        // X loader animation
+        setTimeout(() => {
+          document.getElementById('x-loader').style.display = 'none';
+          const xSuccess = document.getElementById('x-success');
+          xSuccess.style.opacity = 1;
+          
+          // Animate X paths
+          const xPath1 = document.getElementById('x-path-1');
+          const xPath2 = document.getElementById('x-path-2');
+          
+          xPath1.style.transition = 'stroke-dashoffset 0.5s ease';
+          xPath2.style.transition = 'stroke-dashoffset 0.5s ease';
+          
+          setTimeout(() => {
+            xPath1.style.strokeDashoffset = 0;
+          }, 100);
+          
+          setTimeout(() => {
+            xPath2.style.strokeDashoffset = 0;
+          }, 300);
+        }, 1500);
+        
+        // Add pulse animation to buttons after a delay
+        setTimeout(() => {
+          const buttons = document.querySelectorAll('button');
+          buttons.forEach(button => {
+            button.classList.add('pulse-animation');
+          });
+        }, 2000);
+      });
+    </script>
+    <script src="js/language-switch.js"></script>
+</body>
+</html> 
