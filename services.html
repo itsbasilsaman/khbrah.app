@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html data-wf-domain="lawfirmtemplate.webflow.io" data-wf-page="5ff7b19427bd828501c3e61c"
-  data-wf-site="5ff723a6a2190a08cd9e2ed2" data-wf-status="1" lang="en">
+  data-wf-site="5ff723a6a2190a08cd9e2ed2" data-wf-status="1" lang="ar" dir="rtl">
 
 <head>
   <meta charset="utf-8">
@@ -602,7 +602,7 @@
             
             <!-- Logo -->
             <a href="index.html" class="flex items-center gap-2 shrink-0">
-              <img src="./Assets/khbrah-logo.png" alt="Khbrah Logo" class="h-12 w-20 object-contain">
+              <img src="./Assets/khbrah-logo.png" alt="Khbrah Logo" class="h-16  object-contain">
             </a>
       
             <!-- Desktop Nav -->
@@ -682,12 +682,30 @@ class="fixed z-50 top-0 right-0 h-full w-72 bg-black/90 text-white backdrop-blur
 
 <!-- Navigation -->
 <nav class="flex flex-col space-y-4 text-lg font-medium">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="services.html">Services</a>
-<a href="features.html">Features</a>
-<a href="packages.html">Plans</a>
-<a href="contact.html">Contact</a>
+<a href="index.html">
+  <span class="en">Home</span>
+  <span class="ar hidden">الرئيسية</span>
+</a>
+<a href="about.html">
+  <span class="en">About</span>
+  <span class="ar hidden">من نحن</span>
+</a>
+<a href="services.html">
+  <span class="en">Services</span>
+  <span class="ar hidden">الخدمات</span>
+</a>
+<a href="features.html">
+  <span class="en">Features</span>
+  <span class="ar hidden">المميزات</span>
+</a>
+<a href="packages.html">
+  <span class="en">Plans</span>
+  <span class="ar hidden">الباقات</span>
+</a>
+<a href="contact.html">
+  <span class="en">Contact</span>
+  <span class="ar hidden">اتصل بنا</span>
+</a>
 </nav>
 
 <!-- Divider -->
@@ -696,7 +714,10 @@ class="fixed z-50 top-0 right-0 h-full w-72 bg-black/90 text-white backdrop-blur
 
 
 <!-- Download Button -->
-<a href="contact.html" class="block text-center text-white font-medium bg-black hover:bg-gray-800 px-4 py-2 rounded-full transition">Download App</a>
+<a href="contact.html" class="block text-center text-white font-medium bg-black hover:bg-gray-800 px-4 py-2 rounded-full transition">
+  <span class="en">Download App</span>
+  <span class="ar hidden">تحميل التطبيق</span>
+</a>
 </div>
 </div>
 
@@ -1311,6 +1332,47 @@ mobileMenu.classList.add('translate-x-full');
       document.getElementById('caseStudyPrice').textContent = formattedValue + ' SAR';
       // Store the selected price for payment processing
       currentPayment.amount = value;
+    }
+
+    // Language switching functionality
+    function toggleLanguage(isArabic) {
+      const englishElements = document.querySelectorAll('.en:not(.lang-text)');
+      const arabicElements = document.querySelectorAll('.ar:not(.lang-text)');
+      
+      if (isArabic) {
+        englishElements.forEach(el => el.classList.add('hidden'));
+        arabicElements.forEach(el => el.classList.remove('hidden'));
+        // Show EN text when in Arabic mode
+        document.querySelectorAll('.lang-text.en').forEach(el => el.classList.remove('hidden'));
+        document.querySelectorAll('.lang-text.ar').forEach(el => el.classList.add('hidden'));
+      } else {
+        englishElements.forEach(el => el.classList.remove('hidden'));
+        arabicElements.forEach(el => el.classList.add('hidden'));
+        // Show AR text when in English mode
+        document.querySelectorAll('.lang-text.en').forEach(el => el.classList.add('hidden'));
+        document.querySelectorAll('.lang-text.ar').forEach(el => el.classList.remove('hidden'));
+      }
+    }
+
+    // Set initial language to Arabic
+    document.addEventListener('DOMContentLoaded', () => {
+      toggleLanguage(true);
+    });
+
+    // Desktop language toggle
+    const languageToggle = document.getElementById('languageToggle');
+    if (languageToggle) {
+      languageToggle.addEventListener('change', (e) => {
+        toggleLanguage(e.target.checked);
+      });
+    }
+
+    // Mobile language toggle
+    const languageToggleMobile = document.getElementById('languageToggleMobile');
+    if (languageToggleMobile) {
+      languageToggleMobile.addEventListener('change', (e) => {
+        toggleLanguage(e.target.checked);
+      });
     }
   </script>
 </body>

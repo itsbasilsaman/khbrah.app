@@ -93,6 +93,129 @@
   font-size: 16px;
 }
 
+/* RTL Support for Services Grid */
+[lang="ar"] .home-practice-areas-grid {
+  direction: rtl;
+  text-align: right;
+}
+
+[lang="ar"] .home-practice-areas-grid .card {
+  direction: rtl;
+  text-align: right;
+}
+
+[lang="ar"] .home-practice-areas-grid .practice-area-card-content {
+  text-align: right;
+}
+
+[lang="ar"] .home-practice-areas-grid .practice-area-card-content h3 {
+  text-align: right;
+}
+
+[lang="ar"] .home-practice-areas-grid .practice-area-card-content p {
+  text-align: right;
+}
+
+/* Ensure grid items flow from right to left in RTL */
+[lang="ar"] .w-layout-grid {
+  direction: rtl;
+}
+
+[lang="ar"] .w-layout-grid > * {
+  direction: ltr; /* Keep content left-to-right within each grid item */
+}
+
+/* RTL Support for Tailwind CSS Grid in services.html */
+[lang="ar"] .grid {
+  direction: rtl;
+}
+
+[lang="ar"] .grid > * {
+  direction: ltr; /* Keep content left-to-right within each grid item */
+}
+
+[lang="ar"] .grid .bg-white {
+  text-align: right;
+}
+
+[lang="ar"] .grid .bg-white h3 {
+  text-align: right;
+}
+
+[lang="ar"] .grid .bg-white p {
+  text-align: right;
+}
+
+[lang="ar"] .grid .bg-white .flex {
+  text-align: right;
+}
+
+/* RTL Support for flex items in service cards */
+[lang="ar"] .flex.items-start.space-x-3 {
+  flex-direction: row-reverse;
+}
+
+[lang="ar"] .flex.items-start.space-x-3 .flex-shrink-0 {
+  margin-left: 0;
+  margin-right: 0.75rem; /* 3 in Tailwind */
+}
+
+/* RTL Support for budget selector */
+[lang="ar"] .budget-selector {
+  text-align: right;
+}
+
+[lang="ar"] .budget-option {
+  text-align: center;
+}
+
+/* RTL Support for price slider */
+[lang="ar"] .flex.justify-between.items-center {
+  flex-direction: row-reverse;
+}
+
+[lang="ar"] .text-center {
+  text-align: center;
+}
+
+/* RTL Support for case results grid */
+[lang="ar"] .home-case-results-grid {
+  direction: rtl;
+}
+
+[lang="ar"] .home-case-results-grid > * {
+  direction: ltr; /* Keep content left-to-right within each grid item */
+}
+
+[lang="ar"] .home-case-results-grid .case-result-card-content {
+  text-align: right;
+}
+
+[lang="ar"] .home-case-results-grid .case-result-card-content h3 {
+  text-align: right;
+}
+
+[lang="ar"] .home-case-results-grid .case-result-card-content p {
+  text-align: right;
+}
+
+[lang="ar"] .home-case-results-grid .case-result-card-price {
+  text-align: right;
+}
+
+/* RTL Support for split content */
+[lang="ar"] .split-content.home-case-results-left {
+  text-align: right;
+}
+
+[lang="ar"] .split-content.home-case-results-left h2 {
+  text-align: right;
+}
+
+[lang="ar"] .split-content.home-case-results-left p {
+  text-align: right;
+}
+
 @media (max-width: 768px) {
   .features-grid {
     grid-template-columns: 1fr;
