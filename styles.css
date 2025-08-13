@@ -283,3 +283,19 @@
 .email-link:hover {
   color: #007bff; /* Email hover color */
 } 
+/* Always force Font Awesome icons to LTR direction, even in RTL mode */
+html[dir="rtl"] .fa,
+html[dir="rtl"] .fas,
+html[dir="rtl"] .far,
+html[dir="rtl"] .fal,
+html[dir="rtl"] .fab {
+  direction: ltr !important;
+}
+html[dir="rtl"] .fa::before,
+html[dir="rtl"] .fas::before,
+html[dir="rtl"] .far::before,
+html[dir="rtl"] .fal::before,
+html[dir="rtl"] .fab::before {
+  direction: ltr !important;
+  unicode-bidi: isolate !important;
+}
