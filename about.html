@@ -659,19 +659,38 @@
     function toggleLanguage(isArabic) {
       const englishElements = document.querySelectorAll('.en:not(.lang-text)');
       const arabicElements = document.querySelectorAll('.ar:not(.lang-text)');
-      
+      // About hero direction switch
+      const aboutHero = document.querySelector('.container-medium-687px.about-hero');
+      // Story left direction switch
+      const storyLeft = document.querySelector('.split-content.story-left');
       if (isArabic) {
         englishElements.forEach(el => el.classList.add('hidden'));
         arabicElements.forEach(el => el.classList.remove('hidden'));
         // Show EN text when in Arabic mode
         document.querySelectorAll('.lang-text.en').forEach(el => el.classList.remove('hidden'));
         document.querySelectorAll('.lang-text.ar').forEach(el => el.classList.add('hidden'));
+        if (aboutHero) {
+          aboutHero.setAttribute('dir', 'rtl');
+          aboutHero.style.textAlign = 'right';
+        }
+        if (storyLeft) {
+          storyLeft.setAttribute('dir', 'rtl');
+          storyLeft.style.textAlign = 'right';
+        }
       } else {
         englishElements.forEach(el => el.classList.remove('hidden'));
         arabicElements.forEach(el => el.classList.add('hidden'));
         // Show AR text when in English mode
         document.querySelectorAll('.lang-text.en').forEach(el => el.classList.add('hidden'));
         document.querySelectorAll('.lang-text.ar').forEach(el => el.classList.remove('hidden'));
+        if (aboutHero) {
+          aboutHero.setAttribute('dir', 'ltr');
+          aboutHero.style.textAlign = 'left';
+        }
+        if (storyLeft) {
+          storyLeft.setAttribute('dir', 'ltr');
+          storyLeft.style.textAlign = 'left';
+        }
       }
     }
 

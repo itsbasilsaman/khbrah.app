@@ -15,13 +15,13 @@
   <meta property="og:type" content="website">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome CDN (Latest Version) -->
-  <link
+  <!-- <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
   integrity="sha512-yHptKw8x+Xe+5OqPUGIVThIoQJH1puyV53vTCDGOymA+CZ9SvQHEavz06qgZPYKXJCBFk10w9DJif0BFZAK8ug=="
   crossorigin="anonymous"
   referrerpolicy="no-referrer"
-  />
+  /> -->
   <!-- Add this line in your <head> section -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <!-- Font Awesome CDN -->
@@ -762,7 +762,7 @@ mobileMenu.classList.add('translate-x-full');
           <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl border border-gray-100 flex flex-col h-full">
             <div class="p-8 flex-grow">
               <div class="w-16 h-16 bg-gradient-to-br from-gray-50 to-gray-100 rounded-full flex items-center justify-center mb-6 shadow-sm">
-                <i class="fas fa-comments text-2xl text-gray-800"></i>
+                <i class="bi bi-chat-dots text-2xl text-gray-800"></i>
               </div>
               <h3 class="text-2xl font-bold mb-4 text-gradient" data-en="Text Chat Consultation" data-ar="استشارة عبر الدردشة النصية">Text Chat Consultation</h3>
               
@@ -775,25 +775,25 @@ mobileMenu.classList.add('translate-x-full');
               <div class="mb-6 space-y-4">
                 <div class="flex items-start space-x-3">
                   <div class="flex-shrink-0 ml-3 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                    <i class="fas fa-check text-green-600 text-sm"></i>
+                    <i class="bi bi-check-lg text-green-600 text-sm"></i>
                   </div>
                   <p class="text-gray-600" data-en="24/7 availability with instant responses" data-ar="متاح على مدار الساعة مع ردود فورية">24/7 availability with instant responses</p>
                 </div>
                 <div class="flex items-start space-x-3">
                   <div class="flex-shrink-0 ml-3 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                    <i class="fas fa-check text-green-600 text-sm"></i>
+                    <i class="bi bi-check-lg text-green-600 text-sm"></i>
                   </div>
                   <p class="text-gray-600" data-en="Expert legal advice from qualified lawyers" data-ar="مشورة قانونية من محامين مؤهلين">Expert legal advice from qualified lawyers</p>
                 </div>
                 <div class="flex items-start space-x-3">
                   <div class="flex-shrink-0 ml-3 w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                    <i class="fas fa-check text-green-600 text-sm"></i>
+                    <i class="bi bi-check-lg text-green-600 text-sm"></i>
                   </div>
                   <p class="text-gray-600" data-en="Document sharing and review capability" data-ar="إمكانية مشاركة ومراجعة المستندات">Document sharing and review capability</p>
                 </div>
                 <div class="flex items-start space-x-3">
                   <div class="flex-shrink-0 ml-3  w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                    <i class="fas fa-check text-green-600 text-sm"></i>
+                    <i class="bi bi-check-lg text-green-600 text-sm"></i>
                   </div>
                   <p class="text-gray-600 pl-3" data-en="Chat history and reference access" data-ar="سجل المحادثات والوصول إلى المراجع">Chat history and reference access</p>
                 </div>
@@ -810,7 +810,7 @@ mobileMenu.classList.add('translate-x-full');
           <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl border border-gray-100 flex flex-col h-full">
             <div class="p-8 flex-grow">
               <div class="w-16 h-16 bg-gradient-to-br from-gray-50 to-gray-100 rounded-full flex items-center justify-center mb-6 shadow-sm">
-                <i class="fas fa-video text-2xl text-gray-800"></i>
+                <i class="bi bi-camera-video text-2xl text-gray-800"></i>
               </div>
               <h3 class="text-2xl font-bold mb-4 text-gradient" data-en="Video & Audio Consultation" data-ar="استشارة عبر الفيديو والصوت">Video & Audio Consultation</h3>
               
@@ -850,7 +850,7 @@ mobileMenu.classList.add('translate-x-full');
           <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl border border-gray-100 flex flex-col h-full">
             <div class="p-8 flex-grow">
               <div class="w-16 h-16 bg-gradient-to-br from-gray-50 to-gray-100 rounded-full flex items-center justify-center mb-6 shadow-sm">
-                <i class="fas fa-gavel text-2xl text-gray-800"></i>
+                <i class="bi bi-journal-text text-2xl text-gray-800"></i>
               </div>
               <h3 class="text-2xl font-bold mb-4 text-gradient" data-en="Case Study & Analysis" data-ar="دراسة وتحليل القضية">Case Study & Analysis</h3>
               
@@ -880,7 +880,7 @@ mobileMenu.classList.add('translate-x-full');
 
               <!-- File Upload Section -->
               <div class="file-upload" onclick="document.getElementById('caseFile').click()">
-                <i class="fas fa-cloud-upload-alt"></i>
+                <i class="bi bi-cloud-arrow-up"></i>
                 <p class="text-gray-600" data-en="Click to upload case documents" data-ar="انقر لتحميل وثائق القضية">Click to upload case documents</p>
                 <input type="file" id="caseFile" class="hidden" multiple accept=".pdf,.doc,.docx">
               </div>
@@ -900,7 +900,7 @@ mobileMenu.classList.add('translate-x-full');
       <div class="chat-header">
         <h3 class="font-bold">Legal Chat Consultation</h3>
         <button onclick="closeChat()" class="text-white">
-          <i class="fas fa-times"></i>
+          <i class="bi bi-x-lg"></i>
         </button>
       </div>
       <div class="chat-messages" id="chatMessages">
@@ -911,7 +911,7 @@ mobileMenu.classList.add('translate-x-full');
       <div class="chat-input">
         <input type="text" placeholder="Type your message..." id="chatInput" disabled>
         <button onclick="sendMessage()" class="bg-black text-white px-4 py-2 rounded-full">
-          <i class="fas fa-paper-plane"></i>
+          <i class="bi bi-paper-plane"></i>
         </button>
       </div>
     </div>
@@ -921,16 +921,16 @@ mobileMenu.classList.add('translate-x-full');
       <div class="flex justify-between items-center mb-4">
         <h3 class="text-xl font-bold">Start Consultation</h3>
         <button onclick="closeCall()" class="text-gray-500">
-          <i class="fas fa-times"></i>
+          <i class="bi bi-x-lg"></i>
         </button>
       </div>
       <div class="call-options">
         <div class="call-option" onclick="selectCallType('video')">
-          <i class="fas fa-video mb-2"></i>
+          <i class="bi bi-camera-video mb-2"></i>
           <p>Video Call</p>
         </div>
         <div class="call-option" onclick="selectCallType('audio')">
-          <i class="fas fa-phone mb-2"></i>
+          <i class="bi bi-telephone mb-2"></i>
           <p>Audio Call</p>
         </div>
       </div>
@@ -943,7 +943,7 @@ mobileMenu.classList.add('translate-x-full');
         <div class="flex justify-between items-center mb-6">
           <h2 class="text-2xl font-bold" data-en="Chat Payment Required" data-ar="الدفع مطلوب للمحادثة">Chat Payment Required</h2>
           <button onclick="closeChatPaymentModal()" class="text-gray-500 hover:text-gray-700">
-            <i class="fas fa-times text-xl"></i>
+            <i class="bi bi-x-lg text-xl"></i>
           </button>
         </div>
         <p class="text-gray-600 mb-6" data-en="Please complete the payment to start chatting with our legal experts." data-ar="يرجى إتمام الدفع لبدء المحادثة مع خبرائنا القانونيين.">Please complete the payment to start chatting with our legal experts.</p>
@@ -960,7 +960,7 @@ mobileMenu.classList.add('translate-x-full');
         <div class="flex justify-between items-center mb-6">
           <h2 class="text-2xl font-bold" data-en="Case Study Payment Required" data-ar="الدفع مطلوب لدراسة القضية">Case Study Payment Required</h2>
           <button onclick="closeCaseStudyPaymentModal()" class="text-gray-500 hover:text-gray-700">
-            <i class="fas fa-times text-xl"></i>
+            <i class="bi bi-x-lg text-xl"></i>
           </button>
         </div>
         <p class="text-gray-600 mb-6" data-en="Please complete the payment to start the case study analysis." data-ar="يرجى إتمام الدفع لبدء تحليل دراسة القضية.">Please complete the payment to start the case study analysis.</p>
@@ -977,7 +977,7 @@ mobileMenu.classList.add('translate-x-full');
         <div class="flex justify-between items-center mb-6">
           <h2 class="text-2xl font-bold" data-en="Complete Payment" data-ar="إتمام الدفع">Complete Payment</h2>
           <button onclick="closeFallbackPayment()" class="text-gray-500 hover:text-gray-700">
-            <i class="fas fa-times text-xl"></i>
+            <i class="bi bi-x-lg text-xl"></i>
           </button>
         </div>
         <div class="mb-6">
@@ -1299,7 +1299,7 @@ mobileMenu.classList.add('translate-x-full');
       if (this.files.length > 0) {
         fileUpload.classList.add('has-files');
         fileUpload.innerHTML = `
-          <i class="fas fa-check-circle text-green-500"></i>
+          <i class="bi bi-check-circle text-green-500"></i>
           <p class="text-gray-600">${this.files.length} file(s) selected</p>
           <button onclick="startCaseStudy()" class="mt-4 bg-black text-white px-6 py-2 rounded-full hover:bg-gray-800 transition-colors duration-300">
             Start Analysis
@@ -1308,7 +1308,7 @@ mobileMenu.classList.add('translate-x-full');
       } else {
         fileUpload.classList.remove('has-files');
         fileUpload.innerHTML = `
-          <i class="fas fa-cloud-upload-alt"></i>
+          <i class="bi bi-cloud-arrow-up"></i>
           <p class="text-gray-600">Click to upload case documents</p>
         `;
       }
@@ -1385,4 +1385,4 @@ mobileMenu.classList.add('translate-x-full');
     }
   </script>
 </body>
-</html> 
+</html>

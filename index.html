@@ -42,6 +42,8 @@ crossorigin="anonymous"
 referrerpolicy="no-referrer"
 />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!-- Bootstrap Icons CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
    
   <script src="ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
   <script
@@ -109,6 +111,14 @@ referrerpolicy="no-referrer"
     .w-webflow-badge {
       display: none !important;
     }
+      /* RTL support for home-about-us-box */
+      [lang="ar"] .home-about-us-box {
+        direction: rtl;
+        text-align: right;
+      }
+      [lang="ar"] .home-about-us-box .paragraph.home-about-us {
+        text-align: right;
+      }
     /* Language Switch Styles */
     .language-switch {
       display: flex;
@@ -215,6 +225,21 @@ referrerpolicy="no-referrer"
     .animate-slide-in {
       animation: slideIn 0.8s ease-out forwards;
     }
+
+    [lang="ar"] .top-content.home-case-results {
+  direction: rtl;
+  text-align: right;
+}
+
+[lang="ar"] .top-content.home-case-results .split-content.home-case-results-left h2,
+[lang="ar"] .top-content.home-case-results .split-content.home-case-results-left p {
+  text-align: right;
+}
+
+[lang="ar"] .top-content.home-case-results .split-content.home-case-results-right {
+  text-align: right;
+}
+
 
     
   </style>
@@ -421,11 +446,11 @@ referrerpolicy="no-referrer"
                   <!-- CTA Buttons -->
                   <div class="flex flex-col gap-4 opacity-0 sm:flex-row animate-slide-up animate-delay-1000 hidden sm:flex">
                       <button class="inline-flex items-center justify-center px-6 py-4 font-semibold text-white transition-all duration-300 transform bg-gray-800 group hover:bg-gray-900 hover:scale-105">
-                        <i class="mr-2 fab pl-2 fa-android"></i>
+                        <i class="bi bi-android2 mx-2 pl-2"></i>
                         <span data-en="Download for Android" data-ar="تحميل للأندرويد"></span>
                       </button>
                       <button class="inline-flex items-center justify-center px-6 py-4 font-semibold text-black transition-all duration-300 transform bg-gray-200 group hover:bg-gray-300 hover:scale-105">
-                        <i class="mr-2 pl-2 fab fa-apple"></i>
+                        <i class="bi bi-apple mx-2 pl-2"></i>
                         <span data-en="Download for iOS" data-ar="تحميل للآيفون"></span>
                       </button>
                   </div>
@@ -499,11 +524,11 @@ referrerpolicy="no-referrer"
                           <!-- CTA Buttons for Mobile View -->
                           <div class="flex flex-col gap-4 mt-4 opacity-0 sm:hidden animate-slide-up animate-delay-1000 pt-3">
                               <button class="inline-flex items-center justify-center px-6 py-4 font-semibold text-white transition-all duration-300 transform bg-gray-800 group hover:bg-gray-900 hover:scale-105">
-                                <i class="mr-2 fab pl-2 fa-android"></i>  
+                                <i class="bi bi-android2 mx-2"></i>  
                                 <span data-en="Download for Android" data-ar="تحميل للأندرويد">Download for Android</span>
                               </button>
                               <button class="inline-flex items-center justify-center px-6 py-4 font-semibold text-black transition-all duration-300 transform bg-gray-200 group hover:bg-gray-300 hover:scale-105">
-                                <i class="mr-2 pl-2 fab fa-apple"></i>  
+                                <i class="bi bi-apple mx-2"></i>  
                                 <span data-en="Download for iOS" data-ar="تحميل للآيفون">Download for iOS</span>
                               </button>
                           </div>
@@ -571,11 +596,11 @@ referrerpolicy="no-referrer"
             <div class="lg:flex ">
               <div class="_2-buttons home-about-us">
                 <a href=" " class="button-primary home-about-us w-button text-[14px]" >
-                  <i class="mr-2 fab fa-android"></i><span data-en="Download for Android" data-ar="تحميل للأندرويد">Download for Android</span>
+                  <i class="bi bi-android2 mx-2"></i><span data-en="Download for Android" data-ar="تحميل للأندرويد">Download for Android</span>
                 </a>
                 <div class="space _2-buttons"></div>
                 <a href=" " class="button-secondary home-about-us w-button text-[14px]" >
-                  <i class="mr-2 fab fa-apple"></i><span data-en="Download for iOS" data-ar="تحميل للآيفون">Download for iOS</span>
+                  <i class="bi bi-apple mx-2"></i><span data-en="Download for iOS" data-ar="تحميل للآيفون">Download for iOS</span>
                 </a>
               </div>
             </div>
@@ -605,10 +630,10 @@ referrerpolicy="no-referrer"
 </p>
       <h3 class="text-xl font-semibold mb-2" style="color:#1D2C3A; font-family: 'Inter', 'Poppins', Arial, sans-serif;" data-en="Our Features:" data-ar="مميزاتنا:">مميزاتنا:</h3>
       <ul class="space-y-4 mb-8" style="font-family: 'Inter', 'Poppins', Arial, sans-serif;">
-        <li class="flex items-center gap-3" style="color:#607D8B;" data-en="Instant communication: Send your requests to more than 500 lawyers in moments." data-ar="تواصل فوري: أرسل طلباتك إلى أكثر من 500 محامٍ في لحظات."><span class="text-xl"><i class="fa-solid fa-bolt"></i></span> <span><strong data-en="Instant communication:" data-ar="تواصل فوري:">تواصل فوري:</strong> <span data-en="Send your requests to more than 500 lawyers in moments." data-ar="أرسل طلباتك إلى أكثر من 500 محامٍ في لحظات.">أرسل طلباتك إلى أكثر من 500 محامٍ في لحظات.</span></span></li>
-        <li class="flex items-center gap-3" style="color:#607D8B;" data-en="Easy hiring: Choose from the best trusted legal experts with just one click." data-ar="توظيف سهل: اختر من بين أفضل الخبراء القانونيين الموثوقين بنقرة واحدة."><span class="text-xl"><i class="fa-solid fa-user-tie"></i></span> <span><strong data-en="Easy hiring:" data-ar="توظيف سهل:">توظيف سهل:</strong> <span data-en="Choose from the best trusted legal experts with just one click." data-ar="اختر من بين أفضل الخبراء القانونيين الموثوقين بنقرة واحدة.">اختر من بين أفضل الخبراء القانونيين الموثوقين بنقرة واحدة.</span></span></li>
-        <li class="flex items-center gap-3" style="color:#607D8B;" data-en="Flexible packages: Plans starting from 50 SAR to suit your needs." data-ar="باقات مرنة: خطط تبدأ من 50 ريال لتناسب احتياجاتك."><span class="text-xl"><i class="fa-solid fa-box"></i></span> <span><strong data-en="Flexible packages:" data-ar="باقات مرنة:">باقات مرنة:</strong> <span data-en="Plans starting from 50 SAR to suit your needs." data-ar="خطط تبدأ من 50 ريال لتناسب احتياجاتك.">خطط تبدأ من 50 ريال لتناسب احتياجاتك.</span></span></li>
-        <li class="flex items-center gap-3" style="color:#607D8B;" data-en="Ongoing support: Get 24/7 assistance with our premium packages." data-ar="دعم مستمر: احصل على المساعدة على مدار الساعة مع باقاتنا المميزة."><span class="text-xl"><i class="fa-solid fa-clock"></i></span> <span><strong data-en="Ongoing support:" data-ar="دعم مستمر:">دعم مستمر:</strong> <span data-en="Get 24/7 assistance with our premium packages." data-ar="احصل على المساعدة على مدار الساعة مع باقاتنا المميزة.">احصل على المساعدة على مدار الساعة مع باقاتنا المميزة.</span></span></li>
+        <li class="flex items-center gap-3" style="color:#607D8B;" data-en="Instant communication: Send your requests to more than 500 lawyers in moments." data-ar="تواصل فوري: أرسل طلباتك إلى أكثر من 500 محامٍ في لحظات."><span class="text-xl"><i class="bi bi-lightning-charge-fill"></i></span> <span><strong data-en="Instant communication:" data-ar="تواصل فوري:">تواصل فوري:</strong> <span data-en="Send your requests to more than 500 lawyers in moments." data-ar="أرسل طلباتك إلى أكثر من 500 محامٍ في لحظات.">أرسل طلباتك إلى أكثر من 500 محامٍ في لحظات.</span></span></li>
+        <li class="flex items-center gap-3" style="color:#607D8B;" data-en="Easy hiring: Choose from the best trusted legal experts with just one click." data-ar="توظيف سهل: اختر من بين أفضل الخبراء القانونيين الموثوقين بنقرة واحدة."><span class="text-xl"><i class="bi bi-person-badge-fill"></i></span> <span><strong data-en="Easy hiring:" data-ar="توظيف سهل:">توظيف سهل:</strong> <span data-en="Choose from the best trusted legal experts with just one click." data-ar="اختر من بين أفضل الخبراء القانونيين الموثوقين بنقرة واحدة.">اختر من بين أفضل الخبراء القانونيين الموثوقين بنقرة واحدة.</span></span></li>
+        <li class="flex items-center gap-3" style="color:#607D8B;" data-en="Flexible packages: Plans starting from 50 SAR to suit your needs." data-ar="باقات مرنة: خطط تبدأ من 50 ريال لتناسب احتياجاتك."><span class="text-xl"><i class="bi bi-box-seam"></i></span> <span><strong data-en="Flexible packages:" data-ar="باقات مرنة:">باقات مرنة:</strong> <span data-en="Plans starting from 50 SAR to suit your needs." data-ar="خطط تبدأ من 50 ريال لتناسب احتياجاتك.">خطط تبدأ من 50 ريال لتناسب احتياجاتك.</span></span></li>
+        <li class="flex items-center gap-3" style="color:#607D8B;" data-en="Ongoing support: Get 24/7 assistance with our premium packages." data-ar="دعم مستمر: احصل على المساعدة على مدار الساعة مع باقاتنا المميزة."><span class="text-xl"><i class="bi bi-clock-history"></i></span> <span><strong data-en="Ongoing support:" data-ar="دعم مستمر:">دعم مستمر:</strong> <span data-en="Get 24/7 assistance with our premium packages." data-ar="احصل على المساعدة على مدار الساعة مع باقاتنا المميزة.">احصل على المساعدة على مدار الساعة مع باقاتنا المميزة.</span></span></li>
       </ul>
       <p class="text-lg mb-4" style="color:#1D2C3A; font-family: 'Inter', 'Poppins', Arial, sans-serif;" data-en="Don’t waste your time! Join us today and make your legal journey easier and faster. And don’t forget to apply for legal jobs with us—we’ve got your back!" data-ar="لا تضيع وقتك! انضم لنا اليوم وابدأ رحلتك لحماية حقوقك بذكاء وسهولة
 ولا تنسى تقدم طلبك للوظائف المتاحة عندنا ، جربنا واترك الباقي علينا!">لا تضيع وقتك! انضم لنا اليوم وابدأ رحلتك لحماية حقوقك بذكاء وسهولة
@@ -756,11 +781,11 @@ referrerpolicy="no-referrer"
         </div>
         <div data-w-id="bfd4c9e4-e5fa-4b87-7e1b-002947b6efc8" class="justify-center lg:flex">
           <a href=" " class="button-primary home-about-us w-button text-[14px]" data-en="Download for Android" data-ar="تحميل للأندرويد">
-            <i class="mr-2 fab fa-android"></i>Download for Android
+            <i class="bi bi-android2 mr-2"></i>Download for Android
           </a>
           <div class="space _2-buttons"></div>
           <a href=" " class="button-secondary home-about-us w-button text-[14px]" data-en="Download for iOS" data-ar="تحميل للآيفون">
-            <i class="mr-2 fab fa-apple"></i>Download for iOS
+            <i class="bi bi-apple mr-2"></i>Download for iOS
           </a>
         </div>
       </div>
@@ -916,7 +941,7 @@ referrerpolicy="no-referrer"
               <div style="display:block" class="image-solid-cover"></div>
             </div>
             <div class="case-result-card-content">
-              <div class="case-result-card-price" data-en="Video Insights" data-ar="رؤى فيديو">Video Insights</div>
+              <div class="case-result-card-price" data-en="Video Insights" data-ar="بيت الخبرة">House of Expertise</div>
               <h3 class="title case-result-card" data-en="Legal Video Insights" data-ar="رؤى قانونية بالفيديو">Legal Video Insights</h3>
               <p data-en="Stay informed with our comprehensive video insights on various legal topics. Learn about your rights and legal procedures through expert-led video content." data-ar="ابق على اطلاع مع رؤى الفيديو الشاملة حول مختلف المواضيع القانونية. تعرف على حقوقك والإجراءات القانونية من خلال محتوى فيديو بقيادة الخبراء.">Stay informed with our comprehensive video insights on مختلف المواضيع القانونية والتطورات الأخيرة. Learn about your rights and legal procedures through expert-led video content.</p>
             </div>
@@ -973,8 +998,8 @@ referrerpolicy="no-referrer"
             </div>
             <h2 class="title footer-title" data-en="Connect With Us" data-ar="تواصل معنا">تواصل معنا</h2>
             <div class="w-layout-grid footer-social-media-grid"><a href="https://x.com/khbra_sa" target="_blank"
-                class="footer-social-media-link icon-size-16px"><i class="fa-brands fa-x-twitter"></i></a> <a href="https://wa.me/966537166646" target="_blank"
-                class="footer-social-media-link"><i class="fa-brands fa-whatsapp"></i></a></div>
+                class="footer-social-media-link icon-size-16px"><i class="bi bi-twitter-x"></i></a> <a href="https://wa.me/966537166646" target="_blank"
+                class="footer-social-media-link"><i class="bi bi-whatsapp"></i></a></div>
                     </div> 
         </div>
      
@@ -1006,6 +1031,8 @@ referrerpolicy="no-referrer"
         document.querySelectorAll('.lang-text.ar').forEach(el => el.classList.remove('hidden'));
       }
     }
+
+
 
     // Set initial language to Arabic
     document.addEventListener('DOMContentLoaded', () => {

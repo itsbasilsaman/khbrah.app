@@ -5906,7 +5906,7 @@ figcaption {
   width: 14px;
   min-width: 14px;
   height: 14px;
-  margin-right: 20px;
+  margin: 0px 20px;
   display: flex;
   position: relative;
   overflow: hidden;
@@ -7806,7 +7806,7 @@ figcaption {
   }
 
   .faq-icon-wrapper {
-    margin-right: 15px;
+    margin: 0px 15px;
   }
 
   .faq-content {
@@ -9684,7 +9684,7 @@ figcaption {
   }
 
   .faq-icon-wrapper {
-    margin-right: 10px;
+    margin: 0px  10px;
   }
 
   .faq-content {
