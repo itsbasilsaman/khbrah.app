@@ -288,7 +288,7 @@
     mobileMenu.classList.add('translate-x-full');
   });
 </script>
-    <section class="section about-hero mt-16 sm:mt-10">
+    <section class="section about-hero mt-20 sm:mt-16">
       <div data-w-id="25e50fda-014e-d0ca-778b-5f922cbe346a"
         style="-webkit-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(null, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);opacity:0"
         class="container-medium-687px about-hero">
@@ -525,7 +525,7 @@
       </div> -->
     </section>
     <section class="section testimonials">
-      <div data-w-id="b401b05d-bff4-eec9-2e25-1ebfdff9effd" class="container-medium-665px testimonials">
+      <div data-w-id="b401b05d-bff4-eec9-2e25-1ebfdff9effd" class="container-medium-665px testimonials testimonials-header-align">
         <h2 class="text-2xl lg:text-4xl mb-2" data-en="Client Success Stories" data-ar="قصص نجاح العملاء">Client Success Stories</h2>
         <p data-en="Discover how our innovative legal consultation platform has helped clients access quality legal services remotely" data-ar="اكتشف كيف ساعدت منصتنا المبتكرة للاستشارات القانونية العملاء في الوصول إلى خدمات قانونية عالية الجودة عن بعد">Discover how our innovative legal consultation platform has helped clients access quality legal services remotely</p>
       </div>
@@ -654,6 +654,15 @@
     integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
   <script src="5ff723a6a2190a08cd9e2ed2/js/webflow.582146835.js" type="text/javascript"></script>
   <script src="js/language-switch.js" type="text/javascript"></script>
+  <style>
+    /* Fix testimonials header alignment for RTL/Arabic mode */
+    .testimonials-header-align {
+      text-align: left;
+    }
+    html[dir="rtl"] .testimonials-header-align {
+      text-align: right !important;
+    }
+  </style>
   <script>
     // Language switching functionality
     function toggleLanguage(isArabic) {
@@ -663,6 +672,8 @@
       const aboutHero = document.querySelector('.container-medium-687px.about-hero');
       // Story left direction switch
       const storyLeft = document.querySelector('.split-content.story-left');
+      // Testimonials header direction switch
+      const testimonialsHeader = document.querySelector('.testimonials-header-align');
       if (isArabic) {
         englishElements.forEach(el => el.classList.add('hidden'));
         arabicElements.forEach(el => el.classList.remove('hidden'));
@@ -677,6 +688,10 @@
           storyLeft.setAttribute('dir', 'rtl');
           storyLeft.style.textAlign = 'right';
         }
+        if (testimonialsHeader) {
+          testimonialsHeader.setAttribute('dir', 'rtl');
+          testimonialsHeader.style.textAlign = 'right';
+        }
       } else {
         englishElements.forEach(el => el.classList.remove('hidden'));
         arabicElements.forEach(el => el.classList.add('hidden'));
@@ -690,6 +705,10 @@
         if (storyLeft) {
           storyLeft.setAttribute('dir', 'ltr');
           storyLeft.style.textAlign = 'left';
+        }
+        if (testimonialsHeader) {
+          testimonialsHeader.setAttribute('dir', 'ltr');
+          testimonialsHeader.style.textAlign = 'left';
         }
       }
     }

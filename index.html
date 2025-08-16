@@ -804,7 +804,7 @@ referrerpolicy="no-referrer"
         }
         </style>
         <h2 class="text-2xl lg:text-4xl mb-2" data-en="Client Success Stories" data-ar="قصص نجاح العملاء">قصص نجاح العملاء</h2>
-        <p data-en="Discover how our innovative legal consultation platform has helped clients access quality legal services remotely" data-ar="اكتشف كيف ساعدت منصتنا المبتكرة للاستشارات القانونية العملاء في الوصول إلى خدمات قانونية عالية الجودة عن بعد">اكتشف كيف ساعدت منصتنا المبتكرة للاستشارات القانونية العملاء في الوصول إلى خدمات قانونية عالية الجودة عن بعد</p>
+        <p class="lg:hidden" data-en="Discover how our innovative legal consultation platform has helped clients access quality legal services remotely" data-ar="اكتشف كيف ساعدت منصتنا المبتكرة للاستشارات القانونية العملاء في الوصول إلى خدمات قانونية عالية الجودة عن بعد">اكتشف كيف ساعدت منصتنا المبتكرة للاستشارات القانونية العملاء في الوصول إلى خدمات قانونية عالية الجودة عن بعد</p>
       </div>
       <div class="container-default w-container">
         <div class="testimonials-wrapper">
@@ -1016,19 +1016,26 @@ referrerpolicy="no-referrer"
     function toggleLanguage(isArabic) {
       const englishElements = document.querySelectorAll('.en:not(.lang-text)');
       const arabicElements = document.querySelectorAll('.ar:not(.lang-text)');
-      
+      // Testimonial paragraph alignment
+      const testimonialParagraphs = document.querySelectorAll('.paragraph.testimonial');
       if (isArabic) {
         englishElements.forEach(el => el.classList.add('hidden'));
         arabicElements.forEach(el => el.classList.remove('hidden'));
         // Show EN text when in Arabic mode
         document.querySelectorAll('.lang-text.en').forEach(el => el.classList.remove('hidden'));
         document.querySelectorAll('.lang-text.ar').forEach(el => el.classList.add('hidden'));
+        testimonialParagraphs.forEach(p => {
+          p.style.textAlign = 'right';
+        });
       } else {
         englishElements.forEach(el => el.classList.remove('hidden'));
         arabicElements.forEach(el => el.classList.add('hidden'));
         // Show AR text when in English mode
         document.querySelectorAll('.lang-text.en').forEach(el => el.classList.add('hidden'));
         document.querySelectorAll('.lang-text.ar').forEach(el => el.classList.remove('hidden'));
+        testimonialParagraphs.forEach(p => {
+          p.style.textAlign = 'left';
+        });
       }
     }
 
