@@ -1,102 +1,175 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Terms and Conditions | Khbrah</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-white text-gray-900 p-4 md:p-8 py-12 font-sans">
+<html lang="ar" dir="rtl" class="h-full">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>شروط وأحكام منصة خبرة ومحامي خبرة | Terms & Conditions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Mulish&display=swap" rel="stylesheet">
 
-  <div class="max-w-3xl mx-auto"> 
-    <h1 class="text-2xl md:text-3xl font-bold text-black mb-6">Terms and Conditions</h1>
-    <p class="mb-6">Welcome to <strong>Khbrah</strong>. These Terms and Conditions govern your use of our legal services platform. By accessing or using our services, you agree to be bound by these terms.</p>
 
-    <h2 class="text-xl font-semibold text-gray-800 mb-2">1. Acceptance of Terms</h2>
-    <p class="mb-4">By using Khbrah's platform, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions. If you do not agree with any part of these terms, please do not use our services.</p>
+    <style>
+      body { font-family: 'Inter', 'Cairo', Arial, sans-serif; }
+      .lang-switch button[aria-checked="true"] {
+        font-weight: bold;
+        background-color: #111;
+        color: #fff;
+        border-color: #222;
+      }
+      .lang-switch button {
+        font-weight: 500;
+        background: #fff;
+        color: #222;
+        border: 2px solid #eee;
+        border-radius: 0.5rem;
+        transition: all 0.2s;
+      }
+    </style>
+    <script>
+      function switchLang(lang) {
+        document.documentElement.lang = lang;
+        document.documentElement.dir  = (lang === 'ar' ? 'rtl' : 'ltr');
+        document.getElementById('terms-ar').classList.toggle('hidden', lang !== 'ar');
+        document.getElementById('terms-en').classList.toggle('hidden', lang !== 'en');
+        document.getElementById('switch-en').setAttribute('aria-checked', lang === 'en');
+        document.getElementById('switch-ar').setAttribute('aria-checked', lang === 'ar');
+      }
+      window.addEventListener("DOMContentLoaded", () => switchLang('ar'));
+    </script>
+  </head>
+  <body class="min-h-screen bg-white text-gray-900">
+    <div class="w-full min-h-screen flex flex-col items-center px-2 py-8 sm:px-4 md:px-10">
+      <!-- Language Switcher -->
+      <div class="lang-switch flex gap-2 mb-8" role="tablist">
+        <button id="switch-ar" aria-checked="true" aria-label="العربية" onclick="switchLang('ar')" class="px-4 py-2">
+          العربية
+        </button>
+        <button id="switch-en" aria-checked="false" aria-label="English" onclick="switchLang('en')" class="px-4 py-2">
+          English
+        </button>
+      </div>
 
-    <h2 class="text-xl font-semibold text-gray-800 mb-2">2. Service Description</h2>
-    <p class="mb-2">Khbrah provides a legal services platform that connects clients with qualified lawyers for:</p>
-    <ul class="list-disc ml-6 mb-4">
-      <li>Legal consultations via audio, video, and text</li>
-      <li>Document preparation and review services</li>
-      <li>Legal education courses and training</li>
-      <li>Company registration and compliance services</li>
-    </ul>
-
-    <h2 class="text-xl font-semibold text-gray-800 mb-2">3. User Registration and Accounts</h2>
-    <ul class="list-disc ml-6 mb-4">
-      <li>You must provide accurate and complete information during registration</li>
-      <li>You are responsible for maintaining the confidentiality of your account</li>
-      <li>You must notify us immediately of any unauthorized use of your account</li>
-      <li>You must be at least 18 years old to use our services</li>
-    </ul>
-
-    <h2 class="text-xl font-semibold text-gray-800 mb-2">4. Lawyer Verification and Credentials</h2>
-    <p class="mb-4">All lawyers on our platform undergo verification processes. However, we do not guarantee the outcome of legal matters. Legal advice provided is for informational purposes only and does not constitute a lawyer-client relationship until formal engagement.</p>
-
-    <h2 class="text-xl font-semibold text-gray-800 mb-2">5. Payment Terms</h2>
-    <ul class="list-disc ml-6 mb-4">
-      <li>All fees are payable in advance through our secure payment system</li>
-      <li>Consultation fees are non-refundable once the session begins</li>
-      <li>Course fees are refundable within 7 days if not accessed</li>
-      <li>We reserve the right to modify pricing with 30 days' notice</li>
-    </ul>
-
-    <h2 class="text-xl font-semibold text-gray-800 mb-2">6. User Conduct</h2>
-    <p class="mb-2">You agree not to:</p>
-    <ul class="list-disc ml-6 mb-4">
-      <li>Use our services for any illegal or unauthorized purpose</li>
-      <li>Harass, abuse, or harm other users or lawyers</li>
-      <li>Share confidential information obtained through consultations</li>
-      <li>Attempt to gain unauthorized access to our systems</li>
-      <li>Use automated tools to access our services</li>
-    </ul>
-
-    <h2 class="text-xl font-semibold text-gray-800 mb-2">7. Intellectual Property</h2>
-    <ul class="list-disc ml-6 mb-4">
-      <li>All content on our platform is protected by copyright and other intellectual property laws</li>
-      <li>You may not reproduce, distribute, or create derivative works without permission</li>
-      <li>Course materials are for personal use only and may not be shared</li>
-    </ul>
-
-    <h2 class="text-xl font-semibold text-gray-800 mb-2">8. Privacy and Data Protection</h2>
-    <p class="mb-4">Your privacy is important to us. Please review our Privacy Policy to understand how we collect, use, and protect your personal information. By using our services, you consent to our data practices as described in our Privacy Policy.</p>
-
-    <h2 class="text-xl font-semibold text-gray-800 mb-2">9. Limitation of Liability</h2>
-    <p class="mb-4">Khbrah acts as a platform connecting clients and lawyers. We are not responsible for the quality of legal advice provided by lawyers or the outcomes of legal matters. Our liability is limited to the amount paid for our services.</p>
-
-    <h2 class="text-xl font-semibold text-gray-800 mb-2">10. Dispute Resolution</h2>
-    <ul class="list-disc ml-6 mb-4">
-      <li>Any disputes arising from these terms will be resolved through arbitration</li>
-      <li>Arbitration will be conducted in accordance with applicable laws</li>
-      <li>You agree to waive any right to a jury trial or class action lawsuit</li>
-    </ul>
-
-    <h2 class="text-xl font-semibold text-gray-800 mb-2">11. Service Availability</h2>
-    <p class="mb-4">We strive to maintain high service availability but do not guarantee uninterrupted access. We may temporarily suspend services for maintenance, updates, or technical issues.</p>
-
-    <h2 class="text-xl font-semibold text-gray-800 mb-2">12. Termination</h2>
-    <ul class="list-disc ml-6 mb-4">
-      <li>You may terminate your account at any time</li>
-      <li>We may terminate or suspend your account for violations of these terms</li>
-      <li>Upon termination, your right to use our services ceases immediately</li>
-    </ul>
-
-    <h2 class="text-xl font-semibold text-gray-800 mb-2">13. Changes to Terms</h2>
-    <p class="mb-4">We reserve the right to modify these terms at any time. Changes will be effective immediately upon posting. Continued use of our services constitutes acceptance of modified terms.</p>
-
-    <h2 class="text-xl font-semibold text-gray-800 mb-2">14. Governing Law</h2>
-    <p class="mb-4">These terms are governed by the laws of the jurisdiction where Khbrah operates. Any legal proceedings will be brought in the appropriate courts of that jurisdiction.</p>
-
-    <h2 class="text-xl font-semibold text-gray-800 mb-2">15. Severability</h2>
-    <p class="mb-4">If any provision of these terms is found to be unenforceable, the remaining provisions will continue in full force and effect.</p>
-
-    <h2 class="text-xl font-semibold text-gray-800 mb-2">Contact Information</h2>
-    <p class="mb-8">For questions about these Terms and Conditions, please contact us through our in-app support or WhatsApp help center. We're here to help clarify any concerns you may have.</p>
-
-    <p class="text-sm text-gray-600 mb-8">Last updated: December 2024</p>
-  </div>
-
-</body>
-</html> 
+      <div class="w-full max-w-4xl bg-white shadow-xl rounded-2xl px-6 py-10 md:px-10 md:py-12">
+        <!-- Arabic Terms -->
+        <div id="terms-ar"  style="font-family: 'Vazirmatn', sans-serif;">
+          <h1 class="text-3xl font-extrabold mb-5 tracking-tight text-black text-center"  style="font-family: 'Vazirmatn', sans-serif;">شروط وأحكام منصة خبرة ومحامي خبرة</h1>
+          <p class="mb-7 text-lg text-gray-700 text-center">من خلال تسجيلك واستخدامك لتطبيق خبرة ومحامي خبرة، فإنك توافق على الشروط التالية وتخضع لقوانين المملكة العربية السعودية.</p>
+          <ol class="list-decimal list-inside space-y-7 marker:text-black marker:font-bold">
+            <li>
+              <span class="font-semibold text-black mb-2 block">١. الأهلية والتسجيل</span>
+              <span class="pl-2 text-gray-900">يُسمح فقط للمحامين المؤهلين والمرخصين بمزاولة المهنة في المملكة العربية السعودية بالتسجيل كمحامين في التطبيق. المنصة غير مسؤولة عن أي تزوير في مستندات المستخدمين ويُتاح التسجيل برقم هاتف صالح أو حساب Google أو Apple.</span>
+            </li>
+            <li>
+              <span class="font-semibold text-black mb-2 block">٢. لوحة تحكم المشرف والقدرات</span>
+              <span class="pl-2 text-gray-900">مشرفو المنصة يمكنهم إدارة الحسابات، الجلسات، الأرصدة المالية، البنرات وخطط الاشتراك وفقاً للسياسات القانونية.</span>
+            </li>
+            <li>
+              <span class="font-semibold text-black mb-2 block">٣. ميزات المحامي والمسؤوليات</span>
+              <span class="pl-2 text-gray-900">أدوات لإدارة الخدمات، التواصل والجلسات الآمنة. يجب الالتزام بالسرية والدقة والحضور في الوقت المحدد.</span>
+            </li>
+            <li>
+              <span class="font-semibold text-black mb-2 block">٤. خطط الاشتراك للمحامين</span>
+              <span class="pl-2 text-gray-900">خطط مميزة للظهور الأول، لوحة متقدمة، تحميل مقاطع فيديو. تحتفظ المنصة بحق تعديل أو إلغاء أي خطة.</span>
+            </li>
+            <li>
+              <span class="font-semibold text-black mb-2 block">٥. المحفظة وعمليات السحب</span>
+              <span class="pl-2 text-gray-900">الأرباح تُضاف إلى المحفظة مع إمكانية السحب بعد تحقق المشرف. قد يتم حجب السحب في الحالات الخاصة.</span>
+            </li>
+            <li>
+              <span class="font-semibold text-black mb-2 block">٦. الضمان الذهبي</span>
+              <span class="pl-2 text-gray-900">باقة ضمان ذهبي لاسترداد المبالغ وفق شروط محددة، تشمل حضور المقابلات وإثبات الجهود في البحث عن وظيفة.</span>
+            </li>
+            <li>
+              <span class="font-semibold text-black mb-2 block">٧. مقاطع الفيديو التوعوية</span>
+              <span class="pl-2 text-gray-900">تحميل مقاطع توعوية عامة فقط، وتخضع للمراجعة وحذف أي محتوى مخالف.</span>
+            </li>
+            <li>
+              <span class="font-semibold text-black mb-2 block">٨. السلوك والاحترافية</span>
+              <span class="pl-2 text-gray-900">يجب الحفاظ على الاحترافية والسرية، مُنع الانتحال أو التواصل الخارجي أو الإساءة أو إساءة استخدام الصلاحيات.</span>
+            </li>
+            <li>
+              <span class="font-semibold text-black mb-2 block">٩. تحديد المسؤولية</span>
+              <span class="pl-2 text-gray-900">المنصة وسيط وليست مسؤولة عن نتائج النصائح القانونية ما لم يكن بسبب إهمال مباشر منها.</span>
+            </li>
+            <li>
+              <span class="font-semibold text-black mb-2 block">١٠. الخصوصية واستخدام البيانات</span>
+              <span class="pl-2 text-gray-900">حماية البيانات الشخصية وفق الأنظمة، والتشفير واستخدامها فقط لتحسين الأداء.</span>
+            </li>
+            <li>
+              <span class="font-semibold text-black mb-2 block">١١. التعديلات والإيقاف</span>
+              <span class="pl-2 text-gray-900">يحق للمنصة تعديل الشروط أو تعليق الحسابات عند الانتهاك مع إشعار المستخدمين.</span>
+            </li>
+            <li>
+              <span class="font-semibold text-black mb-2 block">١٢. القانون الحاكم</span>
+              <span class="pl-2 text-gray-900">تخضع الشروط لأنظمة المملكة العربية السعودية والنزاعات تؤول للجهات القضائية المختصة.</span>
+            </li>
+            <li>
+              <span class="font-semibold text-black mb-2 block">١٣. تواصل معنا</span>
+              <span class="pl-2 text-gray-900">للتواصل لدينا: <a href="mailto:it@khbrah.sa" class="underline text-black">it@khbrah.sa</a></span>
+            </li>
+          </ol>
+        </div>
+        <!-- English Terms -->
+        <div id="terms-en" class="hidden"  style="font-family: 'Mulish', sans-serif;">
+          <h1 class="text-3xl font-extrabold mb-5 tracking-tight text-black text-center">Terms & Conditions – Khbrah Platform and Khbrah Lawyer</h1>
+          <p class="mb-7 text-lg text-gray-700 text-center">By registering and using Khbrah and Khbrah Lawyer, you agree to the following terms and they are governed by the laws of Saudi Arabia.</p>
+          <ol class="list-decimal list-inside space-y-7 marker:text-black marker:font-bold">
+            <li>
+              <span class="font-semibold text-black mb-2 block">1. Eligibility and Registration</span>
+              <span class="pl-2 text-gray-900">Only qualified and licensed lawyers may register. The platform is not liable for any forgery. Registration available via valid phone or Google/Apple accounts.</span>
+            </li>
+            <li>
+              <span class="font-semibold text-black mb-2 block">2. Admin Dashboard and Capabilities</span>
+              <span class="pl-2 text-gray-900">Admins manage accounts, sessions, finances, banners and subscription plans according to legal policies.</span>
+            </li>
+            <li>
+              <span class="font-semibold text-black mb-2 block">3. Lawyer Features and Responsibilities</span>
+              <span class="pl-2 text-gray-900">Tools for service management, secure communications and sessions. Professional conduct and confidentiality are required.</span>
+            </li>
+            <li>
+              <span class="font-semibold text-black mb-2 block">4. Subscription Plans for Lawyers</span>
+              <span class="pl-2 text-gray-900">Premium plans for search priority, advanced dashboard, video uploads. The platform may change or cancel plans.</span>
+            </li>
+            <li>
+              <span class="font-semibold text-black mb-2 block">5. Wallet and Withdrawals</span>
+              <span class="pl-2 text-gray-900">Earnings are added to the wallet, withdrawals are subject to admin verification and may be restricted in special cases.</span>
+            </li>
+            <li>
+              <span class="font-semibold text-black mb-2 block">6. Golden Guarantee</span>
+              <span class="pl-2 text-gray-900">Refund package with specific conditions: attending interviews and job search proof required.</span>
+            </li>
+            <li>
+              <span class="font-semibold text-black mb-2 block">7. Awareness Videos</span>
+              <span class="pl-2 text-gray-900">Upload only general awareness content. All videos are reviewed and violating content is removed.</span>
+            </li>
+            <li>
+              <span class="font-semibold text-black mb-2 block">8. Conduct and Professionalism</span>
+              <span class="pl-2 text-gray-900">Maintain professionalism and confidentiality. Impersonation, external contact, abuse, or misuse lead to penalties.</span>
+            </li>
+            <li>
+              <span class="font-semibold text-black mb-2 block">9. Limitation of Liability</span>
+              <span class="pl-2 text-gray-900">The platform is an intermediary and not responsible for legal service results, unless due to direct negligence.</span>
+            </li>
+            <li>
+              <span class="font-semibold text-black mb-2 block">10. Privacy and Data Use</span>
+              <span class="pl-2 text-gray-900">Data is protected, encrypted, and used only for platform improvement according to regulations.</span>
+            </li>
+            <li>
+              <span class="font-semibold text-black mb-2 block">11. Modifications and Suspension</span>
+              <span class="pl-2 text-gray-900">The platform may change terms or suspend accounts for violations and will notify users.</span>
+            </li>
+            <li>
+              <span class="font-semibold text-black mb-2 block">12. Governing Law</span>
+              <span class="pl-2 text-gray-900">Terms are governed by Saudi Arabian law; disputes are subject to competent judicial authorities.</span>
+            </li>
+            <li>
+              <span class="font-semibold text-black mb-2 block">13. Contact Us</span>
+              <span class="pl-2 text-gray-900">Contact: <a href="mailto:it@khbrah.sa" class="underline text-black">it@khbrah.sa</a></span>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
