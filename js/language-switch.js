@@ -245,5 +245,87 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         }
+        }
+
+        // Re-attach newsletter handlers in case DOM elements changed after language switch
+        if (typeof attachNewsletterHandlers === 'function') {
+            try { attachNewsletterHandlers(); } catch (err) { console.error('attachNewsletterHandlers error', err); }
+        }
+
+    // Newsletter form handler: show success UI and open WhatsApp with the submitted email
+    function attachNewsletterHandlers() {
+        const phone = '966557063869'; // target WhatsApp number (country code +966, no plus or spaces)
+        const forms = document.querySelectorAll('form[id*="Newsletter"], form[name*="Newsletter"], .footer-newsletter-input-wrapper');
+        forms.forEach(form => {
+            // avoid binding twice
+            if (form.__newsletterAttached) return;
+            form.__newsletterAttached = true;
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Show success UI immediately (even if validation or send fails)
+                try {
+                    const containerImmediate = form.closest('.footer-form-block') || form.parentElement;
+                    if (containerImmediate) {
+                        const successImmediate = containerImmediate.querySelector('.w-form-done');
+                        const errorImmediate = containerImmediate.querySelector('.w-form-fail');
+                        // Hide form and hide error, show success
+                        form.style.display = 'none';
+                        if (errorImmediate) errorImmediate.style.display = 'none';
+                        if (successImmediate) {
+                            successImmediate.style.display = '';
+                            const langImmediate = localStorage.getItem('language') || document.documentElement.getAttribute('lang') || 'en';
+                            const innerImmediate = successImmediate.querySelector('[data-en], [data-ar]');
+                            if (innerImmediate) {
+                                const textImmediate = innerImmediate.getAttribute(`data-${langImmediate}`);
+                                if (textImmediate) innerImmediate.textContent = textImmediate;
+                            }
+                            // Add meta info
+                            const pageUrlImmediate = window.location.href || '';
+                            const pageTitleImmediate = document.title || '';
+                            const labelsImmediate = { en: { page: 'Page', url: 'URL' }, ar: { page: 'الصفحة', url: 'الرابط' } };
+                            const labelImmediate = labelsImmediate[langImmediate] || labelsImmediate.en;
+                            let metaElImmediate = successImmediate.querySelector('.newsletter-meta');
+                            if (!metaElImmediate) {
+                                metaElImmediate = document.createElement('div');
+                                metaElImmediate.className = 'newsletter-meta';
+                                successImmediate.appendChild(metaElImmediate);
+                            }
+                            metaElImmediate.textContent = `${labelImmediate.page}: ${pageTitleImmediate} — ${labelImmediate.url}: ${pageUrlImmediate}`;
+                        }
+                    }
+                } catch (err) {
+                    console.error('newsletter immediate UI error', err);
+                }
+
+                // Continue to prepare the WhatsApp message (use email if provided)
+                const emailInput = form.querySelector('input[type="email"], input[name="email"]');
+                let email = '(no email provided)';
+                if (emailInput) {
+                    // Report validity to the user but proceed regardless
+                    if (!emailInput.checkValidity()) {
+                        try { emailInput.reportValidity(); } catch (err) { /* ignore */ }
+                    }
+                    email = (emailInput.value || '').trim() || email;
+                }
+
+                // Open WhatsApp chat with the provided email (opens in new tab)
+                try {
+                    const pageUrl = window.location.href || '';
+                    const pageTitle = document.title || '';
+                    const lang = localStorage.getItem('language') || document.documentElement.getAttribute('lang') || 'en';
+                    const message = `New newsletter signup:\nEmail: ${email}\nPage: ${pageTitle}\nURL: ${pageUrl}\nLanguage: ${lang}`;
+                    const waUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+                    window.open(waUrl, '_blank');
+                } catch (err) {
+                    console.error('Failed to open WhatsApp URL', err);
+                }
+            });
+        });
     }
-}); 
+
+    // Attach newsletter handlers once on initial load
+    try { attachNewsletterHandlers(); } catch (err) { /* ignore */ }
+
+});

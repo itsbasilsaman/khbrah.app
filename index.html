@@ -307,7 +307,7 @@ referrerpolicy="no-referrer"
             </span>
           </label>
         </div>
-        <a href="contact.html" class="text-white flex justify-center items-center font-medium bg-black hover:bg-gray-100 hover:scale-105 px-4 py-2 rounded-full transition-all duration-300 ease-in-out w-[170px]">
+        <a href="https://play.google.com/store/apps/details?id=com.khbrah.main" class="text-white flex justify-center items-center font-medium bg-black hover:bg-gray-100 hover:scale-105 px-4 py-2 rounded-full transition-all duration-300 ease-in-out w-[170px]">
           <span class="en">Download App</span>
           <span class="ar hidden" style="font-family: 'Noto Sans Arabic', sans-serif;">تحميل التطبيق</span>
         </a>
@@ -377,7 +377,7 @@ referrerpolicy="no-referrer"
     
 
     <!-- Download Button -->
-    <a href="contact.html" class="block text-center text-white font-medium bg-black hover:bg-gray-800 px-4 py-2 rounded-full transition">
+    <a href="https://play.google.com/store/apps/details?id=com.khbrah.main" class="block text-center text-white font-medium bg-black hover:bg-gray-800 px-4 py-2 rounded-full transition">
       <span class="en">Download App</span>
       <span class="ar hidden" style="font-family: 'Noto Sans Arabic', sans-serif;">تحميل التطبيق</span>
     </a>
@@ -445,14 +445,14 @@ referrerpolicy="no-referrer"
 
                   <!-- CTA Buttons -->
                   <div class="flex flex-col gap-4 opacity-0 sm:flex-row animate-slide-up animate-delay-1000 hidden sm:flex">
-                      <button class="inline-flex items-center justify-center px-6 py-4 font-semibold text-white transition-all duration-300 transform bg-gray-800 group hover:bg-gray-900 hover:scale-105">
+                      <a href="https://play.google.com/store/apps/details?id=com.khbrah.main" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-4 font-semibold text-white transition-all duration-300 transform bg-gray-800 group hover:bg-gray-900 hover:scale-105">
                         <i class="bi bi-android2 mx-2 pl-2"></i>
-                        <span data-en="Download for Android" data-ar="تحميل للأندرويد"></span>
-                      </button>
-                      <button class="inline-flex items-center justify-center px-6 py-4 font-semibold text-black transition-all duration-300 transform bg-gray-200 group hover:bg-gray-300 hover:scale-105">
+                        <span data-en="Download for Android" data-ar="تحميل للأندرويد">Download for Android</span>
+                      </a>
+                      <a href="https://apps.apple.com/in/app/%D9%85%D8%AD%D8%A7%D9%85%D9%8A-%D8%AE%D8%A8%D8%B1%D8%A9/id6751870430" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-4 font-semibold text-black transition-all duration-300 transform bg-gray-200 group hover:bg-gray-300 hover:scale-105">
                         <i class="bi bi-apple mx-2 pl-2"></i>
-                        <span data-en="Download for iOS" data-ar="تحميل للآيفون"></span>
-                      </button>
+                        <span data-en="Download for iOS" data-ar="تحميل للآيفون">Download for iOS</span>
+                      </a>
                   </div>
               </div>
 
@@ -514,11 +514,11 @@ referrerpolicy="no-referrer"
             <p class="paragraph home-about-us" data-en="khbrah is your trusted legal consultancy platform, connecting clients with experienced lawyers through innovative digital solutions. Our app offers comprehensive legal services including audio/video consultations, legal document assistance, and expert representation." data-ar="خبرة هي منصتك الموثوقة للاستشارات القانونية، تربط العملاء بمحامين ذوي خبرة من خلال حلول رقمية مبتكرة. تطبيقنا يقدم خدمات قانونية شاملة تشمل الاستشارات الصوتية/المرئية، ومساعدة المستندات القانونية، والتمثيل القانوني المتخصص.">خبرة هي منصتك الموثوقة للاستشارات القانونية، تربط العملاء بمحامين ذوي خبرة من خلال حلول رقمية مبتكرة. تطبيقنا يقدم خدمات قانونية شاملة تشمل الاستشارات الصوتية/المرئية، ومساعدة المستندات القانونية، والتمثيل القانوني المتخصص.</p>
             <div class="lg:flex ">
               <div class="_2-buttons home-about-us">
-                <a href=" " class="button-primary home-about-us w-button text-[14px]" >
+                <a href=" https://play.google.com/store/apps/details?id=com.khbrah.main" class="button-primary home-about-us w-button text-[14px]" >
                   <i class="bi bi-android2 mx-2"></i><span data-en="Download for Android" data-ar="تحميل للأندرويد">Download for Android</span>
                 </a>
                 <div class="space _2-buttons"></div>
-                <a href=" " class="button-secondary home-about-us w-button text-[14px]" >
+                <a href="https://apps.apple.com/in/app/%D9%85%D8%AD%D8%A7%D9%85%D9%8A-%D8%AE%D8%A8%D8%B1%D8%A9/id6751870430 " class="button-secondary home-about-us w-button text-[14px]" >
                   <i class="bi bi-apple mx-2"></i><span data-en="Download for iOS" data-ar="تحميل للآيفون">Download for iOS</span>
                 </a>
               </div>
@@ -596,13 +596,7 @@ referrerpolicy="no-referrer"
         );
       }
 
-      // Function to convert number to Arabic numerals
-      function toArabicNumeral(num) {
-        const arabicNumerals = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩'];
-        return num.toString().split('').map(digit => arabicNumerals[parseInt(digit)]).join('');
-      }
-
-      // Function to animate counting
+      // Function to animate counting (always use Western digits)
       function animateCounter(element) {
         const target = parseInt(element.getAttribute('data-target'));
         const duration = 3000; // 3 seconds
@@ -615,23 +609,18 @@ referrerpolicy="no-referrer"
         const timer = setInterval(() => {
           frame++;
           current = Math.min(target, Math.floor(step * frame));
-          
-          // Check if document is RTL
+
+          // Always display Western (ASCII) digits. Keep plus sign placement
+          // consistent: prefix for LTR, suffix for RTL.
+          const displayCurrent = String(current);
+          const displayTarget = String(target);
           const isRTL = document.documentElement.dir === 'rtl';
-          
+
           if (current >= target) {
-            if (isRTL) {
-              element.textContent = toArabicNumeral(target) + '+';
-            } else {
-              element.textContent = '+' + target;
-            }
+            element.textContent = isRTL ? displayTarget + '+' : '+' + displayTarget;
             clearInterval(timer);
           } else {
-            if (isRTL) {
-              element.textContent = toArabicNumeral(current) + '+';
-            } else {
-              element.textContent = '+' + current;
-            }
+            element.textContent = isRTL ? displayCurrent + '+' : '+' + displayCurrent;
           }
         }, frameDuration);
       }
@@ -699,11 +688,11 @@ referrerpolicy="no-referrer"
           </div>
         </div>
         <div data-w-id="bfd4c9e4-e5fa-4b87-7e1b-002947b6efc8" class="justify-center lg:flex">
-          <a href=" " class="button-primary home-about-us w-button text-[14px]" data-en="Download for Android" data-ar="تحميل للأندرويد">
+          <a href=" https://play.google.com/store/apps/details?id=com.khbrah.main" class="button-primary home-about-us w-button text-[14px]" data-en="Download for Android" data-ar="تحميل للأندرويد">
             <i class="bi bi-android2 mr-2"></i>Download for Android
           </a>
           <div class="space _2-buttons"></div>
-          <a href=" " class="button-secondary home-about-us w-button text-[14px]" data-en="Download for iOS" data-ar="تحميل للآيفون">
+          <a href="https://apps.apple.com/in/app/%D9%85%D8%AD%D8%A7%D9%85%D9%8A-%D8%AE%D8%A8%D8%B1%D8%A9/id6751870430 " class="button-secondary home-about-us w-button text-[14px]" data-en="Download for iOS" data-ar="تحميل للآيفون">
             <i class="bi bi-apple mr-2"></i>Download for iOS
           </a>
         </div>
@@ -802,7 +791,7 @@ referrerpolicy="no-referrer"
         <div data-w-id="aed83d10-eb96-d404-4b84-64f2138da974" class="cta-box">
           <h2 data-en="Request a Free Case Review Today!" data-ar="اطلب مراجعة مجانية لقضيتك اليوم!">اطلب مراجعة مجانية لقضيتك اليوم!</h2>
           <p class="paragraph cta" data-en="Khbrah connects you with experienced legal professionals through audio/video consultations, document support, and expert representation."
-          data-ar="خُبرة تربطك بمحامين محترفين من خلال الاستشارات الصوتية/المرئية، دعم المستندات، والتمثيل القانوني المتخصص.">خُبرة تربطك بمحامين محترفين من خلال الاستشارات الصوتية/المرئية، دعم المستندات، والتمثيل القانوني المتخصص.</p><a href="contact.html" class="button-primary w-button"  data-en="Download App" 
+          data-ar="خُبرة تربطك بمحامين محترفين من خلال الاستشارات الصوتية/المرئية، دعم المستندات، والتمثيل القانوني المتخصص.">خُبرة تربطك بمحامين محترفين من خلال الاستشارات الصوتية/المرئية، دعم المستندات، والتمثيل القانوني المتخصص.</p><a href="https://play.google.com/store/apps/details?id=com.khbrah.main" class="button-primary w-button"  data-en="Download App" 
           data-ar="تحميل التطبيق">Download App</a>
         </div>
       </div>
@@ -817,7 +806,7 @@ referrerpolicy="no-referrer"
             <p data-en="Experience seamless legal consultation through our innovative platform. Connect with expert lawyers through audio, video, and chat consultations, all while setting your own budget." data-ar="اختبر الاستشارة القانونية السلسة من خلال منصتنا المبتكرة. تواصل مع المحامين الخبراء من خلال الاستشارات الصوتية والمرئية والدردشة، مع تحديد ميزانيتك الخاصة.">Experience seamless legal consultation through our innovative platform. Connect with expert lawyers through audio, video, and chat consultations, all while setting your own budget.</p>
           </div>
           <div class="split-content home-case-results-right">
-            <div class="_2-buttons home-case-results"><a href="contact.html"
+            <div class="_2-buttons home-case-results"><a href="https://play.google.com/store/apps/details?id=com.khbrah.main"
                 class="button-primary _2-buttons-class w-button" data-en="Download App" data-ar="تحميل التطبيق">Download App</a>
               <div class="space _2-buttons"></div><a href="case-results.html"
                 class="button-secondary _2-buttons-class w-button" data-en="Our Services" data-ar="خدماتنا">Our Services</a>
@@ -880,7 +869,7 @@ referrerpolicy="no-referrer"
              data-ar="خُبرة تربطك بمحامين محترفين من خلال الاستشارات الصوتية/المرئية، دعم المستندات، والتمثيل القانوني المتخصص.">
             Khbrah connects you with experienced legal professionals through audio/video consultations, document support, and expert representation.
           </p>
-          <a href=" " 
+          <a href=" https://play.google.com/store/apps/details?id=com.khbrah.main" 
              class="button-primary w-button" 
              data-en="Download App" 
              data-ar="تحميل التطبيق">
@@ -911,9 +900,7 @@ referrerpolicy="no-referrer"
               <div class="success-message w-form-done">
                 <div data-en="Thank you for subscribing to our legal newsletter." data-ar="شكراً لاشتراكك في نشرتنا الإخبارية القانونية.">شكراً لاشتراكك في نشرتنا الإخبارية القانونية.</div>
               </div>
-              <div class="error-message w-form-fail">
-                <div data-en="Oops! Something went wrong. Please try again." data-ar="عذراً! حدث خطأ ما. يرجى المحاولة مرة أخرى.">عذراً! حدث خطأ ما. يرجى المحاولة مرة أخرى.</div>
-              </div>
+               >
             </div>
             <h2 class="title footer-title" data-en="Connect With Us" data-ar="تواصل معنا">تواصل معنا</h2>
             <div class="w-layout-grid footer-social-media-grid">

@@ -199,6 +199,22 @@
   text-align: right;
 }
 
+/* Newsletter success meta (page + url) */
+.newsletter-meta {
+  color: #666;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  word-break: break-word;
+}
+
+[lang="ar"] .newsletter-meta {
+  text-align: right;
+}
+
+[lang="en"] .newsletter-meta {
+  text-align: left;
+}
+
 [lang="ar"] .home-case-results-grid .case-result-card-price {
   text-align: right;
 }
