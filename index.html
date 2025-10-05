@@ -272,6 +272,20 @@
     }
   </style>
   <style>
+    /* Mobile safety-net: some Webflow animations set inline opacity:0 and rely on JS to animate in.
+       If the JS fails (blocked or errors), force key hero/about elements visible on small screens. */
+    @media (max-width: 767px) {
+      .page-wrapper,
+      .image-wrapper.home-about-us,
+      .home-about-us-box,
+      .home-about-us-wrapper [style*="opacity:0"] {
+        opacity: 1 !important;
+        transform: none !important;
+        -webkit-transform: none !important;
+      }
+    }
+  </style>
+  <style>
     /* Ensure achievement counters use Western/Latin digits and an English font
        even when the site is in Arabic mode. */
     .achievement-number {
