@@ -5,6 +5,22 @@
 
 <head>
   <meta charset="utf-8">
+  <script>
+    (function(){
+      try{
+        var saved = null;
+        try { saved = localStorage.getItem('siteLang'); } catch(e) { saved = null; }
+        var isArabic = saved ? (saved === 'ar') : true;
+        document.documentElement.lang = isArabic ? 'ar' : 'en';
+        document.documentElement.dir = isArabic ? 'rtl' : 'ltr';
+      }catch(err){}
+    })();
+  </script>
+  <style>
+    html[lang="ar"] .en:not(.lang-text) { display: none !important; }
+    html[lang="ar"] .ar:not(.lang-text) { display: inline !important; }
+    html[lang="ar"] header nav { flex-direction: row-reverse !important; }
+  </style>
 <title>Khbrah – Trusted Digital Legal Consultancy Platform</title>
 <meta
   name="description"
@@ -13,16 +29,16 @@
 <meta
   property="og:description"
   content="Khbrah connects you with experienced legal professionals through a user-friendly digital platform. Access consultations, legal documents, and expert representation seamlessly.">
-<meta
+  <meta
   property="og:image"
-  content="https://yourdomain.com/path-to-your-og-image.jpg">
+  content="https://www.khbrah.sa/path-to-your-og-image.jpg">
 <meta property="twitter:title" content="Khbrah – Trusted Digital Legal Consultancy Platform">
 <meta
   property="twitter:description"
   content="Access expert legal support via audio/video consultations, document handling, and representation—all in one trusted platform.">
-<meta
+  <meta
   property="twitter:image"
-  content="https://yourdomain.com/path-to-your-twitter-image.jpg">
+  content="https://www.khbrah.sa/path-to-your-twitter-image.jpg">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -493,6 +509,18 @@ referrerpolicy="no-referrer"
       toggleLanguage(e.target.checked);
     });
   </script>
+  <style>
+    /* RTL spacing adjustments using attribute selectors */
+    [dir="rtl"] [class*="lg:pl-8"] { padding-left: 0 !important; padding-right: 2rem !important; }
+    [dir="rtl"] [class*="lg:pr-8"] { padding-right: 0 !important; padding-left: 2rem !important; }
+    [dir="rtl"] [class*="pl-2"] { padding-left: 0 !important; padding-right: .5rem !important; }
+    [dir="rtl"] [class*="pr-2"] { padding-right: 0 !important; padding-left: .5rem !important; }
+
+    [dir="rtl"] [class*="space-x-6"] > * + * { margin-left: 0 !important; margin-right: 1.5rem !important; }
+    [dir="rtl"] header nav a, [dir="rtl"] #mobile-menu nav a, [dir="rtl"] .nav-link { text-align: right !important; }
+    [dir="rtl"] header nav { flex-direction: row-reverse !important; }
+    [dir="rtl"] footer ul { text-align: right !important; }
+  </style>
 </body>
 
 </html>

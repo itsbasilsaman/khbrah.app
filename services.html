@@ -4,6 +4,22 @@
 
 <head>
   <meta charset="utf-8">
+  <script>
+    (function(){
+      try{
+        var saved = null;
+        try { saved = localStorage.getItem('siteLang'); } catch(e) { saved = null; }
+        var isArabic = saved ? (saved === 'ar') : true;
+        document.documentElement.lang = isArabic ? 'ar' : 'en';
+        document.documentElement.dir = isArabic ? 'rtl' : 'ltr';
+      }catch(err){}
+    })();
+  </script>
+  <style>
+    html[lang="ar"] .en:not(.lang-text) { display: none !important; }
+    html[lang="ar"] .ar:not(.lang-text) { display: inline !important; }
+    html[lang="ar"] header nav { flex-direction: row-reverse !important; }
+  </style>
   <title>Khbrah – Legal Services & Pricing</title>
   <meta
     name="description"
@@ -55,6 +71,7 @@
     .text-gradient {
       background: linear-gradient(135deg, #000000 0%, #333333 100%);
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
@@ -636,6 +653,10 @@
                 <span class="en">Plans</span>
                 <span class="ar hidden">الباقات</span>
               </a>
+              <a href="blog.html" class="nav-link text-white font-semibold">
+                <span class="en">Blog</span>
+                <span class="ar hidden">المدونة</span>
+              </a>
               <a href="contact.html" class="nav-link text-white font-semibold">
                 <span class="en">Contact</span>
                 <span class="ar hidden">اتصل بنا</span>
@@ -710,6 +731,10 @@ class="fixed z-50 top-0 right-0 h-full w-72 bg-black/90 text-white backdrop-blur
 <a href="packages.html">
   <span class="en">Plans</span>
   <span class="ar hidden">الباقات</span>
+</a>
+<a href="blog.html">
+  <span class="en">Blog</span>
+  <span class="ar hidden">المدونة</span>
 </a>
 <a href="contact.html">
   <span class="en">Contact</span>
@@ -1002,10 +1027,191 @@ mobileMenu.classList.add('translate-x-full');
       </div>
     </div>
 
-    <!-- Footer (Same as other pages) -->
-    <footer class="footer">
-      <!-- Footer content (same as other pages) -->
+    <footer class="bg-black text-white">
+      <div class="max-w-7xl mx-auto px-6 py-12 lg:py-16">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Brand -->
+          <div class="space-y-4">
+            <a href="index.html" class="inline-block">
+              <img src="/Assets/khbrah-logo.png" alt="Khbrah" class="h-12">
+            </a>
+            <p class="text-sm muted en">Khbrah connects you with experienced legal professionals through audio/video consultations, document support, and expert representation.</p>
+            <p class="text-sm muted ar hidden" style="font-family: 'Vazirmatn', sans-serif;">خِبرة تربطك بمحامين محترفين من خلال الاستشارات الصوتية/المرئية، دعم المستندات، والتمثيل القانوني المتخصص.</p>
+            <div class="mt-4">
+              <div class="w-layout-grid footer-social-media-grid flex items-center gap-3">
+                <a aria-label="Twitter" href="https://x.com/khbrah__sa?s=21&t=CzxXRN0kg88UtBQ2WRVLrQ" target="_blank" class="p-2 rounded bg-white/5 hover:bg-white/10 text-white transition-colors"><i class="bi bi-twitter-x"></i></a>
+                <a aria-label="WhatsApp" href="https://wa.me/966557063869" target="_blank" class="p-2 rounded bg-white/5 hover:bg-white/10 text-white transition-colors"><i class="bi bi-whatsapp"></i></a>
+                <a aria-label="Facebook" href="https://www.facebook.com/profile.php?id=61579083676613" target="_blank" class="p-2 rounded bg-white/5 hover:bg-white/10 text-white transition-colors"><i class="bi bi-facebook"></i></a>
+                <a aria-label="TikTok" href="https://www.tiktok.com/@khbrah_sa?_t=ZS-8yt7Lec253Z&_r=1" target="_blank" class="p-2 rounded bg-white/5 hover:bg-white/10 text-white transition-colors"><i class="bi bi-tiktok"></i></a>
+                <a aria-label="Instagram" href="https://www.instagram.com/khbrah__sa?igsh=dWlyZnIzMDhvOGpz&utm_source=qr" target="_blank" class="p-2 rounded bg-white/5 hover:bg-white/10 text-white transition-colors"><i class="bi bi-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Links -->
+          <div class="text-sm">
+            <h3 class="font-semibold mb-3 en">Quick Links</h3>
+            <h3 class="font-semibold mb-3 ar hidden" style="font-family: 'Vazirmatn', sans-serif;">روابط سريعة</h3>
+            <ul class="space-y-2 muted">
+              <li><a href="features.html" class="hover:underline"> <span class="en">Features</span><span class="ar hidden" style="font-family: 'Vazirmatn', sans-serif;">المميزات</span></a></li>
+              <li><a href="services.html" class="hover:underline"> <span class="en">Services</span><span class="ar hidden" style="font-family: 'Vazirmatn', sans-serif;">الخدمات</span></a></li>
+              <li><a href="packages.html" class="hover:underline"> <span class="en">Plans</span><span class="ar hidden" style="font-family: 'Vazirmatn', sans-serif;">الباقات</span></a></li>
+              <li><a href="contact.html" class="hover:underline"> <span class="en">Contact</span><span class="ar hidden" style="font-family: 'Vazirmatn', sans-serif;">اتصل بنا</span></a></li>
+            </ul>
+          </div>
+
+          <!-- Subscribe -->
+          <div class="">
+            <h3 class="font-semibold mb-3 en">Subscribe</h3>
+            <h3 class="font-semibold mb-3 ar hidden" style="font-family: 'Vazirmatn', sans-serif;">اشترك</h3>
+            <p class="text-sm muted mb-4 en">Get new articles and legal updates straight to your inbox. No spam.</p>
+            <p class="text-sm muted mb-4 ar hidden" style="font-family: 'Vazirmatn', sans-serif;">احصل على المقالات والتحديثات القانونية مباشرة إلى بريدك. لا رسائل مزعجة.</p>
+
+            <form id="footer-subscribe-form" name="footer-subscribe" method="POST" data-netlify="true" class="flex flex-col sm:flex-row gap-3" onsubmit="return false;">
+              <input type="hidden" name="form-name" value="footer-subscribe">
+              <label for="footer-email" class="sr-only">Email address</label>
+              <input id="footer-email" name="email" type="email" required placeholder="you@domain.com" class="w-full sm:flex-1 px-3 py-2 rounded bg-white text-black" />
+              <button id="footer-subscribe-btn" type="submit" class="px-4 py-2 bg-white text-black rounded font-medium hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-300 transition"> <span class="en">Subscribe</span><span class="ar hidden" style="font-family: 'Vazirmatn', sans-serif;">اشترك</span></button>
+            </form>
+            <div id="footer-subscribe-msg" class="text-sm mt-3 text-white/80"></div>
+            <!-- Animated subscribed badge (hidden until subscribed) -->
+            <div id="footer-subscribed-badge" class="hidden mt-3 items-center gap-2 justify-start">
+              <span class="inline-flex items-center justify-center w-8 h-8 bg-green-500 rounded-full text-white animate-pop">
+                <i class="bi bi-check-lg"></i>
+              </span>
+              <span class="font-medium text-white">
+                <span class="en">Subscribed</span>
+                <span class="ar hidden" style="font-family: 'Vazirmatn', sans-serif;">تم الاشتراك</span>
+              </span>
+            </div>
+            <p id="footer-subscribe-note" class="text-xs muted mt-4 en">We will send your subscription to <span class="preserve-ltr">it@khbrah.sa</span> and keep you updated.</p>
+            <p id="footer-subscribe-note-ar" class="text-xs muted mt-4 ar hidden" style="font-family: 'Vazirmatn', sans-serif;">سنرسل تفاصيل الاشتراك إلى <span class="preserve-ltr">it@khbrah.sa</span> وسنوافيك بالتحديثات.</p>
+          </div>
+        </div>
+
+        <div class="mt-8 border-t border-white/10 pt-6 text-center text-sm text-white/70">
+          <div class="en">© 2025 Khbrah — All rights reserved.</div>
+          <div class="ar hidden" style="font-family: 'Vazirmatn', sans-serif;">© 2025 خِبرة — كل الحقوق محفوظة.</div>
+        </div>
+      </div>
     </footer>
+
+    <script>
+      // Footer subscribe handler: Netlify-friendly and fallback to mailto to notify it@khbrah.sa
+      (function(){
+        const form = document.getElementById('footer-subscribe-form');
+        const emailInput = document.getElementById('footer-email');
+        const btn = document.getElementById('footer-subscribe-btn');
+        const msg = document.getElementById('footer-subscribe-msg');
+        const NOTIFY_EMAIL = 'it@khbrah.sa';
+
+        function isArabicVisible(){
+          return !!document.querySelector('.ar:not(.lang-text):not(.hidden)');
+        }
+
+        const MESSAGES = {
+          en: {
+            invalid: 'Please enter a valid email.',
+            submitting: 'Submitting…',
+            success: 'Subscribed successfully — check your inbox.',
+            fallback: 'Subscribed (client mail opened). If nothing happened, ensure you have an email client.',
+            failed: 'Subscription failed. Please email ' + NOTIFY_EMAIL + ' with your address.'
+          },
+          ar: {
+            invalid: 'الرجاء إدخال بريد إلكتروني صحيح.',
+            submitting: 'جاري الإرسال…',
+            success: 'تم الاشتراك بنجاح — تحقق من صندوق الوارد.',
+            fallback: 'تم الاشتراك (تم فتح تطبيق البريد). إذا لم يحدث شيء، تأكد من وجود تطبيق بريد على جهازك.',
+            failed: 'فشل الاشتراك. يرجى إرسال بريد إلكتروني إلى ' + NOTIFY_EMAIL
+          }
+        };
+
+        function setMsg(key, ok){
+          const lang = isArabicVisible() ? 'ar' : 'en';
+          msg.textContent = MESSAGES[lang][key];
+          msg.style.color = ok ? '#d1fae5' : '#fecaca';
+        }
+
+        function setButtonSubscribed(){
+          // Keep bilingual spans so language toggle still works
+          btn.innerHTML = '<span class="en">Subscribed</span><span class="ar hidden" style="font-family: Vazirmatn, sans-serif;">تم الاشتراك</span>';
+        }
+
+        if (!form) return;
+
+        form.addEventListener('submit', function(e){
+          e.preventDefault();
+          const email = emailInput.value.trim();
+          if (!email) { setMsg('invalid', false); return; }
+          btn.disabled = true; btn.classList.add('opacity-70');
+          setMsg('submitting', true);
+
+          // Try Netlify form submission (site must be deployed to pick this up)
+          const data = new URLSearchParams();
+          data.append('form-name', form.getAttribute('name'));
+          data.append('email', email);
+
+          fetch(window.location.pathname, { method: 'POST', headers: {'Content-Type':'application/x-www-form-urlencoded'}, body: data.toString() })
+            .then(res => {
+              if (res.ok) {
+                // show animated badge only
+                showSubscribedBadge();
+                try { window.open(`mailto:${NOTIFY_EMAIL}?subject=New%20Subscriber&body=New%20subscriber%20email:%20${encodeURIComponent(email)}`); } catch(e){}
+                return;
+              }
+              throw new Error('Netlify form not accepted');
+            })
+            .catch(() => {
+              const mailto = `mailto:${NOTIFY_EMAIL}?subject=New Subscriber&body=New subscriber email: ${encodeURIComponent(email)}`;
+                try {
+                window.open(mailto);
+                // show animated badge instead of text
+                showSubscribedBadge();
+                btn.disabled = true;
+              } catch (err) {
+                setMsg('failed', false);
+                btn.disabled = false; btn.classList.remove('opacity-70');
+              }
+            });
+        });
+        
+        function showSubscribedBadge(){
+          // hide textual messages and form controls, show badge with animation
+          const badge = document.getElementById('footer-subscribed-badge');
+          const msgEl = document.getElementById('footer-subscribe-msg');
+          const formEl = document.getElementById('footer-subscribe-form');
+          const noteEn = document.getElementById('footer-subscribe-note');
+          const noteAr = document.getElementById('footer-subscribe-note-ar');
+          if (msgEl) msgEl.classList.add('hidden');
+          if (noteEn) noteEn.classList.add('hidden');
+          if (noteAr) noteAr.classList.add('hidden');
+          if (formEl) formEl.classList.add('hidden');
+          if (badge) {
+            badge.classList.remove('hidden');
+            badge.classList.add('flex');
+            // small pulse animation
+            badge.animate([
+              { transform: 'scale(0.95)', opacity: 0 },
+              { transform: 'scale(1.05)', opacity: 1 },
+              { transform: 'scale(1)', opacity: 1 }
+            ], { duration: 500, easing: 'ease-out' });
+          }
+        }
+      })();
+    </script>
+
+    <style>
+      /* Ensure page fills viewport and footer stays at bottom (remove unexpected white gap) */
+      html, body { height: 100%; }
+      body { display: flex; flex-direction: column; min-height: 100vh; }
+      .page-wrapper { flex: 1 0 auto; }
+      footer { flex-shrink: 0; }
+      /* make sure footer icons remain visible on hover and text doesn't match background */
+      footer a { color: inherit; }
+      footer a:hover { color: #fff; }
+      /* remove bottom padding so footer sits flush with viewport bottom */
+      footer { padding-bottom: 0; }
+    </style>
   </div>
 
   <!-- Scripts -->
@@ -1384,5 +1590,24 @@ mobileMenu.classList.add('translate-x-full');
       });
     }
   </script>
+    <style>
+      /* RTL spacing adjustments so Arabic looks like English spacing */
+      [dir="rtl"] .lg\:pl-8 { padding-left: 0 !important; padding-right: 2rem !important; }
+      [dir="rtl"] .lg\:pr-8 { padding-right: 0 !important; padding-left: 2rem !important; }
+      [dir="rtl"] .pl-2 { padding-left: 0 !important; padding-right: .5rem !important; }
+      [dir="rtl"] .pr-2 { padding-right: 0 !important; padding-left: .5rem !important; }
+
+      /* Reverse horizontal spacing utilities used for desktop nav */
+      [dir="rtl"] .space-x-6 > * + * { margin-left: 0 !important; margin-right: 1.5rem !important; }
+
+      /* Ensure nav links align correctly */
+      [dir="rtl"] header nav a, [dir="rtl"] #mobile-menu nav a, [dir="rtl"] .nav-link { text-align: right !important; }
+
+      /* Defensive: make desktop nav row-reverse in CSS too */
+      [dir="rtl"] header nav { flex-direction: row-reverse !important; }
+
+      /* Footer quick links alignment */
+      [dir="rtl"] footer ul { text-align: right !important; }
+    </style>
 </body>
 </html>

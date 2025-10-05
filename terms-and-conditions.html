@@ -25,6 +25,22 @@
     }
   </style>
   <script>
+    (function(){
+      try{
+        var saved = null;
+        try { saved = localStorage.getItem('siteLang'); } catch(e) { saved = null; }
+        var isArabic = saved ? (saved === 'ar') : true;
+        document.documentElement.lang = isArabic ? 'ar' : 'en';
+        document.documentElement.dir = isArabic ? 'rtl' : 'ltr';
+      }catch(err){}
+    })();
+  </script>
+  <style>
+    html[lang="ar"] .en:not(.lang-text) { display: none !important; }
+    html[lang="ar"] .ar:not(.lang-text) { display: inline !important; }
+    html[lang="ar"] header nav { flex-direction: row-reverse !important; }
+  </style>
+  <script>
     function switchLang(lang) {
       document.documentElement.lang = lang;
       document.documentElement.dir  = (lang === 'ar' ? 'rtl' : 'ltr');

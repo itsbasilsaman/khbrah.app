@@ -6,6 +6,22 @@
     <title>Payment Successful - Khbrah Law Firm</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <script>
+            (function(){
+                try{
+                    var saved = null;
+                    try { saved = localStorage.getItem('siteLang'); } catch(e) { saved = null; }
+                    var isArabic = saved ? (saved === 'ar') : true;
+                    document.documentElement.lang = isArabic ? 'ar' : 'en';
+                    document.documentElement.dir = isArabic ? 'rtl' : 'ltr';
+                }catch(err){}
+            })();
+        </script>
+        <style>
+            html[lang="ar"] .en:not(.lang-text) { display: none !important; }
+            html[lang="ar"] .ar:not(.lang-text) { display: inline !important; }
+            html[lang="ar"] header nav { flex-direction: row-reverse !important; }
+        </style>
 </head>
 <body class="bg-gray-100 min-h-screen flex items-center justify-center">
     <div class="max-w-md w-full mx-4">
